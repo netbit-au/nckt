@@ -54,7 +54,7 @@ AC_INIT([NCO netCDF Operators],[4.0.2],[help@nco.sf.net],[nco])
 AC_COPYRIGHT
 
 # Safety check that correct --srcdir was specified
-AC_CONFIG_SRCDIR([src/nco/ncks.c])
+AC_CONFIG_SRCDIR([src/nco/nckt.c])
 # Put helper scripts here to reduce top level clutter
 AC_CONFIG_AUX_DIR(autobld)
 # Tell system about local m4 macros to keep libtool in sync

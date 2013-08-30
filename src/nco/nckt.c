@@ -1,4 +1,4 @@
-/* $Header: /cvsroot/nco/nco/src/nco/ncks.c,v 1.253 2010/04/18 17:59:53 zender Exp $ */
+/* $Header: /cvsroot/nco/nco/src/nco/nckt.c,v 1.253 2010/04/18 17:59:53 zender Exp $ */
 
 /* ncks -- netCDF Kitchen Sink */
 
@@ -123,7 +123,7 @@ main(int argc,char **argv)
   char *optarg_lcl=NULL; /* [sng] Local copy of system optarg */
   char *rec_dmn_nm=NULL; /* [sng] Record dimension name */
 
-  const char * const CVS_Id="$Id: ncks.c,v 1.253 2010/04/18 17:59:53 zender Exp $"; 
+  const char * const CVS_Id="$Id: nckt.c,v 1.253 2010/04/18 17:59:53 zender Exp $"; 
   const char * const CVS_Revision="$Revision: 1.253 $";
   const char * const opt_sht_lst="346aABb:CcD:d:FHhL:l:MmOo:Pp:qQrRs:uv:X:x-:";
 

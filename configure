@@ -708,7 +708,7 @@ PACKAGE_STRING='NCO netCDF Operators 4.0.2'
 PACKAGE_BUGREPORT='help@nco.sf.net'
 PACKAGE_URL=''
 
-ac_unique_file="src/nco/ncks.c"
+ac_unique_file="src/nco/nckt.c"
 # Factoring default headers for most tests.
 ac_includes_default="\
 #include <stdio.h>

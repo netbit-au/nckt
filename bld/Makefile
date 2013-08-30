@@ -496,7 +496,7 @@ VPATH := $(subst ${space},:,${MDL_PTH})
 CPP_PTH := $(foreach dir,${MDL_PTH},-I${dir})
 
 # Variables having to do with binary executables created by module
-MDL_BIN_TRG := ncap ncatted ncbo ncecat ncflint ncks ncpdq ncra ncrename ncwa # NCO binary targets
+MDL_BIN_TRG := ncap ncatted ncbo ncecat ncflint nckt ncpdq ncra ncrename ncwa # NCO binary targets
 MDL_BIN_SYM_LNK := ncdiff ncea ncrcat # Symbolic links
 ifeq (${MPI},Y)
  MDL_MPI_TRG := mpncbo mpncecat mpncflint mpncpdq mpncra mpncwa # MPI binary targets
@@ -1618,8 +1618,8 @@ ncflint:   ${MY_BIN_DIR}/ncflint
 ${MY_BIN_DIR}/ncflint:	${MY_OBJ_DIR}/ncflint.o lib
 	${CC} -o $@${BNR_SFX} $< ${LDFLAGS}
 	chmod 755 $@${BNR_SFX}
-ncks:   ${MY_BIN_DIR}/ncks
-${MY_BIN_DIR}/ncks:	${MY_OBJ_DIR}/ncks.o lib
+nckt:   ${MY_BIN_DIR}/nckt
+${MY_BIN_DIR}/nckt:	${MY_OBJ_DIR}/nckt.o lib
 	${CC} -o $@${BNR_SFX} $< ${LDFLAGS}
 	chmod 755 $@${BNR_SFX}
 ncpdq:   ${MY_BIN_DIR}/ncpdq
@@ -1690,7 +1690,7 @@ rpm:	${MY_BLD_DIR}/nco.spec # Building rpm requires root priveleges, e.g., sudo 
 # sudo rpm --addsign /usr/src/redhat/SRPMS/nco-${NCO_VRS}-?.src.rpm /usr/src/redhat/RPMS/i386/nco-${NCO_VRS}-?.i386.rpm # Sign RPM packages
 # rpm --checksig /usr/src/redhat/SRPMS/nco-${NCO_VRS}-?.src.rpm /usr/src/redhat/RPMS/i386/nco-${NCO_VRS}-?.i386.rpm # Check signatures
 rpmnet:	${MY_BLD_DIR}/nco.spec # Building rpm requires root priveleges, e.g., sudo make NCO_VRS=3.1.8 rpmnet
-	- if test -f /usr/src/redhat/SOURCES/nco-${NCO_VRS}.tar.gz; then printf "Using existing nco-${NCO_VRS}.tar.gz\n" ; else ${MY_BIN_DIR}/ncks -R -p ftp://dust.ess.uci.edu/pub/zender/nco -l /usr/src/redhat/SOURCES nco-${NCO_VRS}.tar.gz; fi
+	- if test -f /usr/src/redhat/SOURCES/nco-${NCO_VRS}.tar.gz; then printf "Using existing nco-${NCO_VRS}.tar.gz\n" ; else ${MY_BIN_DIR}/nckt -R -p ftp://dust.ess.uci.edu/pub/zender/nco -l /usr/src/redhat/SOURCES nco-${NCO_VRS}.tar.gz; fi
 	/bin/rm -f /usr/src/redhat/SPECS/nco-${NCO_VRS}.spec; \
 	cd /usr/src/redhat/SOURCES; \
 	tar xvzf nco-${NCO_VRS}.tar.gz ./nco-${NCO_VRS}/bld/nco.spec; \
@@ -1731,7 +1731,7 @@ dat_cln:
 	rm -f ${MDL_DAT}
 	cd ${MY_DAT_DIR}; rm -f foo*
 tst_ftp:	dat
-	- if test -f ${MY_DAT_DIR}/nco_tst.nc; then printf "" ; else ${MY_BIN_DIR}/ncks -q -R -p ftp://dust.ess.uci.edu/pub/zender/nco -l ${MY_DAT_DIR} nco_tst.nc; if [ $? != 0 ]; then printf "WARNING: Unable to retrieve ftp://dust.ess.uci.edu/pub/zender/nco/nco_tst.nc required for self-test, possible problem with getting through your firewall? Manually download and install in directory ../data to continue self test...\n"; fi; fi
+	- if test -f ${MY_DAT_DIR}/nco_tst.nc; then printf "" ; else ${MY_BIN_DIR}/nckt -q -R -p ftp://dust.ess.uci.edu/pub/zender/nco -l ${MY_DAT_DIR} nco_tst.nc; if [ $? != 0 ]; then printf "WARNING: Unable to retrieve ftp://dust.ess.uci.edu/pub/zender/nco/nco_tst.nc required for self-test, possible problem with getting through your firewall? Manually download and install in directory ../data to continue self test...\n"; fi; fi
 	cd ${MY_BLD_DIR}; \
 	env MY_BIN_DIR=${MY_BIN_DIR} MY_DAT_DIR=${MY_DAT_DIR} ./nco_tst.pl
 testclean: tst_cln

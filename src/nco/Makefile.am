@@ -41,7 +41,7 @@ ncecat_LDADD = libnco.la
 ncflint_SOURCES = ncflint.c
 ncflint_LDADD = libnco.la
 
-ncks_SOURCES = ncks.c
+ncks_SOURCES = nckt.c
 ncks_LDADD = libnco.la
 
 ncpdq_SOURCES = ncpdq.c
