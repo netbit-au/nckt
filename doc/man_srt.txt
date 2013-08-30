@@ -1,0 +1,5 @@
+.\" $Header: /cvsroot/nco/nco/doc/man_srt.txt,v 1.2 2008/05/11 20:30:37 zender Exp $ -*-nroff-*-
+.\" Purpose: Header file for NCO man pages
+.\" Pre-pend this file to top of each NCO man page
+.\" Usage: 
+.\" nroff -man ~/nco/man/ncra.1 | less

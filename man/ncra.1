@@ -1,0 +1,182 @@
+.\" $Header: /cvsroot/nco/nco/man/ncra.1,v 1.17 2010/01/05 20:02:17 zender Exp $ -*-nroff-*-
+.\" Purpose: ROFF man page for ncra
+.\" Usage:
+.\" nroff -man ~/nco/man/ncra.1
+.TH NCRA 1
+.SH NAME
+ncra \- netCDF Record Averager
+.SH SYNTAX
+ncra [\-3] [\-4] [\-6] [\-A] [\-C] [\-c] [\-D 
+.IR dbg ]
+[\-d 
+.IR dim ,[
+.IR "min" ][,[
+.IR max ]][,[
+.IR stride ]]]
+[\-F]
+[\-h] [\-L 
+.IR dfl_lvl ] 
+[\-l 
+.IR path ]
+[\-n 
+.IR loop ]
+[\-O] [\-p 
+.IR path ]
+[\-R] [\-r] [\-t
+.IR thr_nbr ]
+[\-v 
+.IR var [,...]]
+[\-X 
+.IR box ] 
+[\-x] [\-y 
+.IR op_typ ]
+.I input-files
+.I output-file
+.SH DESCRIPTION
+.PP
+.B ncra
+averages record variables across an arbitrary number of
+input files.
+The record dimension is retained as a degenerate (size 1) dimension in
+the output variables.
+.PP
+Input files may vary in size, but each must have a record dimension.
+The record coordinate, if any, should be monotonic for (or else non-fatal
+warnings may be generated).
+Hyperslabs of the record dimension which include more than one file are
+handled correctly.
+.B ncra
+supports the 
+.I stride
+argument to the 
+.B \-d
+hyperslab option for the record dimension only, 
+.I stride
+is not
+supported for non-record dimensions.
+.PP
+.B ncra
+weights each record (e.g., time slice) in the
+.I input-files
+equally.
+.B ncra
+does not attempt to see if, say, the 
+.B time
+coordinate
+is irregularly spaced and thus would require a weighted average in order
+to be a true time average.
+.SH EXAMPLES
+.PP
+Average files 
+.BR 85.nc ,
+.BR 86.nc ,
+\ .\|.\|.\ 
+.B 89.nc
+along the record dimension, and store the results in 
+.BR 8589.nc :
+.RS
+ncra 85.nc 86.nc 87.nc 88.nc 89.nc 8589.nc
+.br
+ncra 8[56789].nc 8589.nc
+.br
+ncra \-n 5,2,1 85.nc 8589.nc
+.RE
+These three methods produce identical answers.
+.PP
+Assume the files 
+.BR 85.nc ,
+.BR 86.nc ,
+\ .\|.\|.\ 
+.B 89.nc
+each
+contain a record coordinate 
+.I time
+of length 12 defined such that
+the third record in 
+.B 86.nc
+contains data from March 1986, etc.
+NCO knows how to hyperslab the record dimension across files.
+Thus, to average data from December, 1985 through February, 1986:
+.RS
+ncra \-d time,11,13 85.nc 86.nc 87.nc 8512_8602.nc
+.br
+ncra \-F \-d time,12,14 85.nc 86.nc 87.nc 8512_8602.nc
+.RE
+The file 
+.B 87.nc
+is superfluous, but does not cause an error.
+The 
+.B \-F
+turns on the Fortran (1-based) indexing convention.
+The following uses the 
+.I stride
+option to average all the March
+temperature data from multiple input files into a single output file
+.RS
+ncra \-F \-d time,3,,12 \-v temperature 85.nc 86.nc 87.nc 858687_03.nc
+.RE
+.PP
+Assume the 
+.I time
+coordinate is incrementally numbered such that
+January, 1985 = 1 and December, 1989 = 60.
+Assuming 
+.B ??
+only expands to the five desired files, the following
+averages June, 1985--June, 1989: 
+.RS
+ncra \-d time,6.,54. ??.nc 8506_8906.nc
+.RE
+
+.\" NB: Append man_end.txt here
+.\" $Header: /cvsroot/nco/nco/man/ncra.1,v 1.17 2010/01/05 20:02:17 zender Exp $ -*-nroff-*-
+.\" Purpose: Trailer file for common ending to NCO man pages
+.\" Usage: 
+.\" Append this file to end of NCO man pages immediately after marker
+.\" that says "Append man_end.txt here"
+.SH AUTHOR
+.B NCO
+manual pages written by Charlie Zender and Brian Mays.
+
+.SH "REPORTING BUGS"
+Report bugs to <http://sf.net/bugs/?group_id=3331>.
+
+.SH COPYRIGHT
+Copyright \(co 1995-2010 Charlie Zender
+.br
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+.SH "SEE ALSO"
+The full documentation for
+.B NCO
+is maintained as a Texinfo manual called the 
+.B NCO User's Guide.
+Because 
+.B NCO
+is mathematical in nature, the documentation includes TeX-intensive
+portions not viewable on character-based displays. 
+Hence the only complete and authoritative versions of the 
+.B NCO User's Guide 
+are the PDF (recommended), DVI, and Postscript versions at
+<http://nco.sf.net/nco.pdf>, <http://nco.sf.net/nco.dvi>,
+and <http://nco.sf.net/nco.ps>, respectively.
+HTML and XML versions
+are available at <http://nco.sf.net/nco.html> and
+<http://nco.sf.net/nco.xml>, respectively.
+
+If the
+.B info
+and
+.B NCO
+programs are properly installed at your site, the command
+.IP
+.B info nco
+.PP
+should give you access to the complete manual, except for the
+TeX-intensive portions.
+
+.SH HOMEPAGE
+The 
+.B NCO
+homepage at <http://nco.sf.net> contains more information.

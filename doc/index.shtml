@@ -1,0 +1,1601 @@
+<!-- $Header: /cvsroot/nco/nco/doc/index.shtml,v 1.574 2010/06/27 18:06:28 zender Exp $
+Purpose: NCO homepage
+
+URL:
+http://nco.sourceforge.net/index.shtml
+http://dust.ess.uci.edu/nco/index.shtml
+file:///home/zender/nco/doc/index.shtml
+
+Usage:
+/usr/bin/scp ~/nco/doc/index.shtml ~/nco/doc/nco.png ~/nco/doc/logo_pch.png ~/nco/doc/logo_cog.png ~/nco/doc/logo_cog_nmr.png ~/nco/doc/logo_srl.png zender,nco@web.sf.net:/home/groups/n/nc/nco/htdocs
+scp -p ~/nco/doc/index.shtml ~/nco/doc/nco.png ~/nco/doc/logo_pch.png ~/nco/doc/logo_cog.png ~/nco/doc/logo_cog_nmr.png ~/nco/doc/logo_srl.png dust.ess.uci.edu:/var/www/html/nco
+scp -p ~/nco/doc/.htaccess zender,nco@web.sf.net:/home/groups/n/nc/nco/htdocs/src
+scp -p ~/nco/doc/.htaccess dust.ess.uci.edu:/var/www/html/nco/src
+-->
+
+<!--
+Anti-Spam measures taken from
+http://ddi.digital.net/~gandalf/spamfaq.html
+
+Do unto others:
+<a href="mailto:root@[127.0.0.1]"></a>
+
+This requires Server Side includes:
+<a href="mailto:abuse@!--#echo var="REMOTE_ADDR"-- ">Anti spambot</a>
+
+Send Spam to central authority for documentation:
+<a href="mailto:news.admin.net-abuse.email@myriad.alias.net"></a>
+
+Try to disable Spammers' machines:
+<a href="mailto:'halt'@localhost">Lynx Users: do not follow this link</a>
+<a href="mailto:;halt;@localhost">Lynx Users: do not follow this link</a>
+-->
+
+<!doctype html public "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+   <title>NCO Homepage</title>
+   <meta name="Generator" content="Old fashioned typing">
+   <meta name="author" content="csz">
+   <meta name="Keywords" content="NCO Homepage, netCDF, netCDF operator, GCM, HDF, scientific data">
+   <link rel="icon" href="./nco.png" type="image/png">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#008080" alink="#FF0000">
+
+<table width="100%"><tr><td align="left" valign="top">/
+<a href="http://lists.sf.net/mailman/listinfo/nco-announce">Announce</a> /
+<a href="http://sf.net/forum/forum.php?forum_id=9831">Developer</a> /
+<a href="http://sf.net/forum/forum.php?forum_id=9829">Discussion</a> /
+<a href="http://sf.net/forum/forum.php?forum_id=9830">Help</a> /
+<a href="#RTFM">Manual</a> /
+<a href="http://nco.sf.net">Homepage</a> /
+<a href="http://sf.net/projects/nco">Project</a> /
+<a href="http://nco.cvs.sf.net/nco/nco/src/nco">Source</a> /
+<a href="http://nco.wiki.sourceforge.net">Wiki</a> /
+</td>
+
+<td align="right" valign="top">
+[<a href="http://www.antlr.org">ANTLR</a>] 
+[<a href="http://www.gnu.org/software/gsl">GSL</a>] 
+[<a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a>] 
+[<a href="http://opendap.org">OPeNDAP</a>] 
+[<a href="http://swamp.googlecode.com">SWAMP</a>] 
+[<a href="http://www.unidata.ucar.edu/packages/udunits">UDUnits</a>] 
+</td></tr></table>
+
+<p><hr width="100%"></p>
+<p><h1 align="center">Welcome to the netCDF Operator (NCO) Homepage</h1>
+
+<p><h2>Current NCO version is 4.0.2 last updated on <!--#flastmod file="VERSION"--> </h2>
+
+<table border=0 width=100%>
+
+<td>
+<p><ul>
+<li><a href="#News">News &amp; Milestones</a></li>
+<li><a href="#Definition">What is NCO?</a></li>
+<li><a href="#Contribute">Contributing</a></li>
+<li><a href="#prp_sei">NCO&rarr;SDO Project</a></li>
+<li><a href="#Publications">Publications</a></li>
+<li><a href="#Version">Version Summary</a></li>
+<li><a href="#Binaries">Binaries</a></li>
+<li><a href="#RTFM">Documentation</a></li>
+<li><a href="#FAQ">FAQ</a></li>
+<li><a href="#README/ChangeLog/TODO">README/ChangeLog/TODO</a></li>
+<li><a href="#Source">Source Code</a></li>
+<li><a href="#bld">Compiling</a></li>
+<li><a href="#NCAR">UCI and NCAR</a></li>
+<li><a href="#BM">Benchmarks</a></li>
+<li><a href="#bug">Known Problems</a></li>
+<li><a href="#People">People</a></li>
+<li><a href="#Contact">Contact us</a></li>
+</ul>
+</td>
+
+<td>
+<img src="nco.png" height=180 width=180 align=top>
+<img src="logo_pch.png" height=321 width=195 align=top>
+<img src="logo_cog.png" height=349 width=227 align=top>
+<img src="logo_cog_nmr.png" height=100 width=251 align=top>
+<img src="logo_srl.png" height=92 width=250 align=top>
+<p>
+The original NCO logo&hellip;and (in order of date received) 
+contenders from 
+Tony Freeman (patch), 
+Rich Signell (cogs),
+Rob Hetland (numeric cog), and
+Andrea Cimatoribus (spiral).<br>
+Which do you prefer? The Mandelblob, the patch, a cog, the spiral?<br>
+Can you improve these or create a better one? Send it in!
+Keep the size &lt;250&times;250 pixels.<br>
+</td>
+
+</table>
+<hr>
+
+<!-- http://nco.sf.net#news -->
+<dt><a name="News"></a><a name="news"></a></dt>
+<dt><a name="Milestones"></a><a name="milestones"></a></dt>
+<h2>NCO Milestones</h2>
+
+<ul>
+<li>2010 Fall?: NCO 4.0.3 (TBD)</li>
+
+<li>2010 Jun&nbsp;27: NCO 4.0.2</li>
+
+<li>2010 Apr&nbsp;05: NCO 4.0.1</li>
+
+<li>2010 Jan&nbsp;05: NCO 4.0.0 (bilinear interpolation, calendar attribute)</li>
+
+<li>2009 Jul&nbsp;15: NCO 3.9.9 (chunking, rebasing, GSL stats/interp)</li>
+
+<li>2009 Apr&nbsp;29: NCO 3.9.8 (GSL RNG/PDF functions)</li>
+
+<li>2009 Mar&nbsp;18: NCO 3.9.7</li>
+
+<li>2009 Jan&nbsp;22: NCO 3.9.6 (GSL special functions)</li>
+
+<li>2008 Sep&nbsp;24: <tt>ncap2</tt> <a href="http://nco.sf.net/nco.html#ncap2">documentation</a></li>
+
+<li>2008 Aug&nbsp;31: <a href="http://www.nsf.gov">NSF</a> funding ends</a></li>
+
+<li>2008 Aug&nbsp;08: NCO <a href="http://nco.wiki.sourceforge.net">Wiki</a>!</li>
+
+<li>2008 May&nbsp;22: SWAMP <a href="http://dust.ess.uci.edu/ppr/smn_WZJ08_ccgrid_200805.pdf">Talk</a> at CCGRID08 in Lyon, France</li>
+
+<li>2008 May&nbsp;11: NCO 3.9.5</li>
+
+<li>2008 Apr&nbsp;28: NCO <a href="http://dust.ess.uci.edu/ppr/ppr_Zen08.pdf">overview</a> paper in EMS</li>
+
+<li>2008 Mar&nbsp;04: NCO 3.9.4</li>
+
+<li>2007 Dec&nbsp;10: SWAMP <a href="http://dust.ess.uci.edu/ppr/pst_WZJ074.pdf">Poster</a> at Fall AGU, San Francisco, California</li>
+
+<li>2007 Dec&nbsp;07: NCO 3.9.3 (SWAMP!)</li>
+
+<li>2007 Dec&nbsp;04: NCO <a href="http://dust.ess.uci.edu/ppr/ppr_ZeM07.pdf">scaling paper</a> in IJHPCA</li>
+
+<li>2007 Aug&nbsp;29: NCO 3.9.2 (<tt>_FillValue</tt>s)</li>
+
+<li>2007 Aug&nbsp;27: <a href="http://swamp.googlecode.com">SWAMP site</a> spins-off from NCO</li>
+
+<li>2007 Jun&nbsp;29: NCO 3.9.1 (netCDF4 deflation)</li>
+
+<li>2007 May&nbsp;26: NCO 3.9.0 (netCDF4 atomic types)</li>
+
+<li>2007 May&nbsp;02: SWAMP <a href="http://dust.ess.uci.edu/smn/smn_WZJ07_gpc_200705.pdf">Talk</a> at GPC, Paris, France</li> 
+
+<li>2007 Apr&nbsp;20: NCO 3.2.0</li>
+
+<li>2007 Mar&nbsp;29: NCO 3.1.9 x86_64 RPMs</li>
+
+<li>2007 Mar&nbsp;10: NCO 3.1.9 (i386/x86_64 debs and i386 RPMs)</li>
+
+<li>2007 Feb&nbsp;22: SWAMP
+<a href="http://dust.ess.uci.edu/smn/smn_WZJ07_opendap_200702.pdf">Talk</a> at OPeNDAP Developer's Workshop, Boulder, Colorado</li>
+
+<li>2007 Jan&nbsp;15: <a href="http://dust.ess.uci.edu/smn/smn_nco_ams_200701.pdf">Talk</a> and <a href="http://dust.ess.uci.edu/ppr/abs_xtn_ZeW07.pdf">Extended Abstract</a> on NCO Scaling at AMS IIPS, San Antonio, Texas</li>
+
+<li>2007 Jan&nbsp;09: <a href="http://dust.ess.uci.edu/ppr/pst_ZMW06.pdf">Poster</a> on NCO Scaling at Fall AGU, San Francisco, California</li>
+
+<li>2006 Dec&nbsp;09: <a href="http://dust.ess.uci.edu/ppr/pst_WZJ06.pdf">Poster</a> on SWAMP at Fall AGU, San Francisco, California</li>
+
+<li>2006 Dec&nbsp;06: NCO 3.1.8</li>
+
+<li>2006 Nov&nbsp;11: NCO 3.1.7</li>
+
+<li>2006 Sep&nbsp;18: NCO 3.1.6</li>
+
+<li>2006 Aug&nbsp;29: NCO 3.1.5</li>
+
+<li>2006 Jun&nbsp;07: NCO 3.1.4</li>
+
+<li>2006 May&nbsp;30: NCO 3.1.3</li>
+
+<li>2006 Apr&nbsp;21: NCO 3.1.2</li>
+
+<li>2006 Jan&nbsp;30: NCO 3.1.1</li>
+
+<li>2005 Dec&nbsp;02: NCO 3.1.0 (MPI!)</li>
+
+<li>2005 Oct&nbsp;28: NCO 3.0.3</li>
+
+<li>2005 Oct&nbsp;17: <a href="#BM">NCO parallel benchmarks</a></li>
+
+<li>2005 Aug&nbsp;22: NCO 3.0.2</li>
+
+<li>2005 Jun&nbsp;10: NCO 3.0.1</li>
+
+<li>2005 Mar&nbsp;24: NCO 3.0.0</li>
+
+<li>2004 Sep&nbsp;07: NCO 2.9.9 (<tt>ncpdq</tt> packs data quietly)</li>
+
+<li>2004 Sep&nbsp;01: <a href="http://www.nsf.gov">NSF</a> funding for <a href="#prp_sei">NCO&rarr;SDO Project</a> begins</li>
+
+<li>2004 Aug&nbsp;07: NCO 2.9.8 (<a href="./nco.html#ncpdq"><tt>ncpdq</tt></a> re-orders dimensions)</li>
+
+<li>2004 Mar&nbsp;04: Submit NSF <a href="http://dust.ess.uci.edu/prp/prp_sei/prp_sei.pdf">proposal</a></li>
+
+<li><a href="./nco_news.shtml">Ancient NCO News &amp; Announcements</a></li>
+</ul>
+<hr></p>
+
+<!-- http://nco.sf.net#Definition -->
+<dt><a name="Definition"></a><a name="dfn"></a></dt>
+<h2>What is NCO?</h2>
+<p>The <a
+href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a>
+Operators (NCO) are a suite of standalone, command-line programs like,
+e.g., <tt>ls</tt> or <tt>mkdir</tt>.
+Each operator takes <a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a> 
+files as input, then operates (e.g., derives new data, averages, 
+hyperslabs, manipulates metadata) and produces a 
+<a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a>
+output file.  
+NCO primarily aids manipulation and analysis of gridded scientific data. 
+The single-command style of NCO allows users to manipulate and analyze
+files interactively, or with simple scripts that avoid some overhead
+(and power) of higher level programming environments.  
+The <a href="./nco.html">NCO User's Guide</a> illustrates their use
+with examples from the field of climate modeling and analysis.
+Note that the <a href="./nco.html#averagers">&ldquo;averagers&rdquo;</a> 
+are misnamed because they perform many non-linear operations as well,
+e.g., total, minimum, maximum, RMS: 
+<ul>
+<li><a href="./nco.html#ncap2"><tt>ncap2</tt></a> netCDF Arithmetic Processor (<a href="./nco.html#xmp_ncap">examples</a>)</li>
+<li><a href="./nco.html#ncatted"><tt>ncatted</tt></a> netCDF Attribute Editor (<a href="./nco.html#xmp_ncatted">examples</a>)</li>
+<li><a href="./nco.html#ncbo"><tt>ncbo</tt></a> netCDF Binary Operator (includes <tt>ncadd</tt>, <tt>ncsubtract</tt>, <tt>ncmultiply</tt>, <tt>ncdivide</tt>) (<a href="./nco.html#xmp_ncbo">examples</a>)</li>
+<li><a href="./nco.html#ncea"><tt>ncea</tt></a> netCDF Ensemble Averager (<a href="./nco.html#xmp_ncea">examples</a>)</li>
+<li><a href="./nco.html#ncecat"><tt>ncecat</tt></a> netCDF Ensemble Concatenator (<a href="./nco.html#xmp_ncecat">examples</a>)</li>
+<li><a href="./nco.html#ncflint"><tt>ncflint</tt></a> netCDF File Interpolator (<a href="./nco.html#xmp_ncflint">examples</a>)</li>
+<li><a href="./nco.html#ncks"><tt>ncks</tt></a> netCDF Kitchen Sink (<a href="./nco.html#xmp_ncks">examples</a>)</li>
+<li><a href="./nco.html#ncpdq"><tt>ncpdq</tt></a> netCDF Permute Dimensions Quickly, Pack Data Quietly (<a href="./nco.html#xmp_ncpdq">examples</a>)</li>
+<li><a href="./nco.html#ncra"><tt>ncra</tt></a> netCDF Record Averager (<a href="./nco.html#xmp_ncra">examples</a>)</li>
+<li><a href="./nco.html#ncrcat"><tt>ncrcat</tt></a> netCDF Record Concatenator (<a href="./nco.html#xmp_ncrcat">examples</a>)</li>
+<li><a href="./nco.html#ncrename"><tt>ncrename</tt></a> netCDF Renamer (<a href="./nco.html#xmp_ncrename">examples</a>)</li>
+<li><a href="./nco.html#ncwa"><tt>ncwa</tt></a></td> netCDF Weighted Averager (<a href="./nco.html#xmp_ncwa">examples</a>)</li>
+</ul>
+
+<p>The operators are as general as 
+<a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a>
+itself: there are no restrictions on the contents of the 
+<a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a>
+file(s) used as input.
+NCO's internal routines are completely dynamic and impose no limit on
+the number or sizes of dimensions, variables, and files.
+NCO is designed to be used both interactively and with large batch jobs.
+The default operator behavior is often sufficient for everyday needs, 
+and there are numerous command line (i.e., run-time) options, for
+special cases.
+NCO works well on most modern operating systems, including:
+Apple OS&nbsp;X, *BSD, Cray UNICOS, DEC Tru64, IBM AIX, HPUX,
+Linux, Microsoft Windows, NEC Super&nbsp;UX, SGI IRIX, and Sun
+Solaris.</p>
+
+<p><hr width="100%"></p>
+
+<!-- http://nco.sf.net#Contribute -->
+<dt><a name="Contribute"></a></dt>
+<h2>How to Contribute</h2>
+<p>In March, 2000, NCO became an Open Source project hosted by
+<a href="http://sf.net">SourceForge.net</a>.
+This facilitates collaboration, code contributions, and support.
+There is a <a href="./TODO">TODO list</a> about 200 items long! 
+No matter what your programming background there is a task you can help with. 
+From re-organizing the TODO list itself, to improving this cheesy
+webpage, to documentation, to designing and implementing new features
+and interfaces, we need your help!   
+The <a href="http://sf.net/projects/nco">NCO project homepage</a>
+contains mailing lists, discussion forums, and instructions to make
+contributing to NCO easy. 
+
+<p>As of June, 2003, you may easily donate your hard-earned money to NCO.
+Send your donation to NCO developers as a reward for good behavior, 
+or as an incentive to tackle more <a href="./TODO"><tt>TODO</tt></a>
+items. 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="zender@uci.edu">
+<input type="hidden" name="item_name" value="NCO development">
+<input type="hidden" name="item_number" value="nco_dnt_dvl">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="tax" value="0">
+<input type="image" src="https://www.paypal.com/images/x-click-but04.gif" border="0" name="submit" alt="Donate to NCO with PayPal - it's fast, free and secure!">
+</form>
+Inspired by President Obama's plan to bring more transparency to
+government investment, these homepage donation counters track the
+influence of your monetary donations on NCO development: 
+<dt>Donations received between 20030624 and 20100131: US$80.00.</dt>
+<dt>NCO features &ldquo;incentivized&rdquo; by these donations: More happy-face emoticons in the sourcecode.</dt>
+<hr></p>
+
+<a name="nsf"></a> <!-- http://nco.sf.net#nsf -->
+<a name="sdo"></a> <!-- http://nco.sf.net#sdo -->
+<a name="sei"></a> <!-- http://nco.sf.net#sei -->
+<dt><a name="prp_sei"></a></dt> <!-- http://nco.sf.net#prp_sei -->
+<h2>NCO&rarr;SDO Project</h2>
+<img src="nsf.png" height=180 width=180 align=right>
+<p>
+The National Science Foundation Grant
+<a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0431203">NSF IIS-0431203</a>
+funded our
+<a href="http://dust.ess.uci.edu/prp/prp_sei/prp_sei.pdf">NCO&rarr;SDO Project</a>,
+&ldquo;SEI(GEO): Scientific Data Operators Optimized for Efficient Distributed Interactive and Batch Analysis of Tera-Scale Geophysical Data&rdquo;
+from 20040901&ndash;20080831 as part of the 
+<a href="http://www.cise.nsf.gov/funding/pgm_display.cfm?pub_id=9473&div=iis">Science
+  and Engineering Informatics (SEI)</a> program.
+We appreciate the proposal reviewers for and staff of the Divisions of
+<a href="http://www.cise.nsf.gov/div/index.cfm?div=iis">Information and Intelligent Systems (IIS)</a>
+and
+<a href="http://www.cise.nsf.gov/div/index.cfm?div=sci">Shared Cyberinfrastructure (SC)</a>
+in the 
+<a href="http://www.nsf.gov/home/cise">Directorate for Computer and Information Science and Engineering (CISE)</a>.
+Until September 2004, NCO development was completely voluntary and without institutional support.
+This NSF support dramatically changed the scale and pace of NCO/SDO development.
+This URL,
+<a href="http://nco.sf.net#prp_sei"><tt>http://nco.sf.net#prp_sei</tt></a>,
+points to the most up-to-date information on the NCO/SDO proposal.</p> 
+
+<p>The NSF project provides the human and technical resources to analyze,  
+design, and implement novel advanced methods for distributed 
+data analysis and reduction (DDRA) of geophysical data.
+These powerful methods will be &ldquo;grid-enabled&rdquo;, and we will
+demonstrate their efficacy with analyses of distributed climate
+prediction and observation datasets.
+On the human side, recruited full-time help for specific areas of SDO,
+alongside our current and future volunteers. 
+We have a
+<a href="http://dust.ess.uci.edu/hire/prg_anl_03_adv.pdf">full-time programmer</a> 
+to help design, implement, and release major code changes.
+We have a
+<a href="http://dust.ess.uci.edu/hire/sdn_grd_02_adv.pdf">graduate student researcher</a> 
+pursuing innovative Ph.D. research in using 
+<a href="http://www3.niu.edu/mpi">&ldquo;grid-aware&rdquo;</a>
+<a href="http://www.mpi-forum.org">distributed memory</a>, 
+<a href="http://www.openmp.org">shared memory</a>, and 
+<a href="http://opendap.org">client-server</a> software
+technologies to improve DDRA of climate datasets.
+Another graduate student helps us design, implement, and release major
+code changes. 
+Contact us if you are seriously interested in tackling these
+problems on a full-time, part-time, or pay-per-feature basis.</p>
+
+<p>On the institutional and hardware side, this project connected the
+<a href="http://www.ess.uci.edu/esmf">Earth System Modeling Facility</a> (ESMF)
+to the
+<a href="http://www.calit2.net">California Institute for Telecommunications and Information Technology</a> (Cal-IT2)
+<a href="http://www.optiputer.net">OptIPuter</a> at the
+<a href="http://sdsc.ucsd.edu">San Diego Supercomputer Center</a>.
+These supercomputers dedicated a TB of storage each to
+<a href="http://www.opendap.org">OPeNDAP</a>-served climate simulation
+datasets for DDRA.
+After the proof-of-concept SDO DDRA was complete, we attempted a DDRA 
+intercomparison of the internationally distributed
+<a href="http://www.ccsm.ucar.edu/experiments/ccsm3.0">global climate change simulations</a>
+that reside on the 
+<a href="http://www.earthsystemgrid.org">Earth System Grid</a>.
+Our techniques tremendously accelerated the analysis of different
+climate prediction scenarios for the same model, and among different
+climate models.</p> 
+
+<p>We encourage you to e-mail NCO/SDO endorsements to
+<a href="mailto:surname@uci.edu">Charlie &ldquo;my surname is zender&rdquo; Zender</a>
+with Subject: &ldquo;NCO/SDO Proposal Endorsement&rdquo;. 
+An endorsement can be a sentence or a page, describing how NCO/SDO
+benefits your work or research.
+The information in your endorsement will be used to create supplementary documents to NSF and NASA for future NCO/SDO proposal advocacy.
+&ldquo;What future proposals?&rdquo; you ask, &ldquo;Didn't you just get funded?&rdquo;
+Yes, we are funded to optimize and &ldquo;grid-enable&rdquo; NCO.
+There are still many desirable and unexplored methods for distributed data analysis
+and reduction (DDRA) that would benefit geosciences.
+For example, have you tried analyzing multiple NASA satellite datasets in HDF5 format?
+Need I say more? 
+If you send an endorsement, remember to include (at least) your Name, Title, and Institutional affiliation in the body.</p>
+</ul>
+<hr></p>
+
+<!-- http://nco.sf.net#pub -->
+<dt><a name="Publications"></a><a name="pub"></a><a name="pubs"></a></dt>
+<h2>Publications and Presentations</h2>
+<ul>
+
+<li><!-- WZJ083 --> <a name="WZJ083"></a> <!--http://www.ess.uci.edu/~zender#WZJ083 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2008), Compiling the uncompilable: A&nbsp;case for shell script compilation, <i>Submitted to ACM Trans. Softw. Engin. Method.</i>.
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ083.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ083.pdf">PDF</a> (&copy;&nbsp;2008 by ACM)</a></li>
+
+<li><!-- WZJ091 --> <a name="WZJ091"></a> <!--http://www.ess.uci.edu/~zender#WZJ091 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2009), Efficient Clustered Server-side Data Analysis Workflows using SWAMP, <i>Earth Sci. Inform.</i>, <b>2</b>(3), 141&ndash;155, doi:10.1007/s12145-009-0021-z.
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ091.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ091.pdf">PDF</a> (&copy;&nbsp;2009 by ESI)</a></li>
+
+<li><!-- WZJ081 --> <a name="WZJ081"></a> <!--http://www.ess.uci.edu/~zender#WZJ081 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks: Cluster Workflow Execution of Retargeted Data Analysis Scripts, in <i>Cluster Computing and the Grid, 2008. CCGRID&nbsp;'08. 8th&nbsp;IEEE International Symposium on</i>. Lyons, France, 19&nbsp;22 May, 2008. IEEE Computer Society, 449&ndash;458, doi:10.1109/CCGRID.2008.69.
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ081.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ081.pdf">PDF</a> (&copy;&nbsp;2008 by IEEE)</a></li>
+
+<li><!-- Zen08 --> <a name="Zen08"></a> <!--http://www.ess.uci.edu/~zender#Zen08 -->
+Zender, C.&nbsp;S. (2008), Analysis of Self-describing Gridded Geoscience Data with netCDF Operators (NCO), <i>Environ. Modell. Softw.</i>, <b>23</b>(10), 1338&ndash;1342, doi:10.1016/j.envsoft.2008.03.004.
+<a href="http://dust.ess.uci.edu/ppr/ppr_Zen08.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_Zen08_csz.pdf">PDF (CSZ)</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_Zen08.pdf">PDF (EMS)</a> (&copy;&nbsp;2008 by Elsevier Ltd.)</a></li>
+
+<li> <!-- WZJ074 --> <a name="WZJ074"></a> <!--http://www.ess.uci.edu/~zender#WZJ074 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender and S.&nbsp;F. Jenks (2007): <i>A System for Scripted Data Analysis at Remote Data Centers</i>. Presented at the Fall Meeting of the American Geophysical Union, San Francisco,&nbsp;CA, December 10&ndash;14, 2007. <i>Eos Trans. AGU</i>, <b>88</b>(52), Fall Meet. Suppl., Abstract IN11B-0469.
+<a href="http://dust.ess.uci.edu/ppr/pst_WZJ074.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/pst_WZJ074.pdf">PDF (DLW)</a>
+</li>
+
+<li> <!-- WZJ073 --> <a name="WZJ073"></a> <!--http://www.ess.uci.edu/~zender#WZJ073 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2007), Server-side parallel data reduction and analysis, in <i>Advances in Grid and Pervasive Computing, Second International Conference, GPC 2007</i>, Paris, France, May 2&ndash;4, 2007, Proceedings. IEEE Lecture Notes in Computer Science, vol. 4459, edited by C.&nbsp;C&eacute;rin and K.-C. Li, pp. 744&ndash;750, Springer-Verlag, Berlin/Heidelberg.
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ073.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_WZJ073.pdf">PDF (DLW)</a>
+</li>
+
+<li><!-- WZJ07 --> <a name="WZJ07"></a> <!--http://www.ess.uci.edu/~zender#WZJ07 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2007), 
+<i>Server-side Parallel Data Reduction and Analysis</i>.
+Presented by D.&nbsp;Wang to the International Conference on Grid and
+Pervasive Computing (GPC),
+Paris, France, May 2&ndash;4, 2007. 
+<a href="http://dust.ess.uci.edu/smn/smn_WZJ07_gpc_200705.pdf">PDF</a></li>
+
+<li><!-- ZeM07 --> <a name="ZeM07"></a> <!--http://www.ess.uci.edu/~zender#ZeM07 -->
+Zender, C.&nbsp;S., and H.&nbsp;J. Mangalam (2007), Scaling Properties of Common Statistical Operators for Gridded Datasets, <i>Int.&nbsp;J.&nbsp;High Perform. Comput. Appl, <b>21</b>(4), 485&ndash;498, doi:10.1177/1094342007083802</i>.
+<a href="http://dust.ess.uci.edu/ppr/ppr_ZeM07.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_ZeM07_csz.pdf">PDF (CSZ)</a>
+<a href="http://dust.ess.uci.edu/ppr/ppr_ZeM07.pdf">PDF (IJHPCA) (&copy;&nbsp;2007 by SAGE Publications)</a></li>
+
+<li><!-- WZJ07 --> <a name="WZJ07"></a> <!--http://www.ess.uci.edu/~zender#WZJ07 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2007), 
+<i>Server-side Data Reduction and Analysis with Script Workflow Analysis for Multi-Processing</i>.
+Presented by D.&nbsp;Wang to the OPeNDAP Developer's Workshop,
+Boulder, CO, February 21&ndash;23, 2007.
+<a href="http://dust.ess.uci.edu/smn/smn_WZJ07_opendap_200702.pdf">PDF</a></li>
+
+<li><!-- WZJ07 --> <a name="WZJ07"></a> <!--http://www.ess.uci.edu/~zender#WZJ07 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2007), 
+<i>Server-side Data Reduction and Analysis with Script Workflow Analysis for Multi-Processing</i>.
+Presented by D.&nbsp;Wang to the 23rd AMS Conference on Interactive Information and
+Processing Systems (IIPS) for Meteorology, Oceanography, and Hydrology,
+San Antonio, TX, January 14&ndash;18, 2007.
+<a href="http://dust.ess.uci.edu/smn/smn_WZJ07_ams_200701.pdf">PDF</a></li>
+
+<li><!-- WZJ07 --> <a name="WZJ07"></a> <!--http://www.ess.uci.edu/~zender#WZJ07 -->
+Wang, D.&nbsp;L., C.&nbsp;S. Zender, and S.&nbsp;F. Jenks (2007), 
+DAP-enabled Server-side Data Reduction and Analysis, 
+<i>Proceedings of the 23rd AMS Conference on Interactive Information and Processing Systems (IIPS) for Meteorology, Oceanography, and Hydrology</i>, 
+Paper 3B.2., January 14&ndash;18, San Antonio,&nbsp;TX. American Meteorological Society, AMS Press, Boston,&nbsp;MA.
+<a href="http://dust.ess.uci.edu/ppr/abs_xtn_WZJ07.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/abs_xtn_WZJ07.pdf">PDF</a></li>
+
+<li><!-- ZeW07 --> <a name="ZeW07"></a> <!--http://www.ess.uci.edu/~zender#ZeW07 -->
+Zender, C.&nbsp;S., and D.&nbsp;L. Wang (2007), 
+<i>High performance distributed data reduction and analysis with the netCDF Operators (NCO)</i>. 
+Presented to the 23rd AMS Conference on Interactive Information and Processing Systems (IIPS) for Meteorology, Oceanography, and Hydrology, January 14&ndash;18, 
+San Antonio,&nbsp;TX, January 14&ndash;18, 2007.
+<a href="http://dust.ess.uci.edu/smn/smn_nco_ams_200701.pdf">PDF</a></li>
+
+<li><!-- ZeW07 --> <a name="ZeW07"></a> <!--http://www.ess.uci.edu/~zender#ZeW07 -->
+Zender, C.&nbsp;S., and D.&nbsp;L. Wang (2007), 
+High performance distributed data reduction and analysis with the netCDF Operators (NCO), 
+<i>Proceedings of the 23rd AMS Conference on Interactive Information and Processing Systems (IIPS) for Meteorology, Oceanography, and Hydrology</i>, 
+Paper 3B.4., January 14&ndash;18, San Antonio,&nbsp;TX. American Meteorological Society, AMS Press, Boston,&nbsp;MA.
+<a href="http://dust.ess.uci.edu/ppr/abs_xtn_ZeW07.bib">BibTeX</a>
+<a href="http://dust.ess.uci.edu/ppr/abs_xtn_ZeW07.pdf">PDF</a></li>
+
+<li><!-- WZJ06 --> <a name="WZJ06"></a> <!-- http://dust.ess.uci.edu/ppr/pst_WZJ06.pdf -->
+Wang, D.&nbsp, Zender, C.&nbsp;S., and S.&nbsp;F. Jenks (2006): 
+<i>Server-side netCDF Data Reduction and Analysis</i>.
+Presented by D.&nbsp;Wang to the Fall Meeting of the American Geophysical Union, 
+San Francisco,&nbsp;CA, December 5&ndash;9, 2006.
+<i>Eos Trans. AGU</i>, <b>87</b>(52), Fall Meet. Suppl., Abstract IN53B-0826.
+<a href="http://dust.ess.uci.edu/ppr/pst_WZJ06.pdf">PDF</a>
+
+<li><!-- ZMW06 --> <a name="ZMW06"></a> <!-- http://dust.ess.uci.edu/ppr/pst_ZMW06.pdf -->
+Zender, C.&nbsp;S., H.&nbsp;J. Mangalam, and D.&nbsp;L. Wang (2006):
+<i>Improving Scaling Properties of Common Statistical Operators for Gridded Geoscience Datasets</i>.
+Presented to the Fall Meeting of the American Geophysical Union, 
+San Francisco,&nbsp;CA, December 5&ndash;9, 2006.
+<i>Eos Trans. AGU</i>, <b>87</b>(52), Fall Meet. Suppl., Abstract IN53B-0827.
+<a href="http://dust.ess.uci.edu/ppr/pst_ZMW06.pdf">PDF</a>
+</ul>
+<hr></p>
+
+<!-- http://nco.sf.net#vrs -->
+<dt><a name="Version"></a><a name="vrs"></a></dt>
+<h2>Version Summary</h2>
+Releases receive unique CVS tags and their tarballs are stored  
+<a href="http://nco.sf.net/src">here</a> on SourceForge and
+<a href="http://dust.ess.uci.edu/nco/src">here</a> on my server.
+You can also retrieve the source of tagged versions directly
+<a name="#Source">with CVS</a>.
+<ul>
+<li><b>NCO/SDO 4.0.4</b>: (<i>Future</i>) 
+Chunking in all operators; netCDF4 compound types?
+<li><b>NCO/SDO 4.0.3</b>: (<i>In progress</i>)
+Chunking in all operators; netCDF4 compound types?
+<li><b>NCO/SDO 4.0.2</b>: 
+Consistent deflation, chunking with <tt>netCDF4_classic</tt>;
+Fix <tt>ncap2</tt> RAM vars, 1-D arrays.
+Fix <tt>ncatted</tt> appending <tt>NUL</tt>s.
+<li><b>NCO/SDO 4.0.1</b>:
+<tt>ncks --mk_rec_dmn</tt>, <tt>--fix_rec_dmn</tt>;
+<li><b>NCO/SDO 4.0.0</b>: 
+Bilinear interpolation, GSL fitting; 
+Chunking improvements;
+Better support CF <tt>calendar</tt> and <tt>coordinate</tt> attributes;
+<li><b>NCO/SDO 3.9.9</b>: 
+netCDF4 chunking and <tt>NC_STRING</tt> support; 
+GSL statistics, interpolation functions;
+UDUnits2 <tt>time-since</tt> support;
+<tt>ncrcat</tt> re-basing;
+<li><b>NCO/SDO 3.9.8</b>: 
+<tt>ncap2</tt> supports <tt>sort()</tt>, <tt>array()</tt>;
+better DAP/libnetcdf and UDUnits2 builds;
+GSL distribution/RNG functions;
+<li><b>NCO/SDO 3.9.7</b>:
+Improve GSL-build support;
+<tt>ncap2</tt> threading improvements;
+<tt>ncks --no_dmn_var_nm</tt> printing;
+<li><b>NCO/SDO 3.9.6</b>: 
+Fix OpenMP MSA <a href="#bug_thr_msa">bug</a> (<i>upgrade highly recommended</i>); 
+Memory management to improve threading;
+<tt>ncatted</tt> workaround for netCDF4 <tt>_FillValue</tt>;
+disable OpenMP with netCDF4/HDF;
+no math on type <tt>NC_CHAR</tt>;
+<tt>ncap2</tt> <a href="http://nco.sf.net/nco.html#ncap2">documentation</a>,
+better missing value propagation,
+<tt>#include</tt> files,
+<a href="http://nco.sf.net/nco.html#gsl">GSL</a> math functions;
+<li><b>NCO/SDO 3.9.5</b>: 
+Multi-slabbing (MSA) and <tt>-X</tt> everywhere;
+<tt>ncecat -M</tt>;
+netCDF4-enabled builds on Cygwin;
+<tt>ncap2</tt> builds on Solaris;
+<li><b>NCO/SDO 3.9.4</b>: 
+File consanguinity;
+<tt>ncks</tt>: CF auxiliary coords, LZ stats;
+<tt>ncap2</tt>: masks, index arrays, print attributes, OpenMP, <tt>atan2()</tt>, <tt>pow()</tt>;
+<li><b>NCO/SDO 3.9.3</b>: 
+SWAMP release;
+<tt>ncecat -u</tt>;
+<tt>wget</tt> URLs;
+GCC&nbsp;4.2;
+<tt>ncap2</tt> OpenMP;
+<li><b>NCO/SDO 3.9.2</b>: 
+<tt>_FillValue</tt> supplants <tt>missing_value</tt>;
+<tt>UDUnits2 support</tt>;
+<tt>ncap2</tt> type-conversion support and printing;
+netCDF4 <tt>configure</tt> fixes;
+Change licenses to GPL3 and FDL1.2;
+<li><b>NCO/SDO 3.9.1</b>: 
+<a href="http://nco.sf.net/nco.html#deflate">Support</a> lossless netCDF4/HDF deflation;
+Improve Intel compiler support; 
+<tt>ncap2</tt> for/while loops;
+various and sundry build fixes;
+<li><b>NCO/SDO 3.9.0</b>: 
+<a href="http://nco.sf.net/nco.html#nco4">Support netCDF4</a> types (<tt>ubyte</tt>, <tt>ushort</tt>, <tt>uint</tt>, <tt>int64</tt>, and <tt>uint64</tt>);
+Control <tt>ncks</tt> metadata <a href="http://nco.sf.net/nco.html#prn">copying</a>; 
+Fix <tt>ncbo</tt> packed valued <a href="#bug_ncbo_pck">bug</a> (<i>upgrade recommended</i>); 
+Improve IRIX&nbsp;6.5 support; 
+<li><b>NCO/SDO 3.2.0</b>: More forgiving exclusion list (<tt>-x -v <i>var_nm</i></tt>) <a href="http://nco.sf.net/nco.html#xcl">handling</a>; Fix <tt>rmssdn</tt> normalization; Support Mac OS&nbsp;X on Intel; Documentation bugfixes;
+<li><b>NCO/SDO 3.1.9</b>: <tt>ncap2</tt> in RPM packages; Quieter output; AIX <tt>configure</tt> supports <tt>ncap2</tt>; Update to DAP for netCDF 3.6.2; Fix <tt>nc[erw]a</tt> for coordinate min/max/ttl; <tt>ncecat</tt> allows files to differ in record dimension size;
+<li><b>NCO/SDO 3.1.8</b>: Support <tt>_FillValue</tt> with compile-time switch; Debian package synchronized, includes <tt>ncap2</tt> 
+<li><b>NCO/SDO 3.1.7</b>: <tt>ncap2</tt> &ldquo;double-parsing&rdquo;, array initialization, supercedes <tt>ncap</tt>
+<li><b>NCO/SDO 3.1.6</b>: Support <a href="http://nco.sf.net/nco.html#srd">stride</a> in all hyperslabbing operators; change more WARNINGs to INFOs
+<li><b>NCO/SDO 3.1.5</b>: New <tt>ncap2</tt> array and hyperslab features; change some WARNINGs to INFOs, add Pathscale and update PGI and Intel compiler support
+<li><b>NCO/SDO 3.1.4</b>: Fix <tt>ncbo</tt> memory problem; report timer results
+<li><b>NCO/SDO 3.1.3</b>: <tt>ncap2</tt> automatically <a href="http://nco.sf.net/nco.html#att_prp">propagates</a> attributes to new/derived variables; NCO handles record variables with zero records; <a href="http://nco.sf.net/nco.html#cnv_CF_crd">support</a> CF <tt>coordinates</tt> convention; <tt>ncwa -b</tt> <a href="http://nco.sf.net/nco.html#ncwa">retains</a> degenerate dimensions; build fixes for Cray T3E, Solaris, Cygwin.
+<li><b>NCO/SDO 3.1.2</b>: <tt>ncap2</tt> control structures (conditionals, loops, etc.); keep non-processed data <a href="bug_pack_fix">packed</a> in output file; binary operators <tt>ncbo</tt> and <tt>ncflint</tt> work when only one variable has <tt>missing_value</tt> attribute; change <tt>ncra</tt> and <tt>ncea</tt> to always average coordinate variables
+<li><b>NCO/SDO 3.1.1</b>: NCO builds (again) with C++ compilers; ncap2 development code; server-side extensions
+<li><b>NCO/SDO 3.1.0</b>: MPI operators are bug-free; fix <t>./configure</t> for MPI and netCDF4; MRV algorithm speeds up <tt>ncwa</tt> 5&mdash;10 times; <tt>ncap</tt> random number generator <tt>rnd_nbr()</tt>
+<li><b>NCO 3.0.3</b>: Eliminate all critical read regions (accelerates all SMP operators); builds with netCDF4 alpha; read <t>NETCDF4_CLASSIC</t> (i.e., HDF) files automatically; write <t>NETCDF4</t> files <a href="http://nco.sf.net/nco.html#netcdf4">on request</a>; <a href="http://nco.sf.net#BM">benchmark results</a> quantify parallelism.
+<li><b>NCO 3.0.2</b>: Fewer critical read regions; all known memory leaks plugged; better Intel compiler support; <tt>SFTP</tt> protocol support; FTP protocol supports <tt>.netrc</tt>-based passwords; better model grid-property-awareness (e.g., <tt>lat_bnds</tt>); <tt>ncatted</tt> <tt>ncks</tt>, <tt>ncrename</tt> support metadata header padding with <tt>--hdr</tt>; <tt>ncbo</tt> supports heterogeneous variable ordering; <tt>ncatted</tt> bugfix
+  <li><b>NCO 3.0.1</b>: benchmarks; <tt>ncks</tt> printing tweaks; memory cleanup; <tt>ncap</tt> double-parse speedup and <a href="bug_ncap_cmt">exponentiation bugfix</a>; thread operators by default
+  <li><b>NCO 3.0.0</b>: New <tt>ncks -P</tt> print switch; <tt>ncap</tt> optimizations; <tt>-Z</tt> option supports 64-bit offsets (requires netCDF&nbsp;3.6); NEC&nbsp;SX build improvements; support GCC&nbsp;3.4.X; <tt>nco_put_vara()</tt> overloads in <tt>libnco_c++</tt>
+<li><b>NCO 2.9.9</b>: <tt>ncpdq</tt> packs/unpacks entire files; <tt>ncbo</tt> is threaded
+<li><b>NCO 2.9.8</b>: <a href="./nco.html#ncpdq"><tt>ncpdq</tt></a> released; <tt>ncwa --msk_sng</tt> consolidated mask switch; C99 compiler required
+<li><b>NCO 2.9.7</b>: Read input file lists from <tt>stdin</tt>; write <tt>nco_input_file_list</tt> attributes; add <tt>nco_put_att&lt;int,short,long&gt;</tt> functions to libnco_c++; large file support (LFS); write <tt>nco_openmp_thread_number</tt> attribute
+<li><b>NCO 2.9.6</b>: Support <tt>-o fl_out</tt> syntax; 64-bit ABI for x86_64; <a href="http://www.debian.org">Debian</a> builds libnco_c++
+<li><b>NCO 2.9.5</b>: <tt>ncflint</tt> handles <tt>missing_value</tt> data better, is commutative when weights are equal
+<li><b>NCO 2.9.4</b>: <tt>ncecat</tt> works on pure scalar files; change to <tt>cvs.sf.net</tt>; AIX GCC builds
+<li><b>NCO 2.9.3</b>: <tt>ncra</tt> and <tt>ncea</tt> now <a name="bug_mss_val_zro_ncra">work correctly</a> when <tt>missing_value</tt> equals zero or any intermediate sums
+<li><b>NCO 2.9.2</b>: <tt>ncap</tt> <tt>S/V</tt>, <tt>S%V</tt>, and <tt>S^V</tt> <a href="#bug_ncap_cmt">operations fixed</a> (<tt>S</tt> = scalar, <tt>V</tt> = variable)
+<li><b>NCO 2.9.1</b>: <tt>ncwa</tt> works again on packed <tt>NC_FLOAT</tt> data (<a href="#bug_pck_ncwa">broke when?</a>)
+<li><b>NCO 2.9.0</b>: Complete <tt>ncap</tt> modulo operator (<tt>V%S</tt>) and generic exponentiation (<tt>V^S</tt>), scalar divided by variable (<tt>S/V</tt>); workaround stack memory problem with GCC extensions; fix <tt>make check</tt>
+<li><b>NCO 2.8.8</b>: <tt>--enable-[optimize/debug]-custom</tt> options for GCC work again (broke in 2.8.6)
+<li><b>NCO 2.8.7</b>: <tt>ncap</tt> packing works again (<a href="#bug_pck">broke in 2.8.4</a>); Cygwin builds work again
+<li><b>NCO 2.8.6</b>: AIX and IRIX builds work again; custom GCC builds with <tt>-Werror</tt>
+<li><b>NCO 2.8.5</b>: Solaris <tt>make install</tt> works; <tt>ncap</tt> changes attribute values correctly; <a href="#bld_DODS">Support DODS 3.4+, deprecate 3.3-</a>; add <tt>--enable-[optimize/debug]-custom</tt> options to <tt>./configure</tt>
+<li><b>NCO 2.8.4</b>: Index-based hyperslabs work again (<a href="#bug_idx_hyp">broke in 2.7.3</a>, <i>upgrade highly recommended</i>); <tt>ncap</tt> peak memory usage reduced still more; support for AMD Opteron x86_64 architecture
+<li><b>NCO 2.8.3</b>: Fix big <tt>ncap</tt> memory leak; fix regressions; remove scary packing warnings</li>
+<li><b>NCO 2.8.2</b>: <tt>ncbo</tt> handles distinct <tt>missing_value</tt>s correctly; improve error diagnostics</li>
+<li><b>NCO 2.8.1</b>: <a href="./nco.html#rx">&ldquo;Variable wildcarding&rdquo;</a>&mdash;extended regular expressions in <tt>-v var,...</tt> lists&mdash;support in all operators</li>
+<li><b>NCO 2.8.0</b>: New &ldquo;binary&rdquo; operator <a href="./nco.html#ncbo"><tt>ncbo</tt></a>, obsoletes <tt>ncdiff</tt>; <a href="http://www.debian.org">Debian</a> integration</li>
+<li><b>NCO 2.7.4</b>: Autotools build support for AIX; fix UDUnits confusion with floating point hyperslab specifications</li>
+<li><b>NCO 2.7.3</b>: Support <a href="http://www.unidata.ucar.edu/packages/udunits">UDUnits</a> (and some <a href="http://www.cgd.ucar.edu/cms/eaton/cf-metadata/CF-working.html">CF</a>) conventions, e.g., <tt>ncks -d wvl "1 picometer","1 furlong" -d time,"2001-03-19 06:00:0.0","2001-03-19 18:00:0.0"</tt></li>
+<li><b>NCO 2.7.2</b>: Printing (<tt>ncks -H</tt>) plays well with multi-slabbing</li>
+<li><b>NCO 2.7.1</b>: (Packaged) Fallback to B.&nbsp;Sittler's <tt>getopt()</tt> for long option support; store fixed, packed variables correctly with <tt>ncap</tt>.</li>
+<li><b>NCO 2.7.0</b>: Support for GNU/POSIX long options; <tt>ncks</tt> introduces <i>multi-slabbing</i> (= multiple hyperslabs) capability</li>
+<li><b>NCO 2.6.6</b>: Fix and document <tt>ncrename</tt> attribute renaming; add type conversion functions to <tt>ncap</tt></li>
+<li><b>NCO 2.6.5</b>: Cray, Sun build improvements</li>
+<li><b>NCO 2.6.4</b>: Mac OS&nbsp;X, NEC, SGI build improvements</li>
+<li><b>NCO 2.6.3</b>: Mac OS&nbsp;X builds work seamlessly; documentation fixed</li>
+<li><b>NCO 2.6.2</b>: Major improvements in autotools support; <tt>ncap</tt> supports user-defined dimensions</li>
+<li><b>NCO 2.6.1</b>: Minor fix to unpacking support</li>
+<li><b>NCO 2.6.0</b>: All arithmetic operators (<tt>ncap</tt>, <tt>ncdiff</tt>, <tt>ncea</tt>, <tt>ncflint</tt>, <tt>ncra</tt>) support unpacking</li>
+<li><b>NCO 2.5.6</b>: Handle <tt>missing_value</tt> correctly for integer variables in <tt>ncra</tt>, merge <tt>autoconf</tt> build</li>
+<li><b>NCO 2.5.5</b>: Handle files without existing global &ldquo;<tt>History</tt>&rdquo; attribute correctly</li>
+<li><b>NCO 2.5.4</b>: Add support NEC-SX support; update Cray support; small build changes</li>
+<li><b>NCO 2.5.3</b>: Fix native builds under MS Windows with Cygwin <tt>ncap</tt>; hint to <tt>ncwa</tt></li>
+<li><b>NCO 2.5.2</b>: Add math functions to <tt>ncap</tt>; hint to <tt>ncwa</tt></li>
+<li><b>NCO 2.5.1</b>: <tt>ncatted</tt> deletes all attributes of <tt>att_var</tt> when <tt>att_nm</tt> not specified</li>
+<li><b>NCO 2.5.0</b>: man(1) pages from <a href="http://www.debian.org">Debian</a> distribution</li>
+<li><b>NCO 2.4.6</b>: Free (speech) sort routines</li>
+<li><b>NCO 2.4.5</b>: Arithmetic speedups</li>
+<li><b>NCO 2.4.4</b>: 64-bit AIX builds</li>
+<li><b>NCO 2.4.3</b>: Handle non-standard &ldquo;History&rdquo; attributes</li>
+<li><b>NCO 2.4.2</b>: <tt>ncap</tt> supports nesting files with <tt>#include</tt></li>
+<li><b>NCO 2.4.0</b>: <tt>ncks</tt> supports writing native binary output with <tt>-b</tt> switch</li>
+<li><b>NCO 2.3.1</b>: <tt>ncap</tt> builds on all Unices</li>
+<li><b>NCO 2.3.0</b>: Library redesign</li>
+<li><b>NCO 2.2.4</b>: <tt>ncap</tt> fully supports packing and unpacking variables</li>
+<li><b>NCO 2.2.3</b>: <tt>ncap</tt> supports manually unpacking variables stored with <tt>scale_factor</tt> and <tt>add_offset</tt></li>
+<li><b>NCO 2.2.2</b>: fix rare <tt>ncwa</tt> crash with weights</li>
+<li><b>NCO 2.2.1</b>: fix <tt>ncap</tt> divide and <tt>fmodf</tt> bugs</li>
+<li><b>NCO 2.2.0</b>: (RPM available) <a href="./nco_news.shtml#20020203">20020203</a>: <tt>ncap</tt> public debut (has division error, please upgrade)</li>
+<li><b>NCO 2.1.3</b>: <tt>ncap</tt> implements LHS casting</li>
+<li><b>NCO 2.1.2</b>: C++ API to netcdf; libnco_c++ open for business</li>
+<li><b>NCO 2.1.0</b>: <tt>ncap</tt> full lexer/parser operational</li>
+<li><b>NCO 2.0.3</b>: small fixes to 2.0.0 (e.g., <tt>ncks</tt> printing)</li>
+<li><b>NCO 2.0.2</b>: Add packing/unpacking capabilities based on <tt>scale_factor</tt> and <tt>add_offset</tt> convention</li>
+<li><b>NCO 2.0.1</b>: Add user-configurable multi-threaded capability to arithmetic-intensive operators <tt>ncwa</tt>, <tt>ncea</tt>, and <tt>ncra</tt></li>
+<li><b>NCO 2.0.0</b>: (RPM available) <a href="./nco_news.shtml#20010507">20010507</a>: Switched all internal calls to netCDF 3.x API</li>
+<li><b>NCO 1.2.2</b>: <a href="./nco_news.shtml#20010211">20010211</a>: Allow weights with
+<tt>ncwa</tt> in min/max/ttl operations; easier building with HDF4. 
+<tt>ncrename</tt> can now work on specific variables rather than whole file.
+<tt>ncks</tt> has <tt>-q</tt> option for cleaner printing</li>
+<li><b>NCO 1.2.1</b>: <a href="./nco_news.shtml#20000828">20000828</a>: Added type-conversion of integers to floating point before arithmetic; fixed broken <tt>-v</tt> option</li>
+<li><b>NCO 1.2</b>: <a href="./nco_news.shtml#20000730">20000730</a>: Added non-linear operations to <tt>ncra/ncea</tt> and <tt>ncwa</tt>: min,max,total,rms,rmssdn,sqrt. Added <a href="http://opendap.org">DODS</a> compliance.</li>
+<li><b>NCO 1.1.48</b>: <a href="./nco_news.shtml#20000515">20000515</a>: Potentially serious bugfix to <tt>ncdiff</tt>, recommend upgrade</li>
+<li><b>NCO 1.1.47</b>: <a href="./nco_news.shtml#20000510">20000510</a>: Improved <tt>ncra</tt> and <tt>ncrcat</tt> to allow lazier specifications of input files</li> 
+</ul>
+<hr></p>
+<!-- End http://nco.sf.net#vrs -->
+
+<!-- http://nco.sf.net#bnr -->
+<dt><a name="Binaries"></a><a name="bnr"></a></dt>
+<h2>Get NCO Binary Executables</h2>
+
+<p>NCO developers are too short-handed to provide pre-built binary
+executables for all platforms.
+Our source tarballs are always up-to-date, and work on our
+development systems 
+(<a href="http://www.ubuntu.com">Ubuntu</a>-flavored <a
+href="http://www.debian.org">Debian</a> GNU/Linux for x86 and x86_64) 
+and in our high-end scientific computing environments
+(<a href="http://www.ibm.com/servers/aix">AIX&nbsp;5</a> for Power4/5/6/7).
+We also attempt to provide (theoretically) platform-independent sources
+in the most common UNIX packaging formats (Debian and RPM).
+Below are links to these and to packages created by volunteers who
+port NCO to other platforms.  
+Volunteers willing to perform regular regression testing and porting
+of NCO to other platforms are welcome.  
+Previous versions of these binaries are still available by searching
+the directory index <a href="src">here</a>.
+
+<a name="aix"></a><a name="ibm"></a> <!-- http://nco.sf.net#aix -->
+<h3><a href="http://www.ibm.com/servers/aix">AIX</a> on IBM mainframes</h3>
+<ul>
+<li><a href="src/nco-4.0.2.aix53.tar.gz">nco-4.0.2.aix53.tar.gz</a>
+  (<!--#fsize file="src/nco-4.0.2.aix53.tar.gz"-->): Executables AIX 5.3-compatible (last updated <!--#flastmod file="src/nco-4.0.2.aix53.tar.gz"-->)</li>
+Thanks to NSF for supporting AIX machines at NCAR over the years. 
+</ul>
+
+<a name="debian"></a><a name="dbn"></a> <!-- http://nco.sf.net#debian -->
+<a name="ubuntu"></a><a name="ubn"></a> <!-- http://nco.sf.net#ubuntu -->
+<h3><a href="http://www.debian.org">Debian</a> and <a href="http://www.ubuntu.com">Ubuntu</a> GNU/Linux</a></h3>
+<ul>
+<!--
+<li><a href="http://www.debian.org">Debian</a> and <a href="http://www.ubuntu.com">Ubuntu</a> GNU/Linux-compatible Intel systems, prebuilt binary executable <a href="http://www.debian.org">deb</a>: <a href="http://packages.debian.org/testing/math/nco.html">nco-4.0.2</a></li>
+-->
+<a href="http://packages.debian.org/unstable/science/nco">Debian NCO</a> and 
+<a href="http://packages.ubuntu.com/jaunty/nco">Ubuntu NCO</a> homepages.
+&lsquo;<tt>aptitude install nco</tt>&rsquo; installs the standard NCO for your Debian-compatible&nbsp;OS.
+This standard package is, unfortunately, <i>old</i> (version 3.9.0,
+from about 2005) unless you have a very <i>new</i> flavor of Debian
+(i.e., Sid or Karmic) that supplies the latest numbered NCO release.
+<dt>Debian package for most recent NCO release (install with, e.g., &lsquo;<tt>dpkg --install nco_4.0.2-1_i386.deb</tt>&rsquo;):</dt>
+<li><a href="src/nco_4.0.2-1_amd64.deb">nco_4.0.2-1_amd64.deb</a> (<!--#fsize file="src/nco_4.0.2-1_amd64.deb"-->): Executables AMD64-compatible (last updated <!--#flastmod file="src/nco_4.0.2-1_amd64.deb"-->)</li>
+<li><a href="src/nco_4.0.2-1_i386.deb">nco_4.0.2-1_i386.deb</a> (<!--#fsize file="src/nco_4.0.2-1_i386.deb"-->): Executables i386-compatible (last updated <!--#flastmod file="src/nco_4.0.2-1_i386.deb"-->)</li>
+<li><a href="src/nco_4.0.2-1.dsc">nco_4.0.2-1.dsc</a> (<!--#fsize file="src/nco_4.0.2-1.dsc"-->): Description (last updated <!--#flastmod file="src/nco_4.0.2-1.dsc"-->)</li>
+<li><a href="src/nco_4.0.2-1_amd64.changes">nco_4.0.2-1_amd64.changes</a> (<!--#fsize file="src/nco_4.0.2-1_amd64.changes"-->): Changes since last deb package (last updated <!--#flastmod file="src/nco_4.0.2-1_amd64.changes"-->)</li>
+<li><a href="src/nco_4.0.2.orig.tar.gz">nco_4.0.2.orig.tar.gz</a> (<!--#fsize file="src/nco_4.0.2.orig.tar.gz"-->): Upstream Source (last updated <!--#flastmod file="src/nco_4.0.2.orig.tar.gz"-->)</li>
+<li><a href="src/nco_4.0.2-1.diff.gz">nco_4.0.2-1.diff.gz</a> (<!--#fsize file="src/nco_4.0.2-1_amd64.changes"-->): Debian patch to upstream source (last updated <!--#flastmod file="src/nco_4.0.2-1_amd64.changes"-->)</li>
+Thanks to Daniel Baumann, Barry deFreese, Francesco Lovergine, 
+Brian Mays, Rorik Peterson, and Matej Vela for their help packaging
+NCO for Debian over the years. 
+</ul>
+
+<a name="redhat"></a><a name="rhl"></a><a name="rpm"></a> <!-- http://nco.sf.net#redhat --> <!-- http://nco.sf.net#rhl --> <!-- http://nco.sf.net#rpm -->
+<a name="fedora"></a><a name="fdr"></a><a name="fc"></a> <!-- http://nco.sf.net#fedora --> <!-- http://nco.sf.net#fdr --> <!-- http://nco.sf.net#fc -->
+<a name="centos"></a><a name="cnt"></a><a name="rhel"></a> <!-- http://nco.sf.net#centos --> <!-- http://nco.sf.net#cnt --> <!-- http://nco.sf.net#rhel -->
+<h3><a href="http://fedora.redhat.com">Fedora</a> and <a href="http://www.centos.org">CentOS</a> GNU/Linux</h3>
+<ul>
+<dt>The <a href="https://admin.fedoraproject.org/pkgdb/packages/name/nco">Fedora NCO</a> RPMs are usually quite up-to-date so that &lsquo;<tt>yum install nco</tt>&rsquo; might install, e.g., 
+<li><a href="http://rpmfind.net/linux/RPM/fedora/devel/x86_64/nco-3.9.8-1.fc11.x86_64.html">nco-3.9.8-1.fc11.x86_64.rpm</a>: Executables for x86_64/Fedora Core&nbsp;11-compatible environments</li></dt>
+<dt>If not, try our own most recent self-built NCO RPMs (install with, e.g., &lsquo;<tt>yum install nco-3.9.5-1.fc7.i386.rpm</tt>&rsquo;):
+<li><a href="src/nco-3.9.5-1.fc7.i386.rpm">nco-3.9.5-1.fc7.i386.rpm</a> (<!--#fsize file="src/nco-3.9.5-1.fc7.i386.rpm"-->): Executables for i386/Fedora Core&nbsp;7-compatible environments (last updated <!--#flastmod file="src/nco-3.9.5-1.fc7.i386.rpm"-->)</li>
+<li><a href="src/nco-3.9.5-1.fc7.src.rpm">nco-3.9.5-1.fc7.src.rpm</a> (<!--#fsize file="src/nco-3.9.5-1.fc7.src.rpm"-->): Source (last updated <!--#flastmod file="src/nco-3.9.5-1.fc7.src.rpm"-->)</li>
+<li><a href="src/nco-3.9.5-1.x86_64.rpm">nco-3.9.5-1.x86_64.rpm</a> (<!--#fsize file="src/nco-3.9.5-1.x86_64.rpm"-->): Executables for x86_64/CentOS&nbsp;5-compatible environments (last updated <!--#flastmod file="src/nco-3.9.5-1.x86_64.rpm"-->)</li>
+<li>More information on x86_64 RPMs available <a href="http://dust.ess.uci.edu/wangd/s9y">here</a></li>
+Volunteers have updated and maintained fairly up-to-date NCO packages in Fedora since it was added by Ed Hill in about 2004.
+Thanks to Patrice Dumas, Ed Hill, and Orion Poplawski for packaging NCO RPMs over the years.
+</ul>
+
+<a name="gentoo"></a>
+<a name="gnt"></a>
+<h3><a href="http://www.gentoo.org">Gentoo</a> GNU/Linux</h3>
+<ul>
+<a href="http://gentoo-portage.com/sci-misc/nco">Gentoo GNU/Linux homepage for NCO</a>.
+<a href="http://www.gentoo.org/doc/en/portage-manual.xml">Portage packages</a> by George Shapavalov and Patrick Kursawe:
+<li><a href="http://gentoo-portage.com/sci-misc/nco">nco-3.9.4</a>: Latest(?) Gentoo package</li>
+</ul>
+
+<a name="mac"></a> <!-- http://nco.sf.net#mac -->
+<a name="darwin"></a> <!-- http://nco.sf.net#darwin -->
+<a name="drw"></a> <!-- http://nco.sf.net#drw -->
+<a name="macosx"></a> <!-- http://nco.sf.net#macosx -->
+<a name="osx"></a> <!-- http://nco.sf.net#osx -->
+<a name="macports"></a> <!-- http://nco.sf.net#macports -->
+<a name="fink"></a> <!-- http://nco.sf.net#fink -->
+<h3><a href="http://www.apple.com/macosx/">Mac&nbsp;OS&nbsp;X/Darwin</a></h3>
+<ul>
+<li><a href="http://fink.sf.net">Fink</a> packages for <a href="http://fink.sf.net/pdb/package.php/nco">NCO</a>: Currently NCO 3.9.5. Maintained by Alexander Hansen.</li> 
+<li><a href="http://trac.macosforge.org/projects/macports/wiki">MacPorts</a> infrastructure for <a href="http://svn.macports.org/repository/macports/trunk/dports/science/nco">NCO</a>:
+ <a href="http://svn.macports.org/repository/macports/trunk/dports/science/nco">Portfile</a>
+  for NCO 3.9.9. Maintained by Takeshi Enomoto.</li>
+</ul>
+
+<a name="cygwin"></a><a name="dbn"></a> <!-- http://nco.sf.net#cygwin -->
+<a name="windows"></a><a name="ubn"></a> <!-- http://nco.sf.net#windows -->
+<h3><a href="http://www.microsoft.com">Microsoft</a> Windows</a> running <a href="http://www.cygwin.org">Cygwin</a></h3>
+<ul>
+<li><a href="src/nco-4.0.2.win32.cygwin.tar.gz">nco-4.0.2.win32.cygwin.tar.gz</a> (<!--#fsize file="src/nco-4.0.2.win32.cygwin.tar.gz"-->): Executables Win32-compatible (last updated <!--#flastmod file="src/nco-4.0.2.win32.cygwin.tar.gz"-->)</li>
+Thanks to RedHat Inc. for supporting Cygwin over the years. 
+</ul>
+
+<hr></p>
+<!-- End http://nco.sf.net#bnr -->
+
+<!-- http://nco.sf.net#RTFM -->
+<dt><a name="RTFM"></a></dt>
+<h2>Documentation and User's Guide</h2> 
+<p>The NCO User's Guide is available for reading in these formats:
+<ul>
+<li><a href="./nco.dvi">DVI</a> Device Independent (<tt>kdvi</tt>, <tt>xdvi</tt>)</li>
+<li><a href="./nco.html">HTML</a> Hypertext (any browser)</li>
+<li><a href="./nco.info">Info</a> GNU Info (<tt>M-x Info</tt>, <tt>emacs</tt>)</li>
+<li><a href="./nco.pdf">PDF</a> Portable Document Format (<tt>acroread</tt>, <tt>evince</tt>, <tt>kpdf</tt>, <tt>okular</tt>, <tt>xpdf</tt>)</li>
+<li><a href="./nco.ps">Postscript</a> Printing (<tt>ghostview</tt>, <tt>kghostview</tt>)</li>
+<li><a href="./nco.texi">TeXInfo</a> Documentation Source code (<tt>emacs</tt>)</h2></li>
+<li><a href="./nco.txt">Text</a> Plain text (<tt>more</tt>)</h2></li>
+<li><a href="./nco.xml">XML</a> Extensible Markup Language (<tt>firefox</tt>)</h2></li>
+</ul>
+<tt>nco.texi</tt> is the most up-to-date.
+Files <tt>nco.dvi</tt>, <tt>nco.ps</tt>, and <tt>nco.pdf</tt> are
+the most complete and contain all the mathematical formulae (typeset
+with TeX) missing from the screen-oriented formats.
+The screen-oriented formats&mdash;<tt>nco.html</tt>,
+<tt>nco.info</tt>, <tt>nco.txt</tt>, and <tt>nco.xml</tt>&mdash;contain 
+all the documentation except the highly mathematical sections.
+
+<h3>Wiki:</h3>
+<ul>
+<li>As of August, 2008, NCO has a <a href="http://nco.wiki.sourceforge.net">Wiki</a>.
+The Wiki contains a <a href="http://nco.wiki.sourceforge.net/Cookbook">Cookbook</a>
+of NCO examples not found in the manual. 
+Volunteers are encourage to add their own &ldquo;NCO Hacks&rdquo; to this cookbook!
+</ul>
+
+<h3>Other documentation:</h3>
+<ul>
+<li>This <a href="http://dust.ess.uci.edu/doc/abb/abb.pdf">abbreviation key</a> unlocks the mysteries of the source code abbreviations and acronyms.</li>
+
+<li>Unidata netCDF for Developers Workshop <a href="http://www.unidata.ucar.edu/software/netcdf/docs/workshop/utilities/Nco.html">NCO examples</a></li>
+</ul>
+
+<!-- This documentation went MIA sometime in 2004:
+<a href="http://www.cgd.ucar.edu/csm/support/Document/pdf/nco.pdf">pamphlet</a> and
+<a href="http://www.cgd.ucar.edu/csm/support/Document/shows/nco/nco_files/v3_document.htm">slide presentation</a> 
+introduce and summarize the NCO operators.
+They were created by Sylvia Murphy of the NCAR 
+<a href="http://www.cgd.ucar.edu/csm/cmps/cmps_home.html">Community Climate System Model Support Network</a>.
+-->
+<hr></p>
+<!-- End http://nco.sf.net#RTFM -->
+
+<!-- http://nco.sf.net#FAQ -->
+<dt><a name="FAQ"></a></dt>
+<h2>FAQ: Frequently Asked Questions</h2>
+<p>These questions show up almost as frequently as my mother.
+But they are more predictable:
+<ul>
+<li><i>I still have questions, how do I contact the NCO project?</i>
+The NCO project has various Q&amp;A and discussion forums described
+<a href="#Contact">below</a>.  
+</li>
+<li><i>Where can I find prebuilt NCO executables?</i>
+Pre-built executables of some versions of NCO for the operating
+systems <a href="#Download">described above</a> (Debian-compatible
+GNU/Linux, Fedora/RedHat GNU/Linux, Gentoo GNU/Linux, and
+Mac&nbsp;OS&nbsp;X). 
+If you have an account at UCI or SDSC, try the locations in my
+personal home directories listed below (AIX, IRIX).
+At NCAR, first try <tt>/usr/local/bin</tt> (AIX, IRIX).
+Otherwise, you are on your own.</li>
+<a name="NCAR"></a> <!-- http://nco.sf.net#NCAR -->
+<a name="ncar"></a> <!-- http://nco.sf.net#ncar -->
+<li><i>Does NCAR support NCO?</i>
+The NCAR CISL Technical Consulting Group (TCG) supports NCO like other
+community software packages such as <tt>lapack</tt>. 
+No other NCAR division has coordinated NCO support.
+The NCAR CISL-suported executables are in <tt>/usr/local/bin</tt>.
+If you notice problems with the NCO installation on SCD machines,
+or if you would benefit from a more recent release or patch, then
+inform the relevant system administrators, e.g.,
+<a href="mailto:consult1@ncar.ucar.edu">NCAR User Support</a>.
+If you have a comment, suggestion, or bug report, then contact the
+developers as described below. 
+</li>
+<li><i>Is there an easy way to keep up with new NCO releases?</i>
+Subscribe to the 
+<a href="http://lists.sf.net/mailman/listinfo/nco-announce"><tt>nco-announce</tt></a>
+mailing list. 
+This list is for NCO-related announcements, not for questions.
+<tt>nco-announce</tt> is very low volume&mdash;one message every few months.</li>
+</ul>
+<hr></p>
+<!-- End http://nco.sf.net#FAQ -->
+
+<!-- http://nco.sf.net#README -->
+<dt><a name="README/ChangeLog/TODO"></a></dt>
+<h2>README/ChangeLog/TODO</h2>
+<p>Files containing useful information about the current NCO distribution:
+<ul>
+<li><a href="./README"><tt>README</tt></a> Platforms and software required by NCO</li>
+<li><a href="./ChangeLog"><tt>ChangeLog</tt></a> History of NCO changes</li>
+<li><a href="./TODO"><tt>TODO</tt></a> An unordered list of features and fixes we plan for NCO</li> 
+</ul>
+<hr></p>
+<!-- End http://nco.sf.net#README -->
+
+<!-- http://nco.sf.net#src -->
+<dt><a name="Source"></a><a name="src"></a></dt>
+<h2>Get NCO Source Code</h2>
+
+The best way to acquire NCO sources is with <a href="http://www.cvshome.org">CVS</a>.
+The second best way is to download the source as a compressed tarfile:
+<ul>
+<li>
+<a href="src/nco-4.0.2.tar.gz">nco-4.0.2.tar.gz</a> 
+(<!--#fsize file="src/nco-4.0.2.tar.gz"--> compressed tar-file)<br>
+<!--#exec cmd="openssl dgst -md5 src/nco-4.0.2.tar.gz"--><br>
+<!--#exec cmd="openssl dgst -sha1 src/nco-4.0.2.tar.gz"--> 
+</li>
+</ul>
+
+<p>NCO's browsable
+<a href="http://nco.cvs.sf.net/nco/nco">CVS Repository</a> 
+contains up-to-the-minute sources and is the easiest way to stay
+synchronized with NCO features.
+Retrieving NCO requires some familiarity with GNU development tools,
+especially <a href="http://www.cvshome.org">CVS</a> and 
+<a href="http://www.gnu.org/software/make/make.html">Make</a>.
+
+Sourceforge provides 
+<a href="http://sf.net/cvs/?group_id=3331">generic instructions</a> 
+for accessing their CVS servers.
+First log into the NCO CVS server:
+<p><tt>cvs -d:pserver:anonymous@nco.cvs.sf.net:/cvsroot/nco login</tt></p>
+Hit <tt>return</tt> when asked for the CVS password.
+This login procedure is only required the first time you access the CVS server.
+Then you may retrieve any NCO distribution you wish.
+Usually you wish to retrieve a recent tagged (i.e., released) version.
+This command retrieves and places NCO version <tt>4.0.2</tt> (which is
+tagged as <tt>nco-4_0_2</tt> due to CVS rules) into local directory
+<tt>nco-4.0.2</tt>:   
+<p><tt>cvs -z3 -d:pserver:anonymous@nco.cvs.sf.net:/cvsroot/nco co -r nco-4_0_2 -d nco-4.0.2 nco</tt></p>
+This command retrieves the current (&ldquo;bleeding edge&rdquo;)
+development version of NCO into a local directory named <tt>nco</tt>:
+<p><tt>cvs -z3 -d:pserver:anonymous@nco.cvs.sf.net:/cvsroot/nco co -kk nco</tt></p>
+Track changes to the development version using
+<p><tt>cd nco;cvs update -kk</tt></p>
+One difference between running a "tagged" release 
+(e.g., <tt>nco-4_0_2</tt>) and the development version is that the
+tagged release operators will print a valid version number (e.g.,
+<tt>4.0.2</tt>) when asked to do so with the <tt>-r</tt> flag
+(e.g., <tt>ncks -r</tt>).
+The development version simply places today's date in place of the
+version.
+Once the autotools builds are working more robustly, the confusion
+over versions should largely disappear.
+
+<a name="doxy"></a>
+<h3>Developer NCO Source Documentation</h3>
+<p>Automated source documentation, created by the
+ <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a> tool is available.  
+Some developers find this documentation helpful, as it can clarify code and data 
+relationships in the code.</p>
+<ul>
+<li><a href="http://sand.ess.uci.edu/nco/doxygen/main/files.html">
+Source documentation for NCO and NetCDF4(alpha13)</a></li>
+</ul>
+<p>Please be aware that the documentation may be slightly inaccurate and 
+infrequently updated. Comments and suggestions are certainly welcomed on the 
+ <a href="http://sf.net/forum/forum.php?forum_id=9829">forums</a>.
+</p>
+</ul>
+<hr></p>
+<!-- End http://nco.sf.net#src -->
+
+<!-- http://nco.sf.net#bld -->
+<dt><a name="Rqr"></a><a name="rqr"></a></dt> <!-- http://nco.sf.net#rqr -->
+<dt><a name="bld"></a></dt> <!-- http://nco.sf.net#bld -->
+<dt><a name="cmp"></a></dt> <!-- http://nco.sf.net#cmp -->
+<h2>Compilation Requirements</h2>
+
+<ul><b>Best Practices:</b>
+
+<a name="bld_rqr"></a> <!-- http://nco.sf.net#bld_rqr -->
+The recommended first steps to build (i.e., compile, for the most part) NCO from source code are to install
+<a href="http://www.antlr.org">ANTLR 2.7.x</a> (required for <tt>ncap2</tt>), 
+<a href="http://www.gnu.org/software/gsl">GSL</a> (desirable for <tt>ncap2</tt>), 
+<a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a> (absolutely required), 
+<a href="http://opendap.org">OPeNDAP</a> (enables network transparency), and
+<a href="http://www.unidata.ucar.edu/packages/udunits">UDUnits</a> (allows dimensional unit transformations) 
+before building NCO.
+If possible build these all with the same compiler (and switches).
+NCO is mostly written in&nbsp;C99, and although you <i>may</i> mix and
+match compilers, this is often difficult in practice and is not recommended.
+The exception is <tt>ncap2</tt> which is written in&nbsp;C++.
+ANTLR, OPeNDAP, and NCO must be built with the same C++ compiler
+to properly resolve the C++ name-mangling.
+NCO does not yet support newer ANTLR versions because the
+ANTLR&nbsp;3.x C++ interface is incomplete.
+
+It is possible and often preferable to install most of the
+pre-requisite and optional software from pre-compiled packages on
+modern Debian- and RPM-based systems with (Debian/Ubuntu) 
+<tt>
+<dt>sudo aptitude install antlr # ANTLR</dt>
+<dt>sudo aptitude install libcurl3-dev libxml2-dev # DAP-prereqs</dt>
+<dt>sudo aptitude install bison flex gcc g++ # GNU toolchain</dt>
+<dt>sudo aptitude install gsl-bin libgsl0-dev # GSL</dt>
+<dt>sudo aptitude install libnetcdf4 libnetcdf-dev netcdf-bin # netCDF</dt>
+<dt># NB: There are no Debian packages for DAP or UDUnits :(</dt>
+
+</tt>or (RPM)
+<tt>
+<dt>sudo yum install antlr antlr-c++-devel # ANTLR</dt>
+<dt>sudo yum install curl-devel libxml2-devel # DAP-prereqs</dt>
+<dt>sudo yum install libdap libdap-devel libnc-dap libnc-dap-devel # DAP</dt>
+<dt>sudo yum install bison flex gcc g++ # GNU toolchain</dt>
+<dt>sudo yum install gsl gsl-devel # GSL</dt>
+<dt>sudo yum install netcdf netcdf-devel # netCDF</dt>
+<dt>sudo yum install librx librx-devel # RX</dt>
+<dt>sudo yum install udunits udunits-devel # UDUnits</dt>
+</tt>
+</li>
+
+</ul>
+
+<h2>Hints to Build-from-Source:</h2>
+
+<ul><b>Generic Build Hints:</b>
+
+<a name="bld_cnf"></a> <!-- http://nco.sf.net#bld_cnf -->
+<li><i>The two NCO build mechanisms:</i>
+NCO has two build mechanisms: (1)&nbsp;GNU configure and 
+(2)&nbsp; a custom Makefile (<tt>nco/bld/Makefile</tt>)
+designed for hand-editing.
+Try the traditional GNU <tt>configure</tt> method first, i.e.,
+<tt>./configure;make;make check;make install</tt>. 
+This method involves no hand-editing of makefiles, but trouble-free
+builds with it are less common than we would like.  
+The file <tt>nco/configure.eg</tt> contains a table which describes the 
+success you can expect building NCO with the <tt>configure</tt>
+mechanism. 
+Please contribute patches required to get the <tt>configure</tt> 
+mechanism working properly for NCO on your platform.
+The <a href="http://dust.ess.uci.edu/nco/rgr">regressions archive</a>
+contains gory details of successful (and failed) builds for many platforms.  
+<br>
+All platforms continue to work fine with the <tt>nco/bld/Makefile</tt>
+method: <tt>cd ~/nco/bld;make all;make test</tt>. 
+Disadvantages are that <tt>nco/bld/Makefile</tt> (1)&nbsp;Usually requires
+editing to fix your platforms paths; (2)&nbsp;Does not support shared
+libraries; and (3)&nbsp;Requires a degree from Hogwarts to understand.
+</li>
+
+<!-- http://nco.sf.net#bld_chn -->
+<a name="bld_chn"></a>
+<li><i>Build Chain Version Incompatibilities:</i>
+NCO requires GNU <tt>make</tt> version &ge;&nbsp;3.78.1 to support target-specific variable values in <tt>bld/Makefile</tt>.
+NCO most often fails to build because <tt>ncap</tt> fails to build.
+Two of the most common reasons that <tt>ncap</tt> fails to build are
+(1)&nbsp;GNU <tt>bison</tt> is out-of-date (upgrade <tt>bison</tt>)
+and (2)&nbsp;<tt>--enable-optimize-*</tt> is specified to 
+<tt>configure</tt> (do not specify it).<br>
+</li>
+
+<!-- http://nco.sf.net#bld_c99 -->
+<a name="bld_c99"></a>
+<li><i>C99-compliance &amp; old compilers:</i>
+NCO versions &ge;&nbsp;2.9.8 require the compiler to
+support the 1999 ISO C-Standard called&nbsp;C99.
+NCO takes advantage of two C99 features, restricted pointers and
+designated initializers.
+To build NCO versions &ge;&nbsp;2.9.8 without a C99-compliant
+compiler, simply undefine the <tt>restrict</tt> type qualifier 
+before compiling NCO.
+Do this, e.g., with <tt>CPPFLAGS='-Drestrict='</tt>.
+More details on C99 compatibility are in the header file
+<a href="http://nco.cvs.sf.net/nco/nco/src/nco/nco.h"><tt>nco/src/nco/nco.h</tt></a>.<br>
+</li>
+
+<!-- http://nco.sf.net#bld_netcdf -->
+<a name="bld_netcdf"></a>
+<li><i>Old netCDF libraries:</i>
+NCO versions &ge;&nbsp;3.0.0 require netCDF versions
+&ge;&nbsp;3.6 to take advantage of the new 64-bit offset file type.  
+The library <i>and</i> include directories (e.g., <tt>/usr/lib</tt> and
+<tt>/usr/include</tt>, respectively) for netCDF version &ge;&nbsp;3.6
+must be on the path searched by the compiler, and must precede the
+locations of any older netCDF installations.
+To build NCO versions &ge;&nbsp;3.0.0 with older netCDF versions
+&lt;&nbsp;3.6, simply define the pre-processor token
+<tt>NC_64BIT_OFFSET</tt> to <tt>0</tt> before compiling NCO.
+Do this, e.g., with <tt>CPPFLAGS='-DNC_64BIT_OFFSET=0'</tt> or
+<tt>USR_TKN='-DNC_64BIT_OFFSET=0'</tt> if you use <tt>configure</tt> 
+or <tt>bld/Makefile</tt>, respectively.
+Users attempting to build NCO with OPeNDAP versions &le; 3.6.x may
+need this workaround because OPeNDAP did not fully support netCDF
+version&nbsp;3.6.x functionality until OPeNDAP versions &ge;&nbsp;3.7.0.
+(The indicator for this problem is a build error like 
+<tt>"nco_fl_utl.c", line 30.20: 1506-045 (S) Undeclared identifier
+NC_64BIT_OFFSET</tt>.)  
+All modern NCO versions require netCDF versions &ge;&nbsp;3.5.0 to
+support <tt>nc_type NC_NAT</tt> in NCO source code.  
+NCO versions 3.9.0 and greater (May, 2007) require netCDF versions
+&ge;&nbsp;3.6.0 to resolve the <tt>nc_inq_format()</tt> function.
+</li>
+
+<!-- http://nco.sf.net#bld_ncap -->
+<a name="bld_ncap"></a>
+<li><i><tt>ncap</tt> build hints:</i>
+<tt>ncap</tt> is a sophisticated and somewhat fragile program.
+<tt>ncap</tt> requires <tt>flex</tt> to build correctly.
+AT&T <tt>lex</tt> will not work because it does not understand
+<tt>EOF</tt> rules used in <tt>ncap_lex.l</tt>.
+<tt>bison</tt> version 1.29 (the default version on early
+Mac OS&nbsp;X) is buggy and does not parse <tt>ncap_yacc.y</tt>
+correctly; previous and later <tt>bison</tt>'s work
+correctly. 
+<tt>bison</tt> version 1.25 will not build <tt>ncap</tt> on Solaris.
+Please upgrade <tt>bison</tt> to the latest version (e.g., 1.875+)
+before reporting <tt>ncap</tt> build problems.
+If <tt>ncap</tt> keeps you from building NCO, and you do not need
+<tt>ncap</tt>, configure with <tt>--disable-ncap</tt> (and know that
+<tt>ncwa</tt> will fail to build as a result). 
+</li>
+
+<!-- http://nco.sf.net#bld_GSL -->
+<a name="bld_gsl"></a><a name="bld_GSL"></a>
+<li><i>Build Hints with GSL:</i><br>
+NCO versions 3.9.6&mdash; support automatic building and linking
+for <a href="http://www.gnu.org/software/gsl">GSL</a>
+versions&nbsp;1.4&mdash;. 
+Earlier GSL versions are not supported.<br>
+</li>
+
+<!-- http://nco.sf.net#bld_DAP -->
+<a name="bld_dap"></a><a name="bld_DAP"></a><a name="bld_DODS"></a><a name="bld_OPeNDAP"></a>
+<li><i>Build Hints with DAP:</i><br>
+NCO versions 3.9.9&mdash; support automatic building and linking
+for DAP supplied from <a href="http://www.unidata.ucar.edu/software/netcdf/docs/netcdf/DAP-Support.html">libnetcdf</a> versions&nbsp;4.1-beta1 and beyond<br>
+NCO versions 3.1.3&mdash; support automatic building and linking
+for <a href="http://opendap.org">OPeNDAP</a> versions&nbsp;3.6.x and
+GCC versions&nbsp;4.0+.<br>
+NCO versions 3.0.1&mdash;3.1.2 support automatic building and linking
+for <a href="http://opendap.org">OPeNDAP</a> versions&nbsp;3.5.x and
+GCC versions&nbsp;3.4+.<br>
+NCO versions 2.8.5&mdash;3.0.0 support automatic building and linking
+for <a href="http://opendap.org">OPeNDAP</a> versions&nbsp;3.4.x and
+GCC versions&nbsp;3.3+.<br>
+NCO versions ?.?.?&mdash;2.8.4 support automatic building and linking
+for <a href="http://opendap.org">DODS</a> versions&nbsp;3.2.x and
+GCC versions&nbsp;3.2+.<br> 
+No other version combinations are supported.
+</li>
+
+<!-- http://nco.sf.net#bld_nco_c++ -->
+<a name="bld_nco_c++"></a>
+<li><i><tt>libnco_c++</tt> build hints:</i>
+<tt>libnco_c++</tt> requires a good C++ compiler to build correctly.
+Few people need <tt>libnco_c++</tt>, so the workaround is not to build it.
+This is done by configuring with <tt>--disable-nco_cplusplus</tt>.
+</li>
+
+</ul>
+
+<ul><b>Platform-Specific Build Hints:</b>
+<!-- http://nco.sf.net#bld_aix -->
+<a name="bld_aix"></a>
+<li><i>AIX build hints:</i>
+NCO versions 2.8.7+ do not build with autotools under AIX when
+<tt>--enable-optimize-*</tt> is selected.
+The workaround is to not use <tt>--enable-optimize-*</tt>.
+NCO versions 2.9.7+ do not build shared libraries with AIX xlc
+compilers because of silly AIX library dependencies activated
+by OpenMP directives.
+The workaround is to configure with <tt>--disable-shared</tt>.
+</li>
+
+<!-- http://nco.sf.net#bld_irix -->
+<a name="bld_irix"></a>
+<li><i>IRIX build hints:</i>
+The most common problem with building on SGI IRIX is and out-of-date toolchain.
+</li>
+
+<!-- http://nco.sf.net#bld_osx -->
+<a name="bld_osx"></a>
+<li><i>Mac OS&nbsp;X build hints:</i>
+Mac OS&nbsp;X users report success building NCO without patches so
+long as they (1)&nbsp;Install the latest version of <tt>bison</tt>,
+(2)&nbsp;Disable shared libraries and (3)&nbsp;Disable extended regular
+expressions. This is done with 
+<tt>./configure --disable-regex --disable-shared</tt>
+
+Building NCO with shared libraries on Mac OS&nbsp;X on may be possible.
+To try, first re-build and re-install the netCDF library using
+<tt>CFLAGS=-fno-common</tt>.
+Apparently netCDF, unlike most codes, does not set this automatically.
+Then build NCO normally.
+
+Mac OS&nbsp;X ships with a broken version of the POSIX <tt>cut</tt>
+utility which causes many NCO regression tests to appear to fail.
+In fact the NCO commands succeed, but the <tt>cut</tt> output fails.
+The workaround is not to heed the regression tests, or to install a
+working <tt>cut</tt>, e.g., from the GNU <tt>coreutils</tt> package.
+</li>
+
+<!-- http://nco.sf.net#bld_slr -->
+<a name="bld_slr"></a>
+<li><i>Solaris build hints:</i>
+All recent NCO versions build with autotools on Solaris 2.7&mdash;2.9.
+The most common problem with building on Solaris with
+<tt>cc</tt>/<tt>CC</tt> is that <tt>bison</tt> may be out-of-date.
+Install an up-to-date <tt>bison</tt> (e.g., 1.875+).
+Solaris 2.10, i.e., Solaris10, had the audacity to change the
+prototype of the <tt>ctime_r()</tt> function and so does not build
+NCO&nbsp;3.0.1.
+The fix is to upgrade to the current NCO version.
+</li>
+
+<!-- http://nco.sf.net#bld_sx -->
+<a name="bld_sx"></a>
+<li><i>SX build hints:</i>
+NEC&nbsp;SX does not understand the <tt>S_ISLNK</tt> macro, 
+preferring instead the (non-POSIX) <tt>S_IFLNK</tt> macro.
+This macro appears in the file 
+<a href="http://nco.cvs.sf.net/nco/nco/src/nco/nco_fl_utl.c"><tt>nco_fl_utl.c</tt></a>.
+The patch I wrote for this may be broken.
+Will someone with NEC&nbsp;SX please send us a working patch?
+</li>
+
+<!-- http://nco.sf.net#bld_wnd -->
+<a name="bld_wnd"></a>
+<li><i>Windows build hints:</i>
+Building on Microsoft Windows is possible with Cygwin.
+The resulting executables will behave normally on local files,
+but will not have some (most?) of NCO's network functionality
+(e.g., <tt>scp</tt>, <a href="http://opendap.org">OPeNDAP</a>).
+See the <a href="http://nco.sf.net/nco.html#wnd">User's Guide</a>
+for more details.
+</li>
+</ul>
+<hr></p>
+<!-- End http://nco.sf.net#bld -->
+
+<!-- http://nco.sf.net#HPCC -->
+<!-- http://nco.sf.net#NCAR -->
+<dt><a name="NCAR"></a></dt>
+<h2>Using NCO at UCI, NCAR, and other High Performance Computing Centers (HPCCs)</h2>
+<p>UC Irvine and NCAR users <i>may</i> find pre-built,
+<i>almost</i> up-to-date NCO executables in the following locations.
+These executables are <i>unsupported</i> and are almost
+<i>guaranteed</i> to hail from different NCO versions and thus to
+behave slightly differently.
+(They are built from the main trunk, not a tagged version).
+Users at NCAR should try the <i>supported</i> executables in
+<tt>/usr/local/bin</tt> first. 
+<ul>
+<li>CGD network (Solaris 2.x): <tt>/home/zender/bin/SUNMP</tt></li>
+<li>ESS <tt>greenplanet.ps.uci.edu</tt> (Linux 2.6.x): <tt>/home/zender/bin/LINUX</tt></li>
+<li>ESS <tt>esmf.ess.uci.edu</tt> (AIX 5.1.0.0): <tt>/home/zender/bin/AIX</tt></li>
+<li>ESS <tt>dust.ess.uci.edu</tt> (Linux 2.6.x): <tt>/home/zender/bin/LINUXAMD64</tt></li>
+<li>SCD <tt>bluefire.ucar.edu</tt> (AIX 5.3): <tt>~zender/bin/AIX</tt></li>
+</ul>
+<hr></p>
+<!-- End http://nco.sf.net#NCAR -->
+
+<!-- http://nco.sf.net#BM -->
+<dt><a name="BM"></dt>
+<h2>Benchmarks</h2>
+<p>
+We have benchmarked NCO in SMP (e.g., AIX) and MPI (e.g., Linux) environments.
+The full NCO Benchmarks (in PDF form) are available 
+<a href="http://dust.ess.uci.edu/nco/bm/index.html">here</a>.
+Please send us your suggestions for improved configurations.
+The NCO distribution includes all the custom benchmarking software,
+and is designed to allow you to contribute your own benchmarks.
+<a href="http://nco.sf.net#Contact">Contact us</a> if you're interested.</p>
+
+Current tests include data stored locally and across OPeNDAP servers.   
+We will benchmark NCO with new features (e.g., netCDF4) and hardware
+(e.g., parallel filesystems) as time permits.</p>
+
+<p>
+There are two parallel versions of NCO&mdash;one uses
+<a href="http://www.openmp.org/drupal/">OpenMP</a> on SMP (including
+hyperthreaded) machines and the other uses the 
+<a href="http://www-unix.mcs.anl.gov/mpi/">Message Passing Interface (MPI)</a>
+on distributed architectures.
+OpenMP requires a compiler that supports it.
+Commercial compilers which we have used include those from 
+<a href="http://www.ibm.com/developerWorks/toolbox/download.html/">IBM</a>
+and the <a href="http://www.pgroup.com/">Portland Group</a>.
+<a href="http://www.intel.com/cd/software/products/asmo-na/eng/compilers/index.htm">Intel's Linux compiler</a> is free (beer).
+The MPI operators will run with most MPI implementations, including LAM, MPICH, and MPICH2.
+LAM installs easily with our own testing environment (latest Ubuntu).
+</p>
+<hr>
+<!-- End http://nco.sf.net#BM -->
+
+<!-- http://nco.sf.net#bug -->
+<dt><a name="bug"></a></dt> <!-- http://nco.sf.net#bug -->
+<dt><a name="prb"></a></dt> <!-- http://nco.sf.net#prb -->
+<h2>Known Problems</h2>
+
+Problems with recent releases:
+
+<ul><b>Operator-specific Run-time Problems:</b>
+<!-- http://nco.sf.net#bug_ncks_m -->
+<a name="bug_ncks_m"></a>
+<li><i>Core dump with <tt>ncks</tt>:</i>
+Printing variables to screen with <tt>ncks</tt> triggers
+a segfault in NCO 3.9.9.
+Users may upgrade, downgrade, or apply this one-line patch to 3.9.9 sources:
+Remove this line
+&ldquo;<tt>*cnk_sz=(size_t)NULL;</tt>&rdquo;
+&mdash;near line&nbsp;751 of <tt>nco/src/nco/nco_netcdf.c</tt>&mdash;
+should fix the problem.
+</li>
+
+</ul>
+
+<ul><b>Platform-specific Run-time Problems:</b>
+<a name="bug_ncap_flt_fnc_aix"></a>
+<li><i>Float-valued intrinsic arithmetic functions in <tt>ncap</tt> on AIX:</i>
+<tt>ncap</tt> versions through 4.0.2 have a bug that causes all float-valued
+intrinsic math functions to fail under AIX.
+Float-valued math functions are the ISO&nbsp;C99 functions, e.g.,
+<tt>cosf()</tt>, <tt>fabsf()</tt>, <tt>logf()</tt>.
+The user does not invoke these functions directly&mdash;
+the user always specifies the <i>generic function name</i>, e.g.,
+<tt>cos()</tt>, <tt>abs()</tt>, <tt>log()</tt>.
+NCO automatically calls the native single precision (i.e.,
+float-valued) math functions when the generic function argument 
+is a native float (e.g., naked constants like <tt>1.0f</tt> or
+variables stored as <tt>NC_FLOAT</tt>).
+Double precision arguments cause NCO to invoke the standard
+(double-valued) form of the generic function, e.g., <tt>cos()</tt>, 
+<tt>fabs()</tt>, <tt>log()</tt>. 
+<!-- Whevnever this bug is fixed, here is some text
+Version info:
+<tt>ncap</tt> float functions work in AIX (<a href="#bug_ncap_flt_fnc_aix">long-time bug</a>, upgrade will be required for AIX ncap users)
+ANNOUNCE info:
+First, AIX NCO installations should upgrade to this version to get the
+AIX-specific ncap bug-fix.
+Bug-fixes:
+1. fxm: AIX uses NCO-supplied float-valued functions (e.g., cosf())
+-->
+</li>
+</ul>
+
+Problems with older releases:
+
+<ul><b>Generic Run-time Problems:</b>
+<!-- http://nco.sf.net#bug_thr_msa -->
+<a name="bug_thr_msa"></a>
+<li><i>Threading problems with MSA:</i>
+NCO version 3.9.5 has a nasty bug that causes threaded arithmetic
+operators, e.g., <tt>ncea</tt> to produce incorrect results under some
+conditions. 
+The problem may occur whenever OpenMP is enabled and the operators 
+run on a multi-core CPU with more than one thread.
+These incorrect answers, if generated, are relatively easy to notice.
+The number of threads used to generate a file is, by default, recorded
+in the global attribute <tt>nco_openmp_thread_number</tt> which may
+be examined with <tt>ncks -M foo.nc | grep nco_openmp_thread_number</tt>.
+The only action that will correct a file that you think (or know)
+contains corrupted data because of this NCO bug is to re-process the
+file with a non-buggy NCO version.
+<i>Version&nbsp;3.9.5 is buggy and should be upgraded ASAP</i>.
+Be careful with data processed using this NCO version on multi-core CPUs.
+The (one-line!) patch to fix this bug in 3.9.5 is 
+<a href="https://sourceforge.net/forum/message.php?msg_id=6217274">here</a>.
+</li>
+
+<!-- http://nco.sf.net#bug_idx_hyp -->
+<a name="bug_idx_hyp"></a>
+<li><i>Index-based hyperslab problems:</i>
+NCO versions 2.7.3&mdash;2.8.3 have a nasty bug that causes
+index-based hyperslabs, e.g., <tt>-d lat,1,</tt> to 
+behave like value-based hyperslabs, e.g., <tt>-d lat,1.0</tt> under
+some conditions.
+Unfortunately, the incorrect answers generated may be hard to notice!
+This problem was most often enountered by users trying to assemble
+monthly averages using the stride feature of <tt>ncrcat</tt>.
+One common symptom is that the time-offset of the output file is
+incorrect. 
+<i>Versions 2.7.3&mdash;2.8.3 are buggy and should be upgraded ASAP</i>.
+Re-do any data-processing that used index-based hyperslabbing with
+these versions of NCO.
+</li>
+</ul>
+
+<ul><b>Operator-specific Run-time Problems:</b>
+<!-- http://nco.sf.net#bug_ncap_cmt -->
+<a name="bug_ncap_cmt"></a>
+<li><i>Arithmetic problems with <tt>ncap</tt> division, modulo, and exponentiation:</i>
+<tt>ncap</tt> versions &lt;&nbsp;3.0.1 incorrectly exponentiate
+variables to variable powers (<tt>V^V</tt>).
+We recommend that all <tt>ncap</tt> users upgrade.<br>
+  
+  <tt>ncap</tt> versions up to 2.9.1 incorrectly handle division,
+modulo, and exponentiation operations of the form <tt>S/V</tt>,
+<tt>S%V</tt>, and <tt>S^V</tt> where first operand (<tt>S</tt>) is 
+scalar (i.e., either typed directly in the <tt>ncap</tt> script or 
+converted from an attribute) and the second operand (<tt>V</tt>) is
+a full variable (i.e., stored in a file or computed by <tt>ncap</tt>).
+Instead of the requested quantity, <tt>ncap</tt> returned
+<tt>V/S</tt>, <tt>V%S</tt>, and <tt>V^S</tt>.
+In other words <tt>ncap</tt> treated some non-commutative operations
+as commutative. This is now fixed. 
+The 
+<tt>V/V</tt>, <tt>V%V</tt>, <tt>V^V</tt>, 
+<tt>V/S</tt>, <tt>V%S</tt>, <tt>V^S</tt>, 
+<tt>S/S</tt>, <tt>S%S</tt>, and <tt>S^S</tt> operations were never
+affected. 
+We recommend that all <tt>ncap</tt> users upgrade.
+</li>
+
+<!-- http://nco.sf.net#bug_ncbo_pck -->
+<a name="bug_ncbo_pck"></a>
+<li><i>Incorrect <tt>ncbo</tt> output for packed input:</i>
+<tt>ncbo</tt> versions ???&mdash;3.2.0 incorrectly write differences
+of packed input. This only affects packed variables. 
+
+<!-- http://nco.sf.net#bug_ncflint_mss_val -->
+<a name="bug_ncflint_mss_val"></a>
+<li><i>Problems with <tt>ncflint</tt> and <tt>missing_value</tt>s:</i>
+The algorithm <tt>ncflint</tt> used to perform interpolation in
+versions up to 2.9.4 was not commutative.
+It returned the weighted valid datum when the other datum was
+<tt>missing_value</tt>, or it returned <tt>missing_value</tt>,
+depending on the order the input files were specified.
+As of version 2.9.5, <tt>ncflint</tt> always returns
+<tt>missing_value</tt> when either input datum is
+<tt>missing_value</tt>. 
+Possible future implementations are discussed 
+<a href="http://nco.sf.net/nco.html#ncflint">here</a>.
+
+<!-- http://nco.sf.net#bug_mss_val_zro_ncra -->
+<a name="bug_mss_val_zro_ncra"></a>
+<li><i>Problems with <tt>ncra</tt> and <tt>ncea</tt> when <tt>missing_value</tt> = 0.0:</i>
+The algorithm <tt>ncra</tt> and <tt>ncea</tt> used to perform
+arithmetic in versions up to 2.9.2 breaks if <tt>missing_value</tt>
+is&nbsp;0.0. 
+Why, you ask?
+Running average (or total, etc.) algorithms must initialize the answer  
+to&nbsp;0.0.
+This is done since the sum accumulates in place as <tt>ncra</tt> and
+<tt>ncea</tt> proceeds across records and files.  
+(Normalizing this accumulation by the total number of records is the
+last step).
+The old algorithm compared both the current running average and the
+new record to the <tt>missing_value</tt>.
+If either comparison matched, then nothing accumulated for that
+record. 
+This zero-initialization led to a state where it was impossible 
+to ever recognize valid data.
+As a result nothing accumulated and the answer was always zero.
+The record and ensemble averages would also fail (in a non-obvious)
+way whenever an intermediate sum equalled <tt>missing_value</tt>.
+The chances of the latter event ever happening are exceedingly
+remote. 
+The new algorithm compares only the new record to the
+<tt>missing_value</tt>. 
+This fixes both problems and is faster, too.
+
+<!-- http://nco.sf.net#bug_pck_ncwa -->
+<a name="bug_pck_ncwa"></a>
+<li><i>Packing problems with <tt>ncwa</tt>:</i>
+NCO versions ???&mdash;2.9.0 have a bug that causes <tt>ncwa</tt>
+to fail (produce garbage answers) when processing packed
+<tt>NC_FLOAT</tt> data.  Version 2.9.1 fixes this problem.
+This problem may have been noticed most by
+<a href="http://opendap.org">OPeNDAP</a> users since many 
+netCDF climate datasets served by
+<a href="http://opendap.org">OPeNDAP</a> are packed
+<tt>NC_FLOAT</tt>s.  
+Upgrade to&nbsp;2.9.1 if you use <tt>ncwa</tt> on packed data.
+</li>
+
+<!-- http://nco.sf.net#bug_pck -->
+<a name="bug_pck"></a>
+<li><i>Packing problems with <tt>ncap</tt>:</i>
+NCO versions 2.8.4&mdash;2.8.6 have a bug that causes the <tt>ncap</tt>
+intrinsic packing function <tt>pack()</tt> to fail.
+Version&nbsp;2.8.7 fixes this problem.
+</li>
+</ul>
+
+</ul>
+<p><hr></p>
+<!-- End http://nco.sf.net#bug -->
+
+<!-- Begin People -->
+<a name="ppl"></a> <!-- http://nco.sf.net#ppl -->
+<a name="people"></a> <!-- http://nco.sf.net#people -->
+<dt><a name="People"></a></dt> <!-- http://nco.sf.net#People -->
+<h2>People:</h2>
+<p>(Please <a href="#Contact">communicate</a> with us using the project forums rather than contacting us individually)
+<ul>
+
+<li>
+<a name="zender"></a><a name="Zender"></a> <!-- http://nco.sf.net#zender -->
+<a href="http://www.ess.uci.edu/~zender">Charlie Zender</a>, 
+Associate Professor of Earth System Science
+(<a href="http://www.ess.uci.edu">ESS</a>) and
+Director, UCI Earth System Modeling Facility
+(<a href="http://www.ess.uci.edu/esmf">ESMF</a>).
+<i>Role</i>: Project PI.
+<i>Contributions</i>: NCO core library, porting, release manager
+<i>Related Research</i>: 
+1.&nbsp;Extend empirically verified analytic model for terascale data 
+reduction of gridded datasets to account for cluster- and network-
+effects.  
+2.&nbsp;Enable and optimize NCO for intra-file-level parallelism using  
+netCDF4/HDF5 parallel filesystem features.
+<i>Other Interests</i>: Atmospheric Physics, Climate Change.
+</li>
+
+<li>
+<a name="jenks"></a><a name="Jenks"></a> <!-- http://nco.sf.net#jenks -->
+<a href="http://spds.ece.uci.edu/~sjenks">Stephen Jenks</a>,
+Former Assistant Professor of Electrical Engineering and Computer Science
+(<a href="http://www.eecs.uci.edu">EECS</a>) and 
+Director, Scalable Parallel and Distributed Systems 
+(<a href="http://spds.ece.uci.edu">SPDS</a>) lab.
+<i>Roles</i>: Collaborator. Thesis advisor.
+<i>Related Research</i>: 
+1.&nbsp;Consulting on SWAMP design and implementation.
+<i>Other Interests</i>: Cache memory usage
+</li>
+
+<li>
+<a name="wang"></a><a name="Wang"></a> <!-- http://nco.sf.net#wang -->
+<a href="http://dust.ess.uci.edu/~wangd">Dr.&nbsp;Daniel Wang</a>:
+Earned EECS Ph.D. (2008) with Jenks and Zender at UCI, now at SLAC.
+<i>Role</i>: Architect distributed data reduction and analysis
+solutions for geoscience workflows
+<i>Related Research</i>: 
+1.&nbsp;Use of compiler techniques and whole program analysis to 
+discover and exploit parallelism in scripted workflows.
+2.&nbsp;Resource management in combined computation-data service environments.
+3.&nbsp;Design and implement 
+<a href="http://swamp.googlecode.com">SWAMP</a> to provide
+automated server-side data analysis capabilities to the geoscience 
+community. 
+<i>Other Interests</i>: Large data, data management, programming languages and practice.
+</li>
+
+<li><dt>
+<a name="butowsky"></a><a name="Butowsky"></a> <!-- http://nco.sf.net#butowsky -->
+<a href="http://dust.ess.uci.edu/hbutowsk">Henry Butowsky</a>, 
+Henry Butowsky, software engineer.
+<i>Roles</i>: Scientific programmer
+<i>Current Research</i>: 
+1.&nbsp;Efficient complex data analysis with storage-layer constraints.
+2.&nbsp;Develop and thread the <tt>ncap2</tt> interpreter.
+<i>Other Interests</i>: Compilers and interpreters.
+</li>
+
+<li>
+<a name="capps"></a><a name="Capps"></a> <!-- http://nco.sf.net#capps -->
+<a href="http://dust.ess.uci.edu/scapps/web">Dr.&nbsp;Scott Capps</a>, 
+Earned Earth System Science Ph.D. (2009) with Zender at UCI, now at UCLA.
+<i>Related Research</i>: 
+1.&nbsp;Test NCO on real tera-scale geoscience analysis problems and
+identify necessary improvements in <tt>ncap2</tt> and in SWAMP.
+2.&nbsp;Role of satellite-observed sub-gridscale wind variability 
+on air-surface exchange.
+<i>Other Interests</i>: Weather, climate
+</li>
+
+<p>Thanks also to 
+<a href="http://nco.sf.net/nco.html#ppl">past NCO/SDO contributors</a>.
+
+</ul>
+<hr></p>
+<!-- End People -->
+
+<!-- Begin Contacts -->
+<!-- http://nco.sf.net#Help -->
+<a name="hlp"></a> <!-- http://nco.sf.net#hlp -->
+<a name="help"></a> <!-- http://nco.sf.net#help -->
+<a name="Help"></a> <!-- http://nco.sf.net#Help -->
+<a name="contact"></a> <!-- http://nco.sf.net#contact -->
+<dt><a name="Contact"></a></dt> <!-- http://nco.sf.net#Contact -->
+<h2>Contacting the Project:</h2>
+<p>Contact us through the Project Forums (rather than personal e-mail)
+so other users can benefit from and contribute to our exchange.
+Let us know how NCO is working for you&mdash;we'd like to hear.
+Have you read the <a href="#RTFM">documentation</a> and browsed the
+forums to see if your question/comment has been reported before?
+Please read the Guide's suggestions for productive
+<a href="./nco.html#help">Help Requests and Bug Reports</a>.
+<ul>
+<li><i>Where should I ask my questions on how to use NCO?</i>
+On the <a href="http://sf.net/forum/forum.php?forum_id=9830">Help</a> site.
+</li>
+<li><i>Where should I post suggestions/comments on NCO features and usage?</i>
+On the <a href="http://sf.net/forum/forum.php?forum_id=9829">Discussion</a> site.
+</li>
+<li><i>Where are NCO development and bug-squashing discussed?</i>
+At the <a href="http://sf.net/forum/forum.php?forum_id=9831">Developer</a>
+site.</li>
+</ul>
+<hr></p>
+<!-- End Contacts -->
+
+<a href="http://sf.net"><img src="http://sf.net/sflogo.php?group_id=3331&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo"></a>
+
+<table width="100%"><tr><td align="left" valign="top">/
+<a href="http://lists.sf.net/mailman/listinfo/nco-announce">Announce</a> /
+<a href="http://sf.net/forum/forum.php?forum_id=9831">Developer</a> /
+<a href="http://sf.net/forum/forum.php?forum_id=9829">Discussion</a> /
+<a href="http://sf.net/forum/forum.php?forum_id=9830">Help</a> /
+<a href="http://nco.sf.net">Homepage</a> /
+<a href="#RTFM">Manual</a> /
+<a href="http://sf.net/projects/nco">Project</a> /
+<a href="http://nco.cvs.sf.net/nco/nco/src/nco/">Source</a> /
+<a href="http://nco.wiki.sourceforge.net">Wiki</a> /
+</td>
+
+<td align="right" valign="top">
+[<a href="http://www.antlr.org">ANTLR</a>] 
+[<a href="http://www.gnu.org/software/gsl">GSL</a>] 
+[<a href="http://www.unidata.ucar.edu/packages/netcdf">netCDF</a>] 
+[<a href="http://opendap.org">OPeNDAP</a>] 
+[<a href="http://swamp.googlecode.com">SWAMP</a>]
+[<a href="http://www.unidata.ucar.edu/packages/udunits">UDUnits</a>] 
+</td></tr></table>
+
+</body>
+</html>
