@@ -18,7 +18,8 @@ nco_cnv_csm.lo: nco_cnv_csm.c nco_cnv_csm.h /usr/include/stdio.h \
  /usr/include/sys/select.h /usr/include/bits/select.h \
  /usr/include/bits/sigset.h /usr/include/bits/time.h \
  /usr/include/sys/sysmacros.h /usr/include/alloca.h nco_typ.h \
- ../../config.h nco.h nco_cln_utl.h /usr/include/ctype.h nco_ctl.h \
+ ../../config.h nco.h nco_cln_utl.h /usr/include/ctype.h \
+ /usr/include/udunits2.h /usr/include/converter.h nco_ctl.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/confname.h nco_mmr.h /usr/include/sys/resource.h \
  /usr/include/bits/resource.h nco_sng_utl.h nco_lst_utl.h
@@ -114,6 +115,10 @@ nco.h:
 nco_cln_utl.h:
 
 /usr/include/ctype.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
 
 nco_ctl.h:
 

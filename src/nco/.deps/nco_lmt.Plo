@@ -25,7 +25,8 @@ nco_lmt.lo: nco_lmt.c nco_lmt.h ../../config.h /usr/include/math.h \
  nco_cnf_typ.h nco_mmr.h /usr/include/sys/resource.h \
  /usr/include/bits/resource.h nco_ctl.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/confname.h nco_sng_utl.h \
- nco_lst_utl.h nco_cln_utl.h /usr/include/ctype.h
+ nco_lst_utl.h nco_cln_utl.h /usr/include/ctype.h /usr/include/udunits2.h \
+ /usr/include/converter.h
 
 nco_lmt.h:
 
@@ -156,3 +157,7 @@ nco_lst_utl.h:
 nco_cln_utl.h:
 
 /usr/include/ctype.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:

@@ -27,9 +27,9 @@ ncwa.o: ncwa.c ../../config.h /usr/include/math.h /usr/include/features.h \
  libnco.h nco.h nco_att_utl.h nco_cnf_typ.h nco_mmr.h \
  /usr/include/sys/resource.h /usr/include/bits/resource.h nco_ctl.h \
  nco_sng_utl.h nco_lst_utl.h nco_mss_val.h nco_prn.h nco_scm.h nco_aux.h \
- nco_lmt.h nco_cln_utl.h /usr/include/ctype.h nco_bnr.h nco_cnf_dmn.h \
- nco_rth_utl.h nco_var_utl.h \
- /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/limits.h \
+ nco_lmt.h nco_cln_utl.h /usr/include/ctype.h /usr/include/udunits2.h \
+ /usr/include/converter.h nco_bnr.h nco_cnf_dmn.h nco_rth_utl.h \
+ nco_var_utl.h /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h nco_pck.h \
@@ -197,6 +197,10 @@ nco_lmt.h:
 nco_cln_utl.h:
 
 /usr/include/ctype.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
 
 nco_bnr.h:
 

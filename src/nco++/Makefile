@@ -82,18 +82,18 @@ DIST_SOURCES = $(ncap2_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/dev/netbit-nco/autobld/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/dev/netbit-nco/autobld/missing --run tar
+ACLOCAL = ${SHELL} /home/dev/nckt/autobld/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/dev/nckt/autobld/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /home/dev/netbit-nco/autobld/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/dev/netbit-nco/autobld/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/dev/netbit-nco/autobld/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/dev/nckt/autobld/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/dev/nckt/autobld/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/dev/nckt/autobld/missing --run automake-1.11
 AWK = gawk
 CC = gcc -std=gnu99
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2 -std=c99 -D_BSD_SOURCE -D_POSIX_SOURCE
 CPP = gcc -E
-CPPFLAGS = 
+CPPFLAGS = -I/usr/include 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
@@ -127,13 +127,13 @@ LEXLIB = -lfl
 LEX_OUTPUT_ROOT = lex.nco_yy
 LFLAGS = -Pnco_yy
 LIBOBJS = 
-LIBS = -lm -lnetcdf 
+LIBS = -ludunits2 -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  -ludunits2
 LIBTOOL = $(SHELL) $(top_builddir)/libtool --tag=CXX
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/dev/netbit-nco/autobld/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/dev/nckt/autobld/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 MPICH2_ROOT = 
 MPI_CC = 
@@ -168,10 +168,10 @@ UDUNITS_PATH =
 VERSION = 4.0.2
 YACC = bison -y
 YFLAGS = 
-abs_builddir = /home/dev/netbit-nco/src/nco++
-abs_srcdir = /home/dev/netbit-nco/src/nco++
-abs_top_builddir = /home/dev/netbit-nco
-abs_top_srcdir = /home/dev/netbit-nco
+abs_builddir = /home/dev/nckt/src/nco++
+abs_srcdir = /home/dev/nckt/src/nco++
+abs_top_builddir = /home/dev/nckt
+abs_top_srcdir = /home/dev/nckt
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
@@ -200,7 +200,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dev/netbit-nco/autobld/install-sh
+install_sh = ${SHELL} /home/dev/nckt/autobld/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -240,12 +240,12 @@ ncap2_SOURCES = Invoke.cc ncap2.cc ncap2_utl.cc sdo_utl.cc sym_cls.cc fmc_cls.cc
 ncap2_LDADD = -lnco -lantlr
 # fxm: 20080515 Takeshi Enomoto reports that MACOSX needs
 # ncap2_LDADD = ../nco/.libs/libnco.dylib -lantlr
-#GSL_LIB_ARG = $(shell gsl-config --libs)
-#GSL_INC_ARG = $(shell gsl-config --cflags)
-ncap2_LDFLAGS = -L../nco
-#ncap2_LDFLAGS = -L../nco ${GSL_LIB_ARG}
-INCLUDES = -I./ -I../nco
-#INCLUDES = -I./ -I../nco ${GSL_INC_ARG}
+GSL_LIB_ARG = $(shell gsl-config --libs)
+GSL_INC_ARG = $(shell gsl-config --cflags)
+#ncap2_LDFLAGS = -L../nco
+ncap2_LDFLAGS = -L../nco ${GSL_LIB_ARG}
+#INCLUDES = -I./ -I../nco
+INCLUDES = -I./ -I../nco ${GSL_INC_ARG}
 
 # 20060824: *.hpp and *.cpp files are now part of source tree
 # DISTCLEANFILES=ncoLexer.hpp ncoParser.hpp ncoParserTokenTypes.hpp ncoParserTokenTypes.txt ncoTree.hpp

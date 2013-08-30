@@ -121,9 +121,11 @@ fmc_all_cls.o: fmc_all_cls.cc fmc_all_cls.hh /usr/include/math.h \
  ../nco/nco_scm.h ../nco/nco_bnr.h ../nco/nco_pck.h ../nco/nco_scl_utl.h \
  ../nco/nco_var_utl.h ../nco/nco_rth_utl.h ../nco/nco_var_rth.h \
  ../nco/nco_rth_flt.h ../nco/nco_var_avg.h ../nco/nco_var_scv.h \
- ncap2_utl.hh /usr/include/c++/4.4/cmath \
- /usr/include/c++/4.4/bits/cmath.tcc ../nco/nco_netcdf.h ../nco/libnco.h \
- ../nco/nco_aux.h ../nco/nco_lmt.h ../nco/nco_cln_utl.h \
+ /usr/include/gsl/gsl_spline.h /usr/include/gsl/gsl_interp.h \
+ /usr/include/gsl/gsl_inline.h /usr/include/gsl/gsl_types.h ncap2_utl.hh \
+ /usr/include/c++/4.4/cmath /usr/include/c++/4.4/bits/cmath.tcc \
+ ../nco/nco_netcdf.h ../nco/libnco.h ../nco/nco_aux.h ../nco/nco_lmt.h \
+ ../nco/nco_cln_utl.h /usr/include/udunits2.h /usr/include/converter.h \
  ../nco/nco_cnf_dmn.h ../nco/nco_cnk.h ../nco/nco_cnv_arm.h \
  ../nco/nco_cnv_csm.h ../nco/nco_dbg.h ../nco/nco_dmn_utl.h \
  ../nco/nco_fl_utl.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
@@ -574,6 +576,14 @@ NcapVar.hh:
 
 ../nco/nco_var_scv.h:
 
+/usr/include/gsl/gsl_spline.h:
+
+/usr/include/gsl/gsl_interp.h:
+
+/usr/include/gsl/gsl_inline.h:
+
+/usr/include/gsl/gsl_types.h:
+
 ncap2_utl.hh:
 
 /usr/include/c++/4.4/cmath:
@@ -589,6 +599,10 @@ ncap2_utl.hh:
 ../nco/nco_lmt.h:
 
 ../nco/nco_cln_utl.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
 
 ../nco/nco_cnf_dmn.h:
 

@@ -27,7 +27,8 @@ nckt.o: nckt.c ../../config.h /usr/include/stdio.h \
  /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
  /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h nco_lmt.h \
- nco_cln_utl.h /usr/include/ctype.h nco_bnr.h nco_cnf_dmn.h nco_rth_utl.h \
+ nco_cln_utl.h /usr/include/ctype.h /usr/include/udunits2.h \
+ /usr/include/converter.h nco_bnr.h nco_cnf_dmn.h nco_rth_utl.h \
  nco_var_utl.h /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -194,6 +195,10 @@ nco_lmt.h:
 nco_cln_utl.h:
 
 /usr/include/ctype.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
 
 nco_bnr.h:
 

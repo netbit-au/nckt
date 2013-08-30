@@ -99,8 +99,9 @@ fmc_cls.o: fmc_cls.cc fmc_cls.hh /usr/include/c++/4.4/string \
  /usr/include/sys/resource.h /usr/include/bits/resource.h \
  ../nco/nco_ctl.h ../nco/nco_sng_utl.h ../nco/nco_lst_utl.h \
  ../nco/nco_mss_val.h ../nco/nco_prn.h ../nco/nco_scm.h ../nco/nco_aux.h \
- ../nco/nco_lmt.h ../nco/nco_cln_utl.h ../nco/nco_bnr.h \
- ../nco/nco_cnf_dmn.h ../nco/nco_rth_utl.h ../nco/nco_var_utl.h \
+ ../nco/nco_lmt.h ../nco/nco_cln_utl.h /usr/include/udunits2.h \
+ /usr/include/converter.h ../nco/nco_bnr.h ../nco/nco_cnf_dmn.h \
+ ../nco/nco_rth_utl.h ../nco/nco_var_utl.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -124,7 +125,9 @@ fmc_cls.o: fmc_cls.cc fmc_cls.hh /usr/include/c++/4.4/string \
  ../nco/nco_rec_var.h ../nco/nco_var_lst.h /usr/include/regex.h \
  /usr/include/gnu/option-groups.h ncap2.hh NcapVector.hh \
  /usr/include/malloc.h /usr/include/c++/4.4/functional NcapVarVector.hh \
- NcapVar.hh ../nco/nco.h ../nco/nco_var_utl.h sdo_utl.hh \
+ NcapVar.hh ../nco/nco.h ../nco/nco_var_utl.h \
+ /usr/include/gsl/gsl_spline.h /usr/include/gsl/gsl_interp.h \
+ /usr/include/gsl/gsl_inline.h /usr/include/gsl/gsl_types.h sdo_utl.hh \
  /usr/include/c++/4.4/cassert VarOp.hh prs_cls.hh ncoTree.hpp \
  /usr/include/antlr/TreeParser.hpp /usr/include/antlr/ASTFactory.hpp \
  /usr/include/antlr/ASTArray.hpp /usr/include/antlr/ASTPair.hpp \
@@ -498,6 +501,10 @@ ncap2_utl.hh:
 
 ../nco/nco_cln_utl.h:
 
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
+
 ../nco/nco_bnr.h:
 
 ../nco/nco_cnf_dmn.h:
@@ -617,6 +624,14 @@ NcapVar.hh:
 ../nco/nco.h:
 
 ../nco/nco_var_utl.h:
+
+/usr/include/gsl/gsl_spline.h:
+
+/usr/include/gsl/gsl_interp.h:
+
+/usr/include/gsl/gsl_inline.h:
+
+/usr/include/gsl/gsl_types.h:
 
 sdo_utl.hh:
 

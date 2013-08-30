@@ -104,7 +104,9 @@ NcapVarVector.o: NcapVarVector.cc NcapVarVector.hh \
  /usr/include/bits/mathinline.h ../nco/nco_rth_flt.h ../nco/nco_var_avg.h \
  ../nco/nco_var_scv.h /usr/include/antlr/AST.hpp \
  /usr/include/antlr/config.hpp /usr/include/antlr/ASTRefCount.hpp \
- /usr/include/antlr/Token.hpp /usr/include/antlr/TokenRefCount.hpp
+ /usr/include/antlr/Token.hpp /usr/include/antlr/TokenRefCount.hpp \
+ /usr/include/gsl/gsl_spline.h /usr/include/gsl/gsl_interp.h \
+ /usr/include/gsl/gsl_inline.h /usr/include/gsl/gsl_types.h
 
 NcapVarVector.hh:
 
@@ -467,3 +469,11 @@ NcapVar.hh:
 /usr/include/antlr/Token.hpp:
 
 /usr/include/antlr/TokenRefCount.hpp:
+
+/usr/include/gsl/gsl_spline.h:
+
+/usr/include/gsl/gsl_interp.h:
+
+/usr/include/gsl/gsl_inline.h:
+
+/usr/include/gsl/gsl_types.h:

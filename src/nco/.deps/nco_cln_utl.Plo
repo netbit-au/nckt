@@ -12,7 +12,8 @@ nco_cln_utl.lo: nco_cln_utl.c nco_cln_utl.h ../../config.h \
  /usr/include/bits/byteswap.h /usr/include/sys/select.h \
  /usr/include/bits/select.h /usr/include/bits/sigset.h \
  /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
- /usr/include/alloca.h /usr/include/ctype.h nco.h /usr/include/netcdf.h \
+ /usr/include/alloca.h /usr/include/ctype.h /usr/include/udunits2.h \
+ /usr/include/converter.h nco.h /usr/include/netcdf.h \
  /usr/include/errno.h /usr/include/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
@@ -85,6 +86,10 @@ nco_cln_utl.h:
 /usr/include/alloca.h:
 
 /usr/include/ctype.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
 
 nco.h:
 

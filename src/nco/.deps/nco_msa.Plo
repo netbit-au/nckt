@@ -30,9 +30,10 @@ nco_msa.lo: nco_msa.c nco_msa.h ../../config.h /usr/include/stdio.h \
  /usr/include/bits/inf.h /usr/include/bits/nan.h \
  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
  /usr/include/bits/mathinline.h nco_lst_utl.h nco_cln_utl.h \
- /usr/include/ctype.h nco_var_utl.h nco_att_utl.h nco_mss_val.h nco_scm.h \
- nco_pck.h nco_scl_utl.h nco_rth_utl.h nco_var_rth.h nco_rth_flt.h \
- nco_var_avg.h nco_var_scv.h
+ /usr/include/ctype.h /usr/include/udunits2.h /usr/include/converter.h \
+ nco_var_utl.h nco_att_utl.h nco_mss_val.h nco_scm.h nco_pck.h \
+ nco_scl_utl.h nco_rth_utl.h nco_var_rth.h nco_rth_flt.h nco_var_avg.h \
+ nco_var_scv.h
 
 nco_msa.h:
 
@@ -181,6 +182,10 @@ nco_lst_utl.h:
 nco_cln_utl.h:
 
 /usr/include/ctype.h:
+
+/usr/include/udunits2.h:
+
+/usr/include/converter.h:
 
 nco_var_utl.h:
 

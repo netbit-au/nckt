@@ -427,12 +427,12 @@ configure:5793: checking lex output file root
 configure:5807: result: lex.yy
 configure:5812: checking lex library
 configure:5826: gcc -std=gnu99 -o conftest -g -O2   conftest.c   >&5
-/tmp/ccU5k9FQ.o: In function `input':
-/home/dev/netbit-nco/lex.yy.c:1182: undefined reference to `yywrap'
-/tmp/ccU5k9FQ.o: In function `yylex':
-/home/dev/netbit-nco/lex.yy.c:881: undefined reference to `yywrap'
-/tmp/ccU5k9FQ.o: In function `main':
-/home/dev/netbit-nco/conftest.l:17: undefined reference to `yywrap'
+/tmp/cc2Me8tA.o: In function `input':
+/home/dev/nckt/lex.yy.c:1182: undefined reference to `yywrap'
+/tmp/cc2Me8tA.o: In function `yylex':
+/home/dev/nckt/lex.yy.c:881: undefined reference to `yywrap'
+/tmp/cc2Me8tA.o: In function `main':
+/home/dev/nckt/conftest.l:17: undefined reference to `yywrap'
 collect2: ld returned 1 exit status
 configure:5826: $? = 1
 configure: failed program was:
@@ -2514,8 +2514,8 @@ configure:15911: result: yes
 configure:15911: checking for floor
 configure:15911: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
 conftest.c:54: warning: conflicting types for built-in function 'floor'
-/tmp/cc1A2k13.o: In function `main':
-/home/dev/netbit-nco/conftest.c:65: undefined reference to `floor'
+/tmp/ccYBQlId.o: In function `main':
+/home/dev/nckt/conftest.c:65: undefined reference to `floor'
 collect2: ld returned 1 exit status
 configure:15911: $? = 1
 configure: failed program was:
@@ -2622,8 +2622,8 @@ configure:15911: result: yes
 configure:15911: checking for pow
 configure:15911: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
 conftest.c:61: warning: conflicting types for built-in function 'pow'
-/tmp/cc66AWWK.o: In function `main':
-/home/dev/netbit-nco/conftest.c:72: undefined reference to `pow'
+/tmp/ccxYsz61.o: In function `main':
+/home/dev/nckt/conftest.c:72: undefined reference to `pow'
 collect2: ld returned 1 exit status
 configure:15911: $? = 1
 configure: failed program was:
@@ -2722,8 +2722,8 @@ configure:15911: result: yes
 configure:15911: checking for sqrt
 configure:15911: gcc -std=gnu99 -o conftest -g -O2   conftest.c  >&5
 conftest.c:65: warning: conflicting types for built-in function 'sqrt'
-/tmp/cccAU9In.o: In function `main':
-/home/dev/netbit-nco/conftest.c:76: undefined reference to `sqrt'
+/tmp/cco8wHBr.o: In function `main':
+/home/dev/nckt/conftest.c:76: undefined reference to `sqrt'
 collect2: ld returned 1 exit status
 configure:15911: $? = 1
 configure: failed program was:
@@ -3260,88 +3260,9 @@ configure:16509: $? = 0
 configure:16541: result: no
 configure:16657: checking for nc__opendap in -lnetcdf
 configure:16682: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lnetcdf -lcurl  >&5
-/usr/bin/ld: cannot find -lcurl
-collect2: ld returned 1 exit status
-configure:16682: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "NCO netCDF Operators"
-| #define PACKAGE_TARNAME "nco"
-| #define PACKAGE_VERSION "4.0.2"
-| #define PACKAGE_STRING "NCO netCDF Operators 4.0.2"
-| #define PACKAGE_BUGREPORT "help@nco.sf.net"
-| #define PACKAGE_URL ""
-| #define USER root
-| #define HOST netbit
-| #define HOSTNAME netbit
-| #define GNU_TRP x86_64-unknown-linux-gnu
-| #define LINUXAMD64 1
-| #define PACKAGE "nco"
-| #define VERSION "4.0.2"
-| #define YYTEXT_POINTER 1
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define LSTAT_FOLLOWS_SLASHED_SYMLINK 1
-| #define HAVE_CANONICALIZE_FILE_NAME 1
-| #define HAVE_GETHOSTNAME 1
-| #define HAVE_GETPAGESIZE 1
-| #define HAVE_GETRUSAGE 1
-| #define HAVE_MEMCHR 1
-| #define HAVE_MEMMOVE 1
-| #define HAVE_MEMSET 1
-| #define HAVE_MKSTEMP 1
-| #define HAVE_READLINK 1
-| #define HAVE_REALPATH 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_SETLOCALE 1
-| #define HAVE_STRCHR 1
-| #define HAVE_STRERROR 1
-| #define HAVE_STRPBRK 1
-| #define HAVE_STRRCHR 1
-| #define HAVE_STRSTR 1
-| #define HAVE_STRTOL 1
-| #define STDC_HEADERS 1
-| #define HAVE_GETOPT_H 1
-| #define HAVE_LIBINTL_H 1
-| #define HAVE_LIMITS_H 1
-| #define HAVE_LOCALE_H 1
-| #define HAVE_NETINET_IN_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_CSTDLIB 1
-| #define HAVE_PTRDIFF_T 1
-| #define SIZEOF_INTP 8
-| #define HAVE_NAMESPACES /**/
-| #define HAVE_VALARRAY /**/
-| /* end confdefs.h.  */
-| 
-| /* Override any GCC internal prototype to avoid an error.
-|    Use char because int might match the return type of a GCC
-|    builtin and then its argument prototype would still apply.  */
-| #ifdef __cplusplus
-| extern "C"
-| #endif
-| char nc__opendap ();
-| int
-| main ()
-| {
-| return nc__opendap ();
-|   ;
-|   return 0;
-| }
-configure:16691: result: no
-configure:16705: WARNING: DAP-netCDF support through libnetCDF disabled (missing DAP library)
+configure:16682: $? = 0
+configure:16691: result: yes
+configure:16832: DAP support enabled
 configure:16871: checking netcdf.h usability
 configure:16871: gcc -std=gnu99 -c -g -O2  conftest.c >&5
 configure:16871: $? = 0
@@ -3352,12 +3273,6 @@ configure:16871: $? = 0
 configure:16871: result: yes
 configure:16871: checking for netcdf.h
 configure:16871: result: yes
-configure:17014: Checking default compiler flags
-configure:17016: checking for nc_open in -lnetcdf
-configure:17041: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lnetcdf   >&5
-configure:17041: $? = 0
-configure:17050: result: yes
-configure:17055: Good news: Simple program compiles and links to libnetcdf.a with default compiler flags
 configure:17159: checking for getopt_long
 configure:17159: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lnetcdf  >&5
 configure:17159: $? = 0
@@ -3428,6 +3343,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | /* end confdefs.h.  */
@@ -3449,12 +3367,12 @@ configure: failed program was:
 configure:17200: result: no
 configure:17211: checking for sin in -lm
 configure:17236: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm  -lnetcdf  >&5
-conftest.c:71: warning: conflicting types for built-in function 'sin'
+conftest.c:74: warning: conflicting types for built-in function 'sin'
 configure:17236: $? = 0
 configure:17245: result: yes
 configure:17256: checking for sinf in -lsunmath
 configure:17281: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lsunmath  -lm -lnetcdf  >&5
-conftest.c:72: warning: conflicting types for built-in function 'sinf'
+conftest.c:75: warning: conflicting types for built-in function 'sinf'
 /usr/bin/ld: cannot find -lsunmath
 collect2: ld returned 1 exit status
 configure:17281: $? = 1
@@ -3519,6 +3437,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | #define HAVE_LIBM 1
@@ -3541,7 +3462,7 @@ configure: failed program was:
 configure:17290: result: no
 configure:17301: checking for gettext in -lintl
 configure:17326: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lintl  -lm -lnetcdf  >&5
-conftest.c:72: warning: conflicting types for built-in function 'gettext'
+conftest.c:75: warning: conflicting types for built-in function 'gettext'
 /usr/bin/ld: cannot find -lintl
 collect2: ld returned 1 exit status
 configure:17326: $? = 1
@@ -3606,6 +3527,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | #define HAVE_LIBM 1
@@ -3628,8 +3552,8 @@ configure: failed program was:
 configure:17335: result: no
 configure:17346: checking for res_init in -lresolv
 configure:17371: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lresolv  -lm -lnetcdf  >&5
-/tmp/ccyUgMAv.o: In function `main':
-/home/dev/netbit-nco/conftest.c:76: undefined reference to `res_init'
+/tmp/ccnDb01C.o: In function `main':
+/home/dev/nckt/conftest.c:79: undefined reference to `res_init'
 collect2: ld returned 1 exit status
 configure:17371: $? = 1
 configure: failed program was:
@@ -3693,6 +3617,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | #define HAVE_LIBM 1
@@ -3779,6 +3706,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | #define HAVE_LIBM 1
@@ -3859,6 +3789,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | #define HAVE_LIBM 1
@@ -3939,6 +3872,9 @@ configure: failed program was:
 | #define SIZEOF_INTP 8
 | #define HAVE_NAMESPACES /**/
 | #define HAVE_VALARRAY /**/
+| #define HAVE_LIBNETCDF 1
+| #define ENABLE_DAP_NETCDF 1
+| #define ENABLE_DAP 1
 | #define HAVE_NETCDF_H 1
 | #define NO_NETCDF_2 1
 | #define HAVE_LIBM 1
@@ -3971,176 +3907,183 @@ configure:17592: checking for getopt_long
 configure:17592: result: yes
 configure:17612: checking for atan2
 configure:17612: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:91: warning: conflicting types for built-in function 'atan2'
+conftest.c:94: warning: conflicting types for built-in function 'atan2'
 configure:17612: $? = 0
 configure:17612: result: yes
 configure:17658: checking for acosf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:92: warning: conflicting types for built-in function 'acosf'
+conftest.c:95: warning: conflicting types for built-in function 'acosf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for asinf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:93: warning: conflicting types for built-in function 'asinf'
+conftest.c:96: warning: conflicting types for built-in function 'asinf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for atanf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:94: warning: conflicting types for built-in function 'atanf'
+conftest.c:97: warning: conflicting types for built-in function 'atanf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for atan2f
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:95: warning: conflicting types for built-in function 'atan2f'
+conftest.c:98: warning: conflicting types for built-in function 'atan2f'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for cosf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:96: warning: conflicting types for built-in function 'cosf'
+conftest.c:99: warning: conflicting types for built-in function 'cosf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for expf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:97: warning: conflicting types for built-in function 'expf'
+conftest.c:100: warning: conflicting types for built-in function 'expf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for fabsf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:98: warning: conflicting types for built-in function 'fabsf'
+conftest.c:101: warning: conflicting types for built-in function 'fabsf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for fmodf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:99: warning: conflicting types for built-in function 'fmodf'
+conftest.c:102: warning: conflicting types for built-in function 'fmodf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for log10f
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:100: warning: conflicting types for built-in function 'log10f'
+conftest.c:103: warning: conflicting types for built-in function 'log10f'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for logf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:101: warning: conflicting types for built-in function 'logf'
+conftest.c:104: warning: conflicting types for built-in function 'logf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for powf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:102: warning: conflicting types for built-in function 'powf'
+conftest.c:105: warning: conflicting types for built-in function 'powf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for sinf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:103: warning: conflicting types for built-in function 'sinf'
+conftest.c:106: warning: conflicting types for built-in function 'sinf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for sqrtf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:104: warning: conflicting types for built-in function 'sqrtf'
+conftest.c:107: warning: conflicting types for built-in function 'sqrtf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17658: checking for tanf
 configure:17658: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:105: warning: conflicting types for built-in function 'tanf'
+conftest.c:108: warning: conflicting types for built-in function 'tanf'
 configure:17658: $? = 0
 configure:17658: result: yes
 configure:17682: checking for erff
 configure:17682: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:106: warning: conflicting types for built-in function 'erff'
+conftest.c:109: warning: conflicting types for built-in function 'erff'
 configure:17682: $? = 0
 configure:17682: result: yes
 configure:17682: checking for erfcf
 configure:17682: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:107: warning: conflicting types for built-in function 'erfcf'
+conftest.c:110: warning: conflicting types for built-in function 'erfcf'
 configure:17682: $? = 0
 configure:17682: result: yes
 configure:17682: checking for gammaf
 configure:17682: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:108: warning: conflicting types for built-in function 'gammaf'
+conftest.c:111: warning: conflicting types for built-in function 'gammaf'
 configure:17682: $? = 0
 configure:17682: result: yes
 configure:17712: checking for acoshf
 configure:17712: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:109: warning: conflicting types for built-in function 'acoshf'
+conftest.c:112: warning: conflicting types for built-in function 'acoshf'
 configure:17712: $? = 0
 configure:17712: result: yes
 configure:17712: checking for asinhf
 configure:17712: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:110: warning: conflicting types for built-in function 'asinhf'
+conftest.c:113: warning: conflicting types for built-in function 'asinhf'
 configure:17712: $? = 0
 configure:17712: result: yes
 configure:17712: checking for atanhf
 configure:17712: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:111: warning: conflicting types for built-in function 'atanhf'
+conftest.c:114: warning: conflicting types for built-in function 'atanhf'
 configure:17712: $? = 0
 configure:17712: result: yes
 configure:17712: checking for coshf
 configure:17712: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:112: warning: conflicting types for built-in function 'coshf'
+conftest.c:115: warning: conflicting types for built-in function 'coshf'
 configure:17712: $? = 0
 configure:17712: result: yes
 configure:17712: checking for sinhf
 configure:17712: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:113: warning: conflicting types for built-in function 'sinhf'
+conftest.c:116: warning: conflicting types for built-in function 'sinhf'
 configure:17712: $? = 0
 configure:17712: result: yes
 configure:17712: checking for tanhf
 configure:17712: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:114: warning: conflicting types for built-in function 'tanhf'
+conftest.c:117: warning: conflicting types for built-in function 'tanhf'
 configure:17712: $? = 0
 configure:17712: result: yes
 configure:17734: checking for ceilf
 configure:17734: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:115: warning: conflicting types for built-in function 'ceilf'
+conftest.c:118: warning: conflicting types for built-in function 'ceilf'
 configure:17734: $? = 0
 configure:17734: result: yes
 configure:17734: checking for floorf
 configure:17734: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:116: warning: conflicting types for built-in function 'floorf'
+conftest.c:119: warning: conflicting types for built-in function 'floorf'
 configure:17734: $? = 0
 configure:17734: result: yes
 configure:17760: checking for nearbyintf
 configure:17760: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:117: warning: conflicting types for built-in function 'nearbyintf'
+conftest.c:120: warning: conflicting types for built-in function 'nearbyintf'
 configure:17760: $? = 0
 configure:17760: result: yes
 configure:17760: checking for rintf
 configure:17760: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:118: warning: conflicting types for built-in function 'rintf'
+conftest.c:121: warning: conflicting types for built-in function 'rintf'
 configure:17760: $? = 0
 configure:17760: result: yes
 configure:17760: checking for roundf
 configure:17760: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:119: warning: conflicting types for built-in function 'roundf'
+conftest.c:122: warning: conflicting types for built-in function 'roundf'
 configure:17760: $? = 0
 configure:17760: result: yes
 configure:17760: checking for truncf
 configure:17760: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:120: warning: conflicting types for built-in function 'truncf'
+conftest.c:123: warning: conflicting types for built-in function 'truncf'
 configure:17760: $? = 0
 configure:17760: result: yes
 configure:17780: checking for getopt_long
 configure:17780: result: yes
 configure:17802: checking for strdup
 configure:17802: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:122: warning: conflicting types for built-in function 'strdup'
+conftest.c:125: warning: conflicting types for built-in function 'strdup'
 configure:17802: $? = 0
 configure:17802: result: yes
 configure:17802: checking for strcasecmp
 configure:17802: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
-conftest.c:123: warning: conflicting types for built-in function 'strcasecmp'
+conftest.c:126: warning: conflicting types for built-in function 'strcasecmp'
 configure:17802: $? = 0
 configure:17802: result: yes
 configure:17891: checking for runantlr
 configure:17907: found /usr/bin/runantlr
 configure:17918: result: runantlr
-configure:18402: WARNING: Did not find 'gsl-config' command in your default path
+configure:18429: These GSL library and header tests must succeed for GSL support:
+configure:18432: checking for gsl_sf_gamma_inc in -lgsl
+configure:18457: gcc -std=gnu99 -o conftest -g -O2 -I/usr/include   conftest.c -lgsl  -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  >&5
+configure:18457: $? = 0
+configure:18466: result: yes
+configure:18481: checking for /usr/include/gsl/gsl_sf_gamma.h
+configure:18495: result: yes
+configure:18539: GSL support enabled
 configure:18566: checking regex.h usability
-configure:18566: gcc -std=gnu99 -c -g -O2  conftest.c >&5
+configure:18566: gcc -std=gnu99 -c -g -O2 -I/usr/include  conftest.c >&5
 configure:18566: $? = 0
 configure:18566: result: yes
 configure:18566: checking regex.h presence
-configure:18566: gcc -E  conftest.c
+configure:18566: gcc -E -I/usr/include  conftest.c
 configure:18566: $? = 0
 configure:18566: result: yes
 configure:18566: checking for regex.h
@@ -4148,17 +4091,17 @@ configure:18566: result: yes
 configure:18576: checking for sys/types.h
 configure:18576: result: yes
 configure:18585: checking for regexec
-configure:18585: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
+configure:18585: gcc -std=gnu99 -o conftest -g -O2 -I/usr/include   conftest.c -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  >&5
 configure:18585: $? = 0
 configure:18585: result: yes
 configure:18594: checking for regcomp
 configure:18594: result: yes
 configure:18603: checking for regfree
-configure:18603: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
+configure:18603: gcc -std=gnu99 -o conftest -g -O2 -I/usr/include   conftest.c -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  >&5
 configure:18603: $? = 0
 configure:18603: result: yes
 configure:18650: checking for tdelete
-configure:18650: gcc -std=gnu99 -o conftest -g -O2   conftest.c -lm -lnetcdf  >&5
+configure:18650: gcc -std=gnu99 -o conftest -g -O2 -I/usr/include   conftest.c -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  >&5
 configure:18650: $? = 0
 configure:18650: result: yes
 configure:18934: checking for 
@@ -4166,401 +4109,20 @@ configure:18948: result: no
 configure:18954: WARNING: file  was not found but will still attempt to build NCO with UDUnits2 support.
 configure:18964: NB: Following tests of UDUnits2 library and header must succeed for UDUnits2 support:
 configure:18966: checking for ut_read_xml in -ludunits2
-configure:18991: gcc -std=gnu99 -o conftest -g -O2   conftest.c -ludunits2  -lm -lnetcdf  >&5
-/usr/bin/ld: cannot find -ludunits2
-collect2: ld returned 1 exit status
-configure:18991: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "NCO netCDF Operators"
-| #define PACKAGE_TARNAME "nco"
-| #define PACKAGE_VERSION "4.0.2"
-| #define PACKAGE_STRING "NCO netCDF Operators 4.0.2"
-| #define PACKAGE_BUGREPORT "help@nco.sf.net"
-| #define PACKAGE_URL ""
-| #define USER root
-| #define HOST netbit
-| #define HOSTNAME netbit
-| #define GNU_TRP x86_64-unknown-linux-gnu
-| #define LINUXAMD64 1
-| #define PACKAGE "nco"
-| #define VERSION "4.0.2"
-| #define YYTEXT_POINTER 1
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define LSTAT_FOLLOWS_SLASHED_SYMLINK 1
-| #define HAVE_CANONICALIZE_FILE_NAME 1
-| #define HAVE_GETHOSTNAME 1
-| #define HAVE_GETPAGESIZE 1
-| #define HAVE_GETRUSAGE 1
-| #define HAVE_MEMCHR 1
-| #define HAVE_MEMMOVE 1
-| #define HAVE_MEMSET 1
-| #define HAVE_MKSTEMP 1
-| #define HAVE_READLINK 1
-| #define HAVE_REALPATH 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_SETLOCALE 1
-| #define HAVE_STRCHR 1
-| #define HAVE_STRERROR 1
-| #define HAVE_STRPBRK 1
-| #define HAVE_STRRCHR 1
-| #define HAVE_STRSTR 1
-| #define HAVE_STRTOL 1
-| #define STDC_HEADERS 1
-| #define HAVE_GETOPT_H 1
-| #define HAVE_LIBINTL_H 1
-| #define HAVE_LIMITS_H 1
-| #define HAVE_LOCALE_H 1
-| #define HAVE_NETINET_IN_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_CSTDLIB 1
-| #define HAVE_PTRDIFF_T 1
-| #define SIZEOF_INTP 8
-| #define HAVE_NAMESPACES /**/
-| #define HAVE_VALARRAY /**/
-| #define HAVE_NETCDF_H 1
-| #define NO_NETCDF_2 1
-| #define HAVE_LIBM 1
-| #define HAVE_NC_INQ_FORMAT 1
-| #define HAVE_GETOPT 1
-| #define HAVE_GETOPT_LONG 1
-| #define HAVE_ATAN2 1
-| #define HAVE_ACOSF 1
-| #define HAVE_ASINF 1
-| #define HAVE_ATANF 1
-| #define HAVE_ATAN2F 1
-| #define HAVE_COSF 1
-| #define HAVE_EXPF 1
-| #define HAVE_FABSF 1
-| #define HAVE_FMODF 1
-| #define HAVE_LOG10F 1
-| #define HAVE_LOGF 1
-| #define HAVE_POWF 1
-| #define HAVE_SINF 1
-| #define HAVE_SQRTF 1
-| #define HAVE_TANF 1
-| #define HAVE_ERFF 1
-| #define HAVE_ERFCF 1
-| #define HAVE_GAMMAF 1
-| #define HAVE_ACOSHF 1
-| #define HAVE_ASINHF 1
-| #define HAVE_ATANHF 1
-| #define HAVE_COSHF 1
-| #define HAVE_SINHF 1
-| #define HAVE_TANHF 1
-| #define HAVE_CEILF 1
-| #define HAVE_FLOORF 1
-| #define HAVE_NEARBYINTF 1
-| #define HAVE_RINTF 1
-| #define HAVE_ROUNDF 1
-| #define HAVE_TRUNCF 1
-| #define HAVE_GETOPT_LONG 1
-| #define HAVE_STRDUP 1
-| #define HAVE_STRCASECMP 1
-| #define MPICH2_ROOT ""
-| #define HAVE_REGEX_H 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_REGEXEC 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_REGFREE 1
-| #define NCO_HAVE_REGEX_FUNCTIONALITY 1
-| #define UDUNITS2_PATH ""
-| /* end confdefs.h.  */
-| 
-| /* Override any GCC internal prototype to avoid an error.
-|    Use char because int might match the return type of a GCC
-|    builtin and then its argument prototype would still apply.  */
-| #ifdef __cplusplus
-| extern "C"
-| #endif
-| char ut_read_xml ();
-| int
-| main ()
-| {
-| return ut_read_xml ();
-|   ;
-|   return 0;
-| }
-configure:19000: result: no
+configure:18991: gcc -std=gnu99 -o conftest -g -O2 -I/usr/include   conftest.c -ludunits2  -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  >&5
+configure:18991: $? = 0
+configure:19000: result: yes
 configure:19041: checking udunits2.h usability
-configure:19041: gcc -std=gnu99 -c -g -O2  conftest.c >&5
-conftest.c:142:22: error: udunits2.h: No such file or directory
-configure:19041: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "NCO netCDF Operators"
-| #define PACKAGE_TARNAME "nco"
-| #define PACKAGE_VERSION "4.0.2"
-| #define PACKAGE_STRING "NCO netCDF Operators 4.0.2"
-| #define PACKAGE_BUGREPORT "help@nco.sf.net"
-| #define PACKAGE_URL ""
-| #define USER root
-| #define HOST netbit
-| #define HOSTNAME netbit
-| #define GNU_TRP x86_64-unknown-linux-gnu
-| #define LINUXAMD64 1
-| #define PACKAGE "nco"
-| #define VERSION "4.0.2"
-| #define YYTEXT_POINTER 1
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define LSTAT_FOLLOWS_SLASHED_SYMLINK 1
-| #define HAVE_CANONICALIZE_FILE_NAME 1
-| #define HAVE_GETHOSTNAME 1
-| #define HAVE_GETPAGESIZE 1
-| #define HAVE_GETRUSAGE 1
-| #define HAVE_MEMCHR 1
-| #define HAVE_MEMMOVE 1
-| #define HAVE_MEMSET 1
-| #define HAVE_MKSTEMP 1
-| #define HAVE_READLINK 1
-| #define HAVE_REALPATH 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_SETLOCALE 1
-| #define HAVE_STRCHR 1
-| #define HAVE_STRERROR 1
-| #define HAVE_STRPBRK 1
-| #define HAVE_STRRCHR 1
-| #define HAVE_STRSTR 1
-| #define HAVE_STRTOL 1
-| #define STDC_HEADERS 1
-| #define HAVE_GETOPT_H 1
-| #define HAVE_LIBINTL_H 1
-| #define HAVE_LIMITS_H 1
-| #define HAVE_LOCALE_H 1
-| #define HAVE_NETINET_IN_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_CSTDLIB 1
-| #define HAVE_PTRDIFF_T 1
-| #define SIZEOF_INTP 8
-| #define HAVE_NAMESPACES /**/
-| #define HAVE_VALARRAY /**/
-| #define HAVE_NETCDF_H 1
-| #define NO_NETCDF_2 1
-| #define HAVE_LIBM 1
-| #define HAVE_NC_INQ_FORMAT 1
-| #define HAVE_GETOPT 1
-| #define HAVE_GETOPT_LONG 1
-| #define HAVE_ATAN2 1
-| #define HAVE_ACOSF 1
-| #define HAVE_ASINF 1
-| #define HAVE_ATANF 1
-| #define HAVE_ATAN2F 1
-| #define HAVE_COSF 1
-| #define HAVE_EXPF 1
-| #define HAVE_FABSF 1
-| #define HAVE_FMODF 1
-| #define HAVE_LOG10F 1
-| #define HAVE_LOGF 1
-| #define HAVE_POWF 1
-| #define HAVE_SINF 1
-| #define HAVE_SQRTF 1
-| #define HAVE_TANF 1
-| #define HAVE_ERFF 1
-| #define HAVE_ERFCF 1
-| #define HAVE_GAMMAF 1
-| #define HAVE_ACOSHF 1
-| #define HAVE_ASINHF 1
-| #define HAVE_ATANHF 1
-| #define HAVE_COSHF 1
-| #define HAVE_SINHF 1
-| #define HAVE_TANHF 1
-| #define HAVE_CEILF 1
-| #define HAVE_FLOORF 1
-| #define HAVE_NEARBYINTF 1
-| #define HAVE_RINTF 1
-| #define HAVE_ROUNDF 1
-| #define HAVE_TRUNCF 1
-| #define HAVE_GETOPT_LONG 1
-| #define HAVE_STRDUP 1
-| #define HAVE_STRCASECMP 1
-| #define MPICH2_ROOT ""
-| #define HAVE_REGEX_H 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_REGEXEC 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_REGFREE 1
-| #define NCO_HAVE_REGEX_FUNCTIONALITY 1
-| #define UDUNITS2_PATH ""
-| /* end confdefs.h.  */
-| #include <stdio.h>
-| #ifdef HAVE_SYS_TYPES_H
-| # include <sys/types.h>
-| #endif
-| #ifdef HAVE_SYS_STAT_H
-| # include <sys/stat.h>
-| #endif
-| #ifdef STDC_HEADERS
-| # include <stdlib.h>
-| # include <stddef.h>
-| #else
-| # ifdef HAVE_STDLIB_H
-| #  include <stdlib.h>
-| # endif
-| #endif
-| #ifdef HAVE_STRING_H
-| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
-| #  include <memory.h>
-| # endif
-| # include <string.h>
-| #endif
-| #ifdef HAVE_STRINGS_H
-| # include <strings.h>
-| #endif
-| #ifdef HAVE_INTTYPES_H
-| # include <inttypes.h>
-| #endif
-| #ifdef HAVE_STDINT_H
-| # include <stdint.h>
-| #endif
-| #ifdef HAVE_UNISTD_H
-| # include <unistd.h>
-| #endif
-| #include <udunits2.h>
-configure:19041: result: no
+configure:19041: gcc -std=gnu99 -c -g -O2 -I/usr/include  conftest.c >&5
+configure:19041: $? = 0
+configure:19041: result: yes
 configure:19041: checking udunits2.h presence
-configure:19041: gcc -E  conftest.c
-conftest.c:109:22: error: udunits2.h: No such file or directory
-configure:19041: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "NCO netCDF Operators"
-| #define PACKAGE_TARNAME "nco"
-| #define PACKAGE_VERSION "4.0.2"
-| #define PACKAGE_STRING "NCO netCDF Operators 4.0.2"
-| #define PACKAGE_BUGREPORT "help@nco.sf.net"
-| #define PACKAGE_URL ""
-| #define USER root
-| #define HOST netbit
-| #define HOSTNAME netbit
-| #define GNU_TRP x86_64-unknown-linux-gnu
-| #define LINUXAMD64 1
-| #define PACKAGE "nco"
-| #define VERSION "4.0.2"
-| #define YYTEXT_POINTER 1
-| #define STDC_HEADERS 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_MEMORY_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_DLFCN_H 1
-| #define LT_OBJDIR ".libs/"
-| #define LSTAT_FOLLOWS_SLASHED_SYMLINK 1
-| #define HAVE_CANONICALIZE_FILE_NAME 1
-| #define HAVE_GETHOSTNAME 1
-| #define HAVE_GETPAGESIZE 1
-| #define HAVE_GETRUSAGE 1
-| #define HAVE_MEMCHR 1
-| #define HAVE_MEMMOVE 1
-| #define HAVE_MEMSET 1
-| #define HAVE_MKSTEMP 1
-| #define HAVE_READLINK 1
-| #define HAVE_REALPATH 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_SETLOCALE 1
-| #define HAVE_STRCHR 1
-| #define HAVE_STRERROR 1
-| #define HAVE_STRPBRK 1
-| #define HAVE_STRRCHR 1
-| #define HAVE_STRSTR 1
-| #define HAVE_STRTOL 1
-| #define STDC_HEADERS 1
-| #define HAVE_GETOPT_H 1
-| #define HAVE_LIBINTL_H 1
-| #define HAVE_LIMITS_H 1
-| #define HAVE_LOCALE_H 1
-| #define HAVE_NETINET_IN_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_CSTDLIB 1
-| #define HAVE_PTRDIFF_T 1
-| #define SIZEOF_INTP 8
-| #define HAVE_NAMESPACES /**/
-| #define HAVE_VALARRAY /**/
-| #define HAVE_NETCDF_H 1
-| #define NO_NETCDF_2 1
-| #define HAVE_LIBM 1
-| #define HAVE_NC_INQ_FORMAT 1
-| #define HAVE_GETOPT 1
-| #define HAVE_GETOPT_LONG 1
-| #define HAVE_ATAN2 1
-| #define HAVE_ACOSF 1
-| #define HAVE_ASINF 1
-| #define HAVE_ATANF 1
-| #define HAVE_ATAN2F 1
-| #define HAVE_COSF 1
-| #define HAVE_EXPF 1
-| #define HAVE_FABSF 1
-| #define HAVE_FMODF 1
-| #define HAVE_LOG10F 1
-| #define HAVE_LOGF 1
-| #define HAVE_POWF 1
-| #define HAVE_SINF 1
-| #define HAVE_SQRTF 1
-| #define HAVE_TANF 1
-| #define HAVE_ERFF 1
-| #define HAVE_ERFCF 1
-| #define HAVE_GAMMAF 1
-| #define HAVE_ACOSHF 1
-| #define HAVE_ASINHF 1
-| #define HAVE_ATANHF 1
-| #define HAVE_COSHF 1
-| #define HAVE_SINHF 1
-| #define HAVE_TANHF 1
-| #define HAVE_CEILF 1
-| #define HAVE_FLOORF 1
-| #define HAVE_NEARBYINTF 1
-| #define HAVE_RINTF 1
-| #define HAVE_ROUNDF 1
-| #define HAVE_TRUNCF 1
-| #define HAVE_GETOPT_LONG 1
-| #define HAVE_STRDUP 1
-| #define HAVE_STRCASECMP 1
-| #define MPICH2_ROOT ""
-| #define HAVE_REGEX_H 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_REGEXEC 1
-| #define HAVE_REGCOMP 1
-| #define HAVE_REGFREE 1
-| #define NCO_HAVE_REGEX_FUNCTIONALITY 1
-| #define UDUNITS2_PATH ""
-| /* end confdefs.h.  */
-| #include <udunits2.h>
-configure:19041: result: no
+configure:19041: gcc -E -I/usr/include  conftest.c
+configure:19041: $? = 0
+configure:19041: result: yes
 configure:19041: checking for udunits2.h
-configure:19041: result: no
-configure:19053: WARNING: UDUnits2 support disabled (missing/unusable library or header file)
+configure:19041: result: yes
+configure:19060: UDUnits2 support enabled
 configure:19464: checking for ncgen
 configure:19482: found /usr/bin/ncgen
 configure:19494: result: /usr/bin/ncgen
@@ -4582,17 +4144,17 @@ generated by GNU Autoconf 2.65.  Invocation command line was
 
 on netbit
 
-config.status:1260: creating Makefile
-config.status:1260: creating data/Makefile
-config.status:1260: creating src/Makefile
-config.status:1260: creating src/nco/Makefile
-config.status:1260: creating man/Makefile
-config.status:1260: creating doc/Makefile
-config.status:1260: creating src/nco_c++/Makefile
-config.status:1260: creating src/nco++/Makefile
-config.status:1260: creating config.h
-config.status:1480: executing depfiles commands
-config.status:1480: executing libtool commands
+config.status:1270: creating Makefile
+config.status:1270: creating data/Makefile
+config.status:1270: creating src/Makefile
+config.status:1270: creating src/nco/Makefile
+config.status:1270: creating man/Makefile
+config.status:1270: creating doc/Makefile
+config.status:1270: creating src/nco_c++/Makefile
+config.status:1270: creating src/nco++/Makefile
+config.status:1270: creating config.h
+config.status:1490: executing depfiles commands
+config.status:1490: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -4658,6 +4220,7 @@ ac_cv_env_host_alias_value=
 ac_cv_env_target_alias_set=
 ac_cv_env_target_alias_value=
 ac_cv_file_=no
+ac_cv_file__usr_include_gsl_gsl_sf_gamma_h=yes
 ac_cv_func_acosf=yes
 ac_cv_func_acoshf=yes
 ac_cv_func_asinf=yes
@@ -4739,21 +4302,21 @@ ac_cv_header_string_h=yes
 ac_cv_header_strings_h=yes
 ac_cv_header_sys_stat_h=yes
 ac_cv_header_sys_types_h=yes
-ac_cv_header_udunits2_h=no
+ac_cv_header_udunits2_h=yes
 ac_cv_header_unistd_h=yes
 ac_cv_host=x86_64-unknown-linux-gnu
 ac_cv_lib_f95__g95_ac_array=no
+ac_cv_lib_gsl_gsl_sf_gamma_inc=yes
 ac_cv_lib_intl_gettext=no
 ac_cv_lib_lex=-lfl
 ac_cv_lib_m_sin=yes
 ac_cv_lib_nco_nco_open=no
-ac_cv_lib_netcdf_nc__opendap=no
-ac_cv_lib_netcdf_nc_open=yes
+ac_cv_lib_netcdf_nc__opendap=yes
 ac_cv_lib_resolv_res_init=no
 ac_cv_lib_socket_main=no
 ac_cv_lib_sunmath_sinf=no
 ac_cv_lib_thread_main=no
-ac_cv_lib_udunits2_ut_read_xml=no
+ac_cv_lib_udunits2_ut_read_xml=yes
 ac_cv_objext=o
 ac_cv_path_EGREP='/bin/grep -E'
 ac_cv_path_FGREP='/bin/grep -F'
@@ -4821,15 +4384,15 @@ lt_cv_sys_max_cmd_len=1572864
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/dev/netbit-nco/autobld/missing --run aclocal-1.11'
+ACLOCAL='${SHELL} /home/dev/nckt/autobld/missing --run aclocal-1.11'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
-AMTAR='${SHELL} /home/dev/netbit-nco/autobld/missing --run tar'
+AMTAR='${SHELL} /home/dev/nckt/autobld/missing --run tar'
 AR='ar'
-AUTOCONF='${SHELL} /home/dev/netbit-nco/autobld/missing --run autoconf'
-AUTOHEADER='${SHELL} /home/dev/netbit-nco/autobld/missing --run autoheader'
-AUTOMAKE='${SHELL} /home/dev/netbit-nco/autobld/missing --run automake-1.11'
+AUTOCONF='${SHELL} /home/dev/nckt/autobld/missing --run autoconf'
+AUTOHEADER='${SHELL} /home/dev/nckt/autobld/missing --run autoheader'
+AUTOMAKE='${SHELL} /home/dev/nckt/autobld/missing --run automake-1.11'
 AWK='gawk'
 BUILD_YACC_SOURCE_FALSE='#'
 BUILD_YACC_SOURCE_TRUE=''
@@ -4837,7 +4400,7 @@ CC='gcc -std=gnu99'
 CCDEPMODE='depmode=gcc3'
 CFLAGS='-g -O2 -std=c99 -D_BSD_SOURCE -D_POSIX_SOURCE'
 CPP='gcc -E'
-CPPFLAGS=''
+CPPFLAGS='-I/usr/include '
 CXX='g++'
 CXXCPP='g++ -E'
 CXXDEPMODE='depmode=gcc3'
@@ -4851,8 +4414,8 @@ ECHO_C=''
 ECHO_N='-n'
 ECHO_T=''
 EGREP='/bin/grep -E'
-ENABLE_GSL_FALSE=''
-ENABLE_GSL_TRUE='#'
+ENABLE_GSL_FALSE='#'
+ENABLE_GSL_TRUE=''
 ENABLE_LAM_FALSE=''
 ENABLE_LAM_TRUE='#'
 ENABLE_MPICH2_FALSE=''
@@ -4878,7 +4441,7 @@ LEXLIB='-lfl'
 LEX_OUTPUT_ROOT='lex.nco_yy'
 LFLAGS='-Pnco_yy'
 LIBOBJS=''
-LIBS='-lm -lnetcdf '
+LIBS='-ludunits2 -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  -ludunits2'
 LIBTOOL='$(SHELL) $(top_builddir)/libtool --tag=CXX'
 LIPO=''
 LN_S='ln -s'
@@ -4886,7 +4449,7 @@ LTLIBOBJS=''
 MAINT='#'
 MAINTAINER_MODE_FALSE=''
 MAINTAINER_MODE_TRUE='#'
-MAKEINFO='${SHELL} /home/dev/netbit-nco/autobld/missing --run makeinfo'
+MAKEINFO='${SHELL} /home/dev/nckt/autobld/missing --run makeinfo'
 MKDIR_P='/bin/mkdir -p'
 MPICH2_ROOT=''
 MPI_CC=''
@@ -4957,7 +4520,7 @@ host_vendor='unknown'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /home/dev/netbit-nco/autobld/install-sh'
+install_sh='${SHELL} /home/dev/nckt/autobld/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
@@ -5043,6 +4606,9 @@ target_vendor='unknown'
 #define SIZEOF_INTP 8
 #define HAVE_NAMESPACES /**/
 #define HAVE_VALARRAY /**/
+#define HAVE_LIBNETCDF 1
+#define ENABLE_DAP_NETCDF 1
+#define ENABLE_DAP 1
 #define HAVE_NETCDF_H 1
 #define NO_NETCDF_2 1
 #define HAVE_LIBM 1
@@ -5083,6 +4649,10 @@ target_vendor='unknown'
 #define HAVE_STRDUP 1
 #define HAVE_STRCASECMP 1
 #define MPICH2_ROOT ""
+#define HAVE_LIBGSL 1
+#define HAVE_GSL_H 1
+#define ENABLE_GSL 1
+#define NCO_GSL_MINOR_VERSION 14
 #define HAVE_REGEX_H 1
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_REGEXEC 1
@@ -5090,25 +4660,10 @@ target_vendor='unknown'
 #define HAVE_REGFREE 1
 #define NCO_HAVE_REGEX_FUNCTIONALITY 1
 #define UDUNITS2_PATH ""
+#define HAVE_LIBUDUNITS2 1
+#define HAVE_UDUNITS2_H 1
+#define ENABLE_UDUNITS 1
 #define ENABLE_SHARED 1
 #define ENABLE_STATIC 1
 
 configure: exit 0
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by NCO netCDF Operators config.status 4.0.2, which was
-generated by GNU Autoconf 2.65.  Invocation command line was
-
-  CONFIG_FILES    = 
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status src/nco/Makefile depfiles
-
-on netbit
-
-config.status:1260: creating src/nco/Makefile
-config.status:1480: executing depfiles commands

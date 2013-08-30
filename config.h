@@ -11,7 +11,7 @@
 /* #undef CRAY */
 
 /* Compile operators with DAP support */
-/* #undef ENABLE_DAP */
+#define ENABLE_DAP 1
 
 /* Custom debugging: Pedantic, bounds checking (slowest execution) */
 /* #undef ENABLE_DEBUG_CUSTOM */
@@ -20,7 +20,7 @@
 /* #undef ENABLE_DEBUG_SYMBOLS */
 
 /* Compile operators with GSL support */
-/* #undef ENABLE_GSL */
+#define ENABLE_GSL 1
 
 /* Enable Large File Support (LFS) */
 /* #undef ENABLE_LARGEFILE */
@@ -41,7 +41,7 @@
 #define ENABLE_STATIC 1
 
 /* Compile operators with UDUnits2 support */
-/* #undef ENABLE_UDUNITS */
+#define ENABLE_UDUNITS 1
 
 /* Compatibility pvmgetarch token for FreeBSD on Intel x86 */
 /* #undef FREEBSD */
@@ -134,7 +134,7 @@
 #define HAVE_GETRUSAGE 1
 
 /* Define to 1 if <gsl_sf_gamma.h> is present */
-/* #undef HAVE_GSL_H */
+#define HAVE_GSL_H 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
@@ -149,7 +149,7 @@
 /* #undef HAVE_LIBF95 */
 
 /* Define to 1 if you have the `gsl' library (-lgsl). */
-/* #undef HAVE_LIBGSL */
+#define HAVE_LIBGSL 1
 
 /* Define to 1 if you have the `intl' library (-lintl). */
 /* #undef HAVE_LIBINTL */
@@ -164,7 +164,7 @@
 /* #undef HAVE_LIBNC_DAP */
 
 /* Define to 1 if you have the `netcdf' library (-lnetcdf). */
-/* #undef HAVE_LIBNETCDF */
+#define HAVE_LIBNETCDF 1
 
 /* Define to 1 if you have the `nsl' library (-lnsl). */
 /* #undef HAVE_LIBNSL */
@@ -188,7 +188,7 @@
 /* #undef HAVE_LIBUDUNITS */
 
 /* Define to 1 if you have the `udunits2' library (-ludunits2). */
-/* #undef HAVE_LIBUDUNITS2 */
+#define HAVE_LIBUDUNITS2 1
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
@@ -336,7 +336,7 @@
 #define HAVE_TRUNCF 1
 
 /* Define to 1 if <udunits2.h> is present */
-/* #undef HAVE_UDUNITS2_H */
+#define HAVE_UDUNITS2_H 1
 
 /* Define to 1 if <udunits.h> is present */
 /* #undef HAVE_UDUNITS_H */
@@ -389,7 +389,7 @@
 #define MPICH2_ROOT ""
 
 /* GSL minor version number */
-/* #undef NCO_GSL_MINOR_VERSION */
+#define NCO_GSL_MINOR_VERSION 14
 
 /* POSIX extended regular expressions available */
 #define NCO_HAVE_REGEX_FUNCTIONALITY 1

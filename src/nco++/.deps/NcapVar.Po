@@ -99,7 +99,9 @@ NcapVar.o: NcapVar.cc NcapVar.hh /usr/include/c++/4.4/iostream \
  /usr/include/c++/4.4/bits/stl_uninitialized.h \
  /usr/include/c++/4.4/bits/stl_vector.h \
  /usr/include/c++/4.4/bits/stl_bvector.h \
- /usr/include/c++/4.4/bits/vector.tcc
+ /usr/include/c++/4.4/bits/vector.tcc /usr/include/gsl/gsl_spline.h \
+ /usr/include/gsl/gsl_interp.h /usr/include/gsl/gsl_inline.h \
+ /usr/include/gsl/gsl_types.h
 
 NcapVar.hh:
 
@@ -448,3 +450,11 @@ ncap2.hh:
 /usr/include/c++/4.4/bits/stl_bvector.h:
 
 /usr/include/c++/4.4/bits/vector.tcc:
+
+/usr/include/gsl/gsl_spline.h:
+
+/usr/include/gsl/gsl_interp.h:
+
+/usr/include/gsl/gsl_inline.h:
+
+/usr/include/gsl/gsl_types.h:
