@@ -1,1 +1,5 @@
-# dummy
+fmc_gsl_cls.o: fmc_gsl_cls.cc fmc_gsl_cls.hh ../../config.h
+
+fmc_gsl_cls.hh:
+
+../../config.h:

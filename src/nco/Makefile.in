@@ -40,12 +40,12 @@ host_triplet = @host@
 target_triplet = @target@
 @ENABLE_MPI_FALSE@bin_PROGRAMS = $(am__EXEEXT_1) ncatted$(EXEEXT) \
 @ENABLE_MPI_FALSE@	ncbo$(EXEEXT) ncecat$(EXEEXT) \
-@ENABLE_MPI_FALSE@	ncflint$(EXEEXT) ncks$(EXEEXT) \
+@ENABLE_MPI_FALSE@	ncflint$(EXEEXT) nckt$(EXEEXT) \
 @ENABLE_MPI_FALSE@	ncpdq$(EXEEXT) ncra$(EXEEXT) \
 @ENABLE_MPI_FALSE@	ncrename$(EXEEXT) $(am__EXEEXT_2)
 @ENABLE_MPI_TRUE@bin_PROGRAMS = $(am__EXEEXT_1) ncatted$(EXEEXT) \
 @ENABLE_MPI_TRUE@	ncbo$(EXEEXT) ncecat$(EXEEXT) \
-@ENABLE_MPI_TRUE@	ncflint$(EXEEXT) ncks$(EXEEXT) ncpdq$(EXEEXT) \
+@ENABLE_MPI_TRUE@	ncflint$(EXEEXT) nckt$(EXEEXT) ncpdq$(EXEEXT) \
 @ENABLE_MPI_TRUE@	ncra$(EXEEXT) ncrename$(EXEEXT) \
 @ENABLE_MPI_TRUE@	mpncbo$(EXEEXT) mpncecat$(EXEEXT) \
 @ENABLE_MPI_TRUE@	mpncflint$(EXEEXT) mpncpdq$(EXEEXT) \
@@ -157,7 +157,7 @@ ncecat_DEPENDENCIES = libnco.la
 am_ncflint_OBJECTS = ncflint.$(OBJEXT)
 ncflint_OBJECTS = $(am_ncflint_OBJECTS)
 ncflint_DEPENDENCIES = libnco.la
-am_ncks_OBJECTS = ncks.$(OBJEXT)
+am_ncks_OBJECTS = nckt.$(OBJEXT)
 ncks_OBJECTS = $(am_ncks_OBJECTS)
 ncks_DEPENDENCIES = libnco.la
 am_ncpdq_OBJECTS = ncpdq.$(OBJEXT)
@@ -638,8 +638,8 @@ ncecat$(EXEEXT): $(ncecat_OBJECTS) $(ncecat_DEPENDENCIES)
 ncflint$(EXEEXT): $(ncflint_OBJECTS) $(ncflint_DEPENDENCIES) 
 	@rm -f ncflint$(EXEEXT)
 	$(LINK) $(ncflint_OBJECTS) $(ncflint_LDADD) $(LIBS)
-ncks$(EXEEXT): $(ncks_OBJECTS) $(ncks_DEPENDENCIES) 
-	@rm -f ncks$(EXEEXT)
+nckt$(EXEEXT): $(ncks_OBJECTS) $(ncks_DEPENDENCIES) 
+	@rm -f nckt$(EXEEXT)
 	$(LINK) $(ncks_OBJECTS) $(ncks_LDADD) $(LIBS)
 ncpdq$(EXEEXT): $(ncpdq_OBJECTS) $(ncpdq_DEPENDENCIES) 
 	@rm -f ncpdq$(EXEEXT)
@@ -674,7 +674,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ncbo.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ncecat.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ncflint.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ncks.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nckt.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nco_att_utl.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nco_aux.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nco_bnr.Plo@am__quote@

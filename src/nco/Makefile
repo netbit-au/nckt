@@ -40,12 +40,12 @@ host_triplet = x86_64-unknown-linux-gnu
 target_triplet = x86_64-unknown-linux-gnu
 bin_PROGRAMS = $(am__EXEEXT_1) ncatted$(EXEEXT) \
 	ncbo$(EXEEXT) ncecat$(EXEEXT) \
-	ncflint$(EXEEXT) ncks$(EXEEXT) \
+	ncflint$(EXEEXT) nckt$(EXEEXT) \
 	ncpdq$(EXEEXT) ncra$(EXEEXT) \
 	ncrename$(EXEEXT) $(am__EXEEXT_2)
 #bin_PROGRAMS = $(am__EXEEXT_1) ncatted$(EXEEXT) \
 #	ncbo$(EXEEXT) ncecat$(EXEEXT) \
-#	ncflint$(EXEEXT) ncks$(EXEEXT) ncpdq$(EXEEXT) \
+#	ncflint$(EXEEXT) nckt$(EXEEXT) ncpdq$(EXEEXT) \
 #	ncra$(EXEEXT) ncrename$(EXEEXT) \
 #	mpncbo$(EXEEXT) mpncecat$(EXEEXT) \
 #	mpncflint$(EXEEXT) mpncpdq$(EXEEXT) \
@@ -157,7 +157,7 @@ ncecat_DEPENDENCIES = libnco.la
 am_ncflint_OBJECTS = ncflint.$(OBJEXT)
 ncflint_OBJECTS = $(am_ncflint_OBJECTS)
 ncflint_DEPENDENCIES = libnco.la
-am_ncks_OBJECTS = ncks.$(OBJEXT)
+am_ncks_OBJECTS = nckt.$(OBJEXT)
 ncks_OBJECTS = $(am_ncks_OBJECTS)
 ncks_DEPENDENCIES = libnco.la
 am_ncpdq_OBJECTS = ncpdq.$(OBJEXT)
@@ -638,8 +638,8 @@ ncecat$(EXEEXT): $(ncecat_OBJECTS) $(ncecat_DEPENDENCIES)
 ncflint$(EXEEXT): $(ncflint_OBJECTS) $(ncflint_DEPENDENCIES) 
 	@rm -f ncflint$(EXEEXT)
 	$(LINK) $(ncflint_OBJECTS) $(ncflint_LDADD) $(LIBS)
-ncks$(EXEEXT): $(ncks_OBJECTS) $(ncks_DEPENDENCIES) 
-	@rm -f ncks$(EXEEXT)
+nckt$(EXEEXT): $(ncks_OBJECTS) $(ncks_DEPENDENCIES) 
+	@rm -f nckt$(EXEEXT)
 	$(LINK) $(ncks_OBJECTS) $(ncks_LDADD) $(LIBS)
 ncpdq$(EXEEXT): $(ncpdq_OBJECTS) $(ncpdq_DEPENDENCIES) 
 	@rm -f ncpdq$(EXEEXT)
@@ -674,7 +674,7 @@ include ./$(DEPDIR)/ncatted.Po
 include ./$(DEPDIR)/ncbo.Po
 include ./$(DEPDIR)/ncecat.Po
 include ./$(DEPDIR)/ncflint.Po
-include ./$(DEPDIR)/ncks.Po
+include ./$(DEPDIR)/nckt.Po
 include ./$(DEPDIR)/nco_att_utl.Plo
 include ./$(DEPDIR)/nco_aux.Plo
 include ./$(DEPDIR)/nco_bnr.Plo

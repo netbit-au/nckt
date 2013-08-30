@@ -19,9 +19,9 @@ NCO_GETOPT=
 endif
 
 if ENABLE_MPI
-bin_PROGRAMS = ${NCAP} ncatted ncbo ncecat ncflint ncks ncpdq ncra ncrename mpncbo mpncecat mpncflint mpncpdq mpncra mpncwa ${NCWA}
+bin_PROGRAMS = ${NCAP} ncatted ncbo ncecat ncflint nckt ncpdq ncra ncrename mpncbo mpncecat mpncflint mpncpdq mpncra mpncwa ${NCWA}
 else
-bin_PROGRAMS = ${NCAP} ncatted ncbo ncecat ncflint ncks ncpdq ncra ncrename ${NCWA}
+bin_PROGRAMS = ${NCAP} ncatted ncbo ncecat ncflint nckt ncpdq ncra ncrename ${NCWA}
 endif
 
 AM_YFLAGS = -d --name-prefix=nco_yy

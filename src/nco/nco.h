@@ -244,6 +244,7 @@ extern "C" {
     ncecat,
     ncflint,
     ncks,
+    nckt,
     ncpdq,
     ncra,
     ncrcat,

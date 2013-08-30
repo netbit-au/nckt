@@ -526,6 +526,7 @@ nco_is_mlt_fl_opr /* [fnc] Query whether program is multi-file operator */
   case ncatted: 
   case ncbo: 
   case ncflint: 
+  case nckt: 
   case ncks: 
   case ncpdq: 
   case ncrename: 
@@ -564,6 +565,7 @@ nco_is_rth_opr /* [fnc] Query whether program does arithmetic */
   case ncatted: 
   case ncecat: 
   case ncks: 
+  case nckt: 
   case ncpdq: 
   case ncrcat: 
   case ncrename: 
@@ -601,6 +603,7 @@ nco_is_rnk_prs_rth_opr /* [fnc] Is program rank-preserving arithmetic operator? 
   case ncatted: 
   case ncecat: 
   case ncks: 
+  case nckt: 
   case ncpdq: 
   case ncrcat: 
   case ncrename: 
@@ -822,6 +825,7 @@ prg_prs /* [fnc] Strip program name to stub and return program ID */
   else if(!strcmp(nm_out_tmp,"mpncflint")){*prg_lcl=ncflint;}
   /* ncks and acceptable synonyms (symbolic links): */
   else if(!strcmp(nm_out_tmp,"ncks")){*prg_lcl=ncks;}
+  else if(!strcmp(nm_out_tmp,"nckt")){*prg_lcl=ncks;}
   /* ncpdq and acceptable synonyms (symbolic links): */
   else if(!strcmp(nm_out_tmp,"ncpdq")){*prg_lcl=ncpdq;}
   else if(!strcmp(nm_out_tmp,"mpncpdq")){*prg_lcl=ncpdq;}
