@@ -92,7 +92,7 @@ am__libnco_la_SOURCES_DIST = libnco.h ncap.h ncap_yacc.h nco.h \
 	nco_att_utl.h nco_aux.h nco_bnr.h nco_cln_utl.h nco_cnf_dmn.h \
 	nco_cnf_typ.h nco_cnk.h nco_cnv_arm.h nco_cnv_csm.h nco_ctl.h \
 	nco_dbg.h nco_dmn_utl.h nco_fl_utl.h nco_getopt.h nco_lmt.h \
-	nco_lst_utl.h nco_mmr.h nco_mpi.h nco_msa.h nco_mss_val.h \
+	nco_lst_utl.h nco_mmr.h nco_mpi.h nco_msa.h nco_sql.h nco_mss_val.h \
 	nco_netcdf.h nco_omp.h nco_pck.h nco_prn.h nco_rec_var.h \
 	nco_rth_flt.h nco_rth_utl.h nco_scl_utl.h nco_scm.h \
 	nco_sng_utl.h nco_typ.h nco_var_avg.h nco_var_lst.h \
@@ -100,7 +100,7 @@ am__libnco_la_SOURCES_DIST = libnco.h ncap.h ncap_yacc.h nco.h \
 	nco_att_utl.c nco_aux.c nco_bnr.c nco_cln_utl.c nco_cnf_dmn.c \
 	nco_cnf_typ.c nco_cnk.c nco_cnv_arm.c nco_cnv_csm.c nco_ctl.c \
 	nco_dbg.c nco_dmn_utl.c nco_fl_utl.c nco_lmt.c nco_lst_utl.c \
-	nco_mmr.c nco_msa.c nco_mss_val.c nco_netcdf.c nco_omp.c \
+	nco_mmr.c nco_msa.c nco_sql.c nco_mss_val.c nco_netcdf.c nco_omp.c \
 	nco_pck.c nco_prn.c nco_rec_var.c nco_rth_flt.c nco_rth_utl.c \
 	nco_scl_utl.c nco_scm.c nco_sng_utl.c nco_var_avg.c \
 	nco_var_lst.c nco_var_rth.c nco_var_scv.c nco_var_utl.c
@@ -110,7 +110,7 @@ am_libnco_la_OBJECTS = $(am__objects_1) $(am__objects_2) \
 	nco_att_utl.lo nco_aux.lo nco_bnr.lo nco_cln_utl.lo \
 	nco_cnf_dmn.lo nco_cnf_typ.lo nco_cnk.lo nco_cnv_arm.lo \
 	nco_cnv_csm.lo nco_ctl.lo nco_dbg.lo nco_dmn_utl.lo \
-	nco_fl_utl.lo nco_lmt.lo nco_lst_utl.lo nco_mmr.lo nco_msa.lo \
+	nco_fl_utl.lo nco_lmt.lo nco_lst_utl.lo nco_mmr.lo nco_msa.lo nco_sql.lo \
 	nco_mss_val.lo nco_netcdf.lo nco_omp.lo nco_pck.lo nco_prn.lo \
 	nco_rec_var.lo nco_rth_flt.lo nco_rth_utl.lo nco_scl_utl.lo \
 	nco_scm.lo nco_sng_utl.lo nco_var_avg.lo nco_var_lst.lo \
@@ -212,18 +212,18 @@ CTAGS = ctags
 am__tty_colors = \
 red=; grn=; lgn=; blu=; std=
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/dev/nckt/autobld/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/dev/nckt/autobld/missing --run tar
+ACLOCAL = ${SHELL} /data/nckt/autobld/missing --run aclocal-1.11
+AMTAR = ${SHELL} /data/nckt/autobld/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /home/dev/nckt/autobld/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/dev/nckt/autobld/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/dev/nckt/autobld/missing --run automake-1.11
+AUTOCONF = ${SHELL} /data/nckt/autobld/missing --run autoconf
+AUTOHEADER = ${SHELL} /data/nckt/autobld/missing --run autoheader
+AUTOMAKE = ${SHELL} /data/nckt/autobld/missing --run automake-1.11
 AWK = gawk
 CC = gcc -std=gnu99
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2 -std=c99 -D_BSD_SOURCE -D_POSIX_SOURCE
 CPP = gcc -E
-CPPFLAGS = -I/usr/include 
+CPPFLAGS = -I/usr/include/postgresql/ -lpq 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
@@ -252,18 +252,18 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LAM_ROOT = 
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LEX = flex
-LEXLIB = -lfl
+LEX = ${SHELL} /data/nckt/autobld/missing --run flex
+LEXLIB = 
 LEX_OUTPUT_ROOT = lex.nco_yy
 LFLAGS = -Pnco_yy
 LIBOBJS = 
-LIBS = -ludunits2 -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  -ludunits2
+LIBS = -lm -lnetcdf -lpq 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool --tag=CXX
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/dev/nckt/autobld/missing --run makeinfo
+MAKEINFO = ${SHELL} /data/nckt/autobld/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 MPICH2_ROOT = 
 MPI_CC = 
@@ -286,7 +286,7 @@ PACKAGE_TARNAME = nco
 PACKAGE_URL = 
 PACKAGE_VERSION = 4.0.2
 PATH_SEPARATOR = :
-PATH_TO_NCGEN = /usr/bin/ncgen
+PATH_TO_NCGEN = 
 POW_LIB = 
 RANLIB = ranlib
 SED = /bin/sed
@@ -296,12 +296,12 @@ STRIP = strip
 UDUNITS2_PATH = 
 UDUNITS_PATH = 
 VERSION = 4.0.2
-YACC = bison -y
+YACC = yacc
 YFLAGS = 
-abs_builddir = /home/dev/nckt/src/nco
-abs_srcdir = /home/dev/nckt/src/nco
-abs_top_builddir = /home/dev/nckt
-abs_top_srcdir = /home/dev/nckt
+abs_builddir = /data/nckt/src/nco
+abs_srcdir = /data/nckt/src/nco
+abs_top_builddir = /data/nckt
+abs_top_srcdir = /data/nckt
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
@@ -330,7 +330,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dev/nckt/autobld/install-sh
+install_sh = ${SHELL} /data/nckt/autobld/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -355,11 +355,11 @@ target_vendor = unknown
 top_build_prefix = ../../
 top_builddir = ../..
 top_srcdir = ../..
-#NCAP = 
+#NCAP =
 NCAP = ncap
-#NCWA = 
+#NCWA =
 NCWA = ncwa
-NCO_GETOPT = 
+NCO_GETOPT =
 #NCO_GETOPT = nco_getopt.c
 AM_YFLAGS = -d --name-prefix=nco_yy
 ncap_SOURCES = ncap_utl.c ncap.c ncap_yacc.y ncap_lex.l
@@ -419,6 +419,7 @@ nco_lmt.h \
 nco_lst_utl.h \
 nco_mmr.h \
 nco_mpi.h \
+nco_sql.h \
 nco_msa.h \
 nco_mss_val.h \
 nco_netcdf.h \
@@ -469,6 +470,7 @@ nco_fl_utl.c \
 nco_lmt.c \
 nco_lst_utl.c \
 nco_mmr.c \
+nco_sql.c \
 nco_msa.c \
 nco_mss_val.c \
 nco_netcdf.c \
@@ -555,7 +557,7 @@ clean-libLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libnco.la: $(libnco_la_OBJECTS) $(libnco_la_DEPENDENCIES) 
+libnco.la: $(libnco_la_OBJECTS) $(libnco_la_DEPENDENCIES)
 	$(libnco_la_LINK) -rpath $(libdir) $(libnco_la_OBJECTS) $(libnco_la_LIBADD) $(LIBS)
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
@@ -600,22 +602,22 @@ clean-binPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-mpncbo$(EXEEXT): $(mpncbo_OBJECTS) $(mpncbo_DEPENDENCIES) 
+mpncbo$(EXEEXT): $(mpncbo_OBJECTS) $(mpncbo_DEPENDENCIES)
 	@rm -f mpncbo$(EXEEXT)
 	$(LINK) $(mpncbo_OBJECTS) $(mpncbo_LDADD) $(LIBS)
-mpncecat$(EXEEXT): $(mpncecat_OBJECTS) $(mpncecat_DEPENDENCIES) 
+mpncecat$(EXEEXT): $(mpncecat_OBJECTS) $(mpncecat_DEPENDENCIES)
 	@rm -f mpncecat$(EXEEXT)
 	$(LINK) $(mpncecat_OBJECTS) $(mpncecat_LDADD) $(LIBS)
-mpncflint$(EXEEXT): $(mpncflint_OBJECTS) $(mpncflint_DEPENDENCIES) 
+mpncflint$(EXEEXT): $(mpncflint_OBJECTS) $(mpncflint_DEPENDENCIES)
 	@rm -f mpncflint$(EXEEXT)
 	$(LINK) $(mpncflint_OBJECTS) $(mpncflint_LDADD) $(LIBS)
-mpncpdq$(EXEEXT): $(mpncpdq_OBJECTS) $(mpncpdq_DEPENDENCIES) 
+mpncpdq$(EXEEXT): $(mpncpdq_OBJECTS) $(mpncpdq_DEPENDENCIES)
 	@rm -f mpncpdq$(EXEEXT)
 	$(LINK) $(mpncpdq_OBJECTS) $(mpncpdq_LDADD) $(LIBS)
-mpncra$(EXEEXT): $(mpncra_OBJECTS) $(mpncra_DEPENDENCIES) 
+mpncra$(EXEEXT): $(mpncra_OBJECTS) $(mpncra_DEPENDENCIES)
 	@rm -f mpncra$(EXEEXT)
 	$(LINK) $(mpncra_OBJECTS) $(mpncra_LDADD) $(LIBS)
-mpncwa$(EXEEXT): $(mpncwa_OBJECTS) $(mpncwa_DEPENDENCIES) 
+mpncwa$(EXEEXT): $(mpncwa_OBJECTS) $(mpncwa_DEPENDENCIES)
 	@rm -f mpncwa$(EXEEXT)
 	$(LINK) $(mpncwa_OBJECTS) $(mpncwa_LDADD) $(LIBS)
 ncap_yacc.h: ncap_yacc.c
@@ -623,34 +625,34 @@ ncap_yacc.h: ncap_yacc.c
 	  rm -f ncap_yacc.c; \
 	  $(MAKE) $(AM_MAKEFLAGS) ncap_yacc.c; \
 	else :; fi
-ncap$(EXEEXT): $(ncap_OBJECTS) $(ncap_DEPENDENCIES) 
+ncap$(EXEEXT): $(ncap_OBJECTS) $(ncap_DEPENDENCIES)
 	@rm -f ncap$(EXEEXT)
 	$(LINK) $(ncap_OBJECTS) $(ncap_LDADD) $(LIBS)
-ncatted$(EXEEXT): $(ncatted_OBJECTS) $(ncatted_DEPENDENCIES) 
+ncatted$(EXEEXT): $(ncatted_OBJECTS) $(ncatted_DEPENDENCIES)
 	@rm -f ncatted$(EXEEXT)
 	$(LINK) $(ncatted_OBJECTS) $(ncatted_LDADD) $(LIBS)
-ncbo$(EXEEXT): $(ncbo_OBJECTS) $(ncbo_DEPENDENCIES) 
+ncbo$(EXEEXT): $(ncbo_OBJECTS) $(ncbo_DEPENDENCIES)
 	@rm -f ncbo$(EXEEXT)
 	$(LINK) $(ncbo_OBJECTS) $(ncbo_LDADD) $(LIBS)
-ncecat$(EXEEXT): $(ncecat_OBJECTS) $(ncecat_DEPENDENCIES) 
+ncecat$(EXEEXT): $(ncecat_OBJECTS) $(ncecat_DEPENDENCIES)
 	@rm -f ncecat$(EXEEXT)
 	$(LINK) $(ncecat_OBJECTS) $(ncecat_LDADD) $(LIBS)
-ncflint$(EXEEXT): $(ncflint_OBJECTS) $(ncflint_DEPENDENCIES) 
+ncflint$(EXEEXT): $(ncflint_OBJECTS) $(ncflint_DEPENDENCIES)
 	@rm -f ncflint$(EXEEXT)
 	$(LINK) $(ncflint_OBJECTS) $(ncflint_LDADD) $(LIBS)
-nckt$(EXEEXT): $(ncks_OBJECTS) $(ncks_DEPENDENCIES) 
+nckt$(EXEEXT): $(ncks_OBJECTS) $(ncks_DEPENDENCIES)
 	@rm -f nckt$(EXEEXT)
 	$(LINK) $(ncks_OBJECTS) $(ncks_LDADD) $(LIBS)
-ncpdq$(EXEEXT): $(ncpdq_OBJECTS) $(ncpdq_DEPENDENCIES) 
+ncpdq$(EXEEXT): $(ncpdq_OBJECTS) $(ncpdq_DEPENDENCIES)
 	@rm -f ncpdq$(EXEEXT)
 	$(LINK) $(ncpdq_OBJECTS) $(ncpdq_LDADD) $(LIBS)
-ncra$(EXEEXT): $(ncra_OBJECTS) $(ncra_DEPENDENCIES) 
+ncra$(EXEEXT): $(ncra_OBJECTS) $(ncra_DEPENDENCIES)
 	@rm -f ncra$(EXEEXT)
 	$(LINK) $(ncra_OBJECTS) $(ncra_LDADD) $(LIBS)
-ncrename$(EXEEXT): $(ncrename_OBJECTS) $(ncrename_DEPENDENCIES) 
+ncrename$(EXEEXT): $(ncrename_OBJECTS) $(ncrename_DEPENDENCIES)
 	@rm -f ncrename$(EXEEXT)
 	$(LINK) $(ncrename_OBJECTS) $(ncrename_LDADD) $(LIBS)
-ncwa$(EXEEXT): $(ncwa_OBJECTS) $(ncwa_DEPENDENCIES) 
+ncwa$(EXEEXT): $(ncwa_OBJECTS) $(ncwa_DEPENDENCIES)
 	@rm -f ncwa$(EXEEXT)
 	$(LINK) $(ncwa_OBJECTS) $(ncwa_LDADD) $(LIBS)
 
@@ -692,6 +694,7 @@ include ./$(DEPDIR)/nco_getopt.Plo
 include ./$(DEPDIR)/nco_lmt.Plo
 include ./$(DEPDIR)/nco_lst_utl.Plo
 include ./$(DEPDIR)/nco_mmr.Plo
+include ./$(DEPDIR)/nco_sql.Plo
 include ./$(DEPDIR)/nco_msa.Plo
 include ./$(DEPDIR)/nco_mss_val.Plo
 include ./$(DEPDIR)/nco_netcdf.Plo

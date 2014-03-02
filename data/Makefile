@@ -50,18 +50,18 @@ CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/dev/nckt/autobld/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/dev/nckt/autobld/missing --run tar
+ACLOCAL = ${SHELL} /data/nckt/autobld/missing --run aclocal-1.11
+AMTAR = ${SHELL} /data/nckt/autobld/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /home/dev/nckt/autobld/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/dev/nckt/autobld/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/dev/nckt/autobld/missing --run automake-1.11
+AUTOCONF = ${SHELL} /data/nckt/autobld/missing --run autoconf
+AUTOHEADER = ${SHELL} /data/nckt/autobld/missing --run autoheader
+AUTOMAKE = ${SHELL} /data/nckt/autobld/missing --run automake-1.11
 AWK = gawk
 CC = gcc -std=gnu99
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2 -std=c99 -D_BSD_SOURCE -D_POSIX_SOURCE
 CPP = gcc -E
-CPPFLAGS = -I/usr/include 
+CPPFLAGS = -I/usr/include/postgresql/ -lpq 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
@@ -90,18 +90,18 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LAM_ROOT = 
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
-LEX = flex
-LEXLIB = -lfl
+LEX = ${SHELL} /data/nckt/autobld/missing --run flex
+LEXLIB = 
 LEX_OUTPUT_ROOT = lex.nco_yy
 LFLAGS = -Pnco_yy
 LIBOBJS = 
-LIBS = -ludunits2 -lgsl -L/usr/lib -lgsl -lgslcblas -lm -lm -lnetcdf  -ludunits2
+LIBS = -lm -lnetcdf -lpq 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool --tag=CXX
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/dev/nckt/autobld/missing --run makeinfo
+MAKEINFO = ${SHELL} /data/nckt/autobld/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 MPICH2_ROOT = 
 MPI_CC = 
@@ -124,7 +124,7 @@ PACKAGE_TARNAME = nco
 PACKAGE_URL = 
 PACKAGE_VERSION = 4.0.2
 PATH_SEPARATOR = :
-PATH_TO_NCGEN = /usr/bin/ncgen
+PATH_TO_NCGEN = 
 POW_LIB = 
 RANLIB = ranlib
 SED = /bin/sed
@@ -134,12 +134,12 @@ STRIP = strip
 UDUNITS2_PATH = 
 UDUNITS_PATH = 
 VERSION = 4.0.2
-YACC = bison -y
+YACC = yacc
 YFLAGS = 
-abs_builddir = /home/dev/nckt/data
-abs_srcdir = /home/dev/nckt/data
-abs_top_builddir = /home/dev/nckt
-abs_top_srcdir = /home/dev/nckt
+abs_builddir = /data/nckt/data
+abs_srcdir = /data/nckt/data
+abs_top_builddir = /data/nckt
+abs_top_srcdir = /data/nckt
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
@@ -168,7 +168,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dev/nckt/autobld/install-sh
+install_sh = ${SHELL} /data/nckt/autobld/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -394,7 +394,7 @@ uninstall-am:
 
 # netCDF build rules
 %.nc : %.cdl
-	/usr/bin/ncgen -o $@ $< 
+	 -o $@ $< 
 
 all: ${test_data}
 

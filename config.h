@@ -20,7 +20,7 @@
 /* #undef ENABLE_DEBUG_SYMBOLS */
 
 /* Compile operators with GSL support */
-#define ENABLE_GSL 1
+/* #undef ENABLE_GSL */
 
 /* Enable Large File Support (LFS) */
 /* #undef ENABLE_LARGEFILE */
@@ -41,7 +41,7 @@
 #define ENABLE_STATIC 1
 
 /* Compile operators with UDUnits2 support */
-#define ENABLE_UDUNITS 1
+/* #undef ENABLE_UDUNITS */
 
 /* Compatibility pvmgetarch token for FreeBSD on Intel x86 */
 /* #undef FREEBSD */
@@ -134,7 +134,7 @@
 #define HAVE_GETRUSAGE 1
 
 /* Define to 1 if <gsl_sf_gamma.h> is present */
-#define HAVE_GSL_H 1
+/* #undef HAVE_GSL_H */
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
@@ -149,7 +149,7 @@
 /* #undef HAVE_LIBF95 */
 
 /* Define to 1 if you have the `gsl' library (-lgsl). */
-#define HAVE_LIBGSL 1
+/* #undef HAVE_LIBGSL */
 
 /* Define to 1 if you have the `intl' library (-lintl). */
 /* #undef HAVE_LIBINTL */
@@ -188,7 +188,7 @@
 /* #undef HAVE_LIBUDUNITS */
 
 /* Define to 1 if you have the `udunits2' library (-ludunits2). */
-#define HAVE_LIBUDUNITS2 1
+/* #undef HAVE_LIBUDUNITS2 */
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
@@ -336,7 +336,7 @@
 #define HAVE_TRUNCF 1
 
 /* Define to 1 if <udunits2.h> is present */
-#define HAVE_UDUNITS2_H 1
+/* #undef HAVE_UDUNITS2_H */
 
 /* Define to 1 if <udunits.h> is present */
 /* #undef HAVE_UDUNITS_H */
@@ -348,10 +348,10 @@
 #define HAVE_VALARRAY /**/
 
 /* Hostname */
-#define HOST netbit
+#define HOST milk
 
 /* Hostname alias */
-#define HOSTNAME netbit
+#define HOSTNAME milk
 
 /* Compatibility pvmgetarch token for HPUX on PA RISC */
 /* #undef HPUX */
@@ -389,7 +389,7 @@
 #define MPICH2_ROOT ""
 
 /* GSL minor version number */
-#define NCO_GSL_MINOR_VERSION 14
+/* #undef NCO_GSL_MINOR_VERSION */
 
 /* POSIX extended regular expressions available */
 #define NCO_HAVE_REGEX_FUNCTIONALITY 1
@@ -545,7 +545,7 @@
 /* #undef UDUNITS_PATH */
 
 /* User */
-#define USER root
+#define USER netbit
 
 /* Use Fortran arithmetic */
 /* #undef USE_FORTRAN_ARITHMETIC */
@@ -558,7 +558,7 @@
 
 /* Define to 1 if `lex' declares `yytext' as a `char *' by default, not a
    `char[]'. */
-#define YYTEXT_POINTER 1
+/* #undef YYTEXT_POINTER */
 
 /* Number of bits in a file offset, on hosts where this is settable. */
 /* #undef _FILE_OFFSET_BITS */

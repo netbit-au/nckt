@@ -32,13 +32,13 @@ DUALCASE=1; export DUALCASE # for MKS sh
 # if CDPATH is set.
 (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
-relink_command="(cd /home/dev/nckt/src/nco++; { test -z \"\${LIBRARY_PATH+set}\" || unset LIBRARY_PATH || { LIBRARY_PATH=; export LIBRARY_PATH; }; }; { test -z \"\${COMPILER_PATH+set}\" || unset COMPILER_PATH || { COMPILER_PATH=; export COMPILER_PATH; }; }; { test -z \"\${GCC_EXEC_PREFIX+set}\" || unset GCC_EXEC_PREFIX || { GCC_EXEC_PREFIX=; export GCC_EXEC_PREFIX; }; }; { test -z \"\${LD_RUN_PATH+set}\" || unset LD_RUN_PATH || { LD_RUN_PATH=; export LD_RUN_PATH; }; }; LD_LIBRARY_PATH=/home/dev/nckt/src/nco/.libs/; export LD_LIBRARY_PATH; PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin:/data/bin/; export PATH; g++ -g -O2 -o \$progdir/\$file Invoke.o ncap2.o ncap2_utl.o sdo_utl.o sym_cls.o fmc_cls.o fmc_all_cls.o fmc_gsl_cls.o prs_cls.o NcapVar.o NcapVarVector.o ncoLexer.o ncoParser.o ncoTree.o  -L/home/dev/nckt/src/nco -L/usr/lib /home/dev/nckt/src/nco/.libs/libnco.so -lantlr -lgsl -lgslcblas -lm -lnetcdf -ludunits2 -Wl,-rpath -Wl,/home/dev/nckt/src/nco/.libs)"
+relink_command="(cd /data/nckt/src/nco++; { test -z \"\${LIBRARY_PATH+set}\" || unset LIBRARY_PATH || { LIBRARY_PATH=; export LIBRARY_PATH; }; }; { test -z \"\${COMPILER_PATH+set}\" || unset COMPILER_PATH || { COMPILER_PATH=; export COMPILER_PATH; }; }; { test -z \"\${GCC_EXEC_PREFIX+set}\" || unset GCC_EXEC_PREFIX || { GCC_EXEC_PREFIX=; export GCC_EXEC_PREFIX; }; }; { test -z \"\${LD_RUN_PATH+set}\" || unset LD_RUN_PATH || { LD_RUN_PATH=; export LD_RUN_PATH; }; }; { test -z \"\${LD_LIBRARY_PATH+set}\" || unset LD_LIBRARY_PATH || { LD_LIBRARY_PATH=; export LD_LIBRARY_PATH; }; }; PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games; export PATH; g++ -g -O2 -o \$progdir/\$file Invoke.o ncap2.o ncap2_utl.o sdo_utl.o sym_cls.o fmc_cls.o fmc_all_cls.o fmc_gsl_cls.o prs_cls.o NcapVar.o NcapVarVector.o ncoLexer.o ncoParser.o ncoTree.o  -L/data/nckt/src/nco /data/nckt/src/nco/.libs/libnco.so -lantlr -lm -lnetcdf -lpq -Wl,-rpath -Wl,/data/nckt/src/nco/.libs)"
 
 # This environment variable determines our operation mode.
 if test "$libtool_install_magic" = "%%%MAGIC variable%%%"; then
   # install mode needs the following variables:
   generated_by_libtool_version='2.2.6b'
-  notinst_deplibs=' /home/dev/nckt/src/nco/libnco.la'
+  notinst_deplibs=' /data/nckt/src/nco/libnco.la'
 else
   # When we are sourced in execute mode, $file and $ECHO are already set.
   if test "$libtool_execute_magic" != "%%%MAGIC variable%%%"; then

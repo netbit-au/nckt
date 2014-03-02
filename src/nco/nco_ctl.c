@@ -10,7 +10,7 @@
 
 const char * /* O [sng] Compiler and version */
 nco_cmp_get(void) /* [fnc] Return compiler and version */
-{ 
+{
   /* Purpose: Return string containing compiler and version */
   const char fnc_nm[]="nco_cmp_get()";
 #if defined(_AIX) && !defined(__GNUC__) && !defined(__xlC__)
@@ -22,7 +22,7 @@ nco_cmp_get(void) /* [fnc] Return compiler and version */
   static const char cmp_sng[]="Token __xlC__ defined in nco_cmp_get(), probably compiled with AIX xlC_r or xlC"; /* [sng] Compiler string */
 #endif /* !__xlC__ */
 #if defined(__GNUC__) && !defined(__INTEL_COMPILER) && !defined(__PATHCC__) && !defined(PGI_CC)
-  /* Testing for GCC macros early is dangerous because some compilers, 
+  /* Testing for GCC macros early is dangerous because some compilers,
      including Intel's, define GCC macros for compatibility */
   static const char cmp_nm[]="gcc"; /* [sng] Compiler name */
   static const char cmp_sng[]="Token __GNUC__ defined in nco_cmp_get(), probably compiled with GNU gcc"; /* [sng] Compiler string */
@@ -67,7 +67,7 @@ nco_cmp_get(void) /* [fnc] Return compiler and version */
 
 const char * /* O [sng] MPI implementation */
 nco_mpi_get(void) /* [fnc] Return MPI implementation */
-{ 
+{
   /* Purpose: Return string containing MPI implementation information */
   const char fnc_nm[]="nco_mpi_get()";
 
@@ -116,8 +116,8 @@ nco_ddra /* [fnc] Count operations */
   /* 20070509 CEWI RUVICFFU: ntg_nbr_rdc_dfl, ntg_nbr_nrm_dfl, flp_nbr_rdc_dfl, flp_nbr_nrm_dfl, rnk_avg */
 
   const char fnc_nm[]="nco_ddra()";
-  
-  /* Following speed parameter estimates are for clay.ess.uci.edu 
+
+  /* Following speed parameter estimates are for clay.ess.uci.edu
      clay is the dual opteron used in ppr_ZeM07 */
   const float ntg_nbr_brd_fdg_fct=1.8; /* [frc] Empirical correction to broadcasting */
   const float spd_flp_ncwa=153e6; /* [# s-1] Floating point operation speed */
@@ -127,11 +127,11 @@ nco_ddra /* [fnc] Count operations */
   const float spd_rd=63.375e6; /* [B s-1] Disk read bandwidth */
   const float spd_wrt=57.865e6; /* [B s-1] Disk write bandwidth */
 
-  /* 20060602: 
-     hjm estimates faster speeds for ncbo:     
+  /* 20060602:
+     hjm estimates faster speeds for ncbo:
      spd_flp_ncbo = 353.2e6: Based on unoptimized operations in tacg function
      spd_ntg_ncbo = 1386.54e6: Based on counting unoptimized operations in tacg function
-     hjm estimates slower speeds for ncwa:     
+     hjm estimates slower speeds for ncwa:
      spd_flp_ncwa = 153e6: Based on direct PAPI measures
      spd_ntg_ncwa = 200e6: Based on direct measure, using large data set, calculating backwards */
 
@@ -144,7 +144,7 @@ nco_ddra /* [fnc] Count operations */
   static float tm_obs_ttl=0.0; /* [s] Total seconds elapsed */
   clock_t tm_obs_crr; /* [us] Microseconds currently */
   float tm_obs_dff; /* [s] Seconds elapsed */
-  
+
   /* Cumulative file costs */
   static long long lmn_nbr_ttl=0LL; /* I/O [nbr] Cumulative variable size */
   static long long ntg_nbr_ttl=0LL; /* I/O [nbr] Cumulative integer operations */
@@ -157,7 +157,7 @@ nco_ddra /* [fnc] Count operations */
   static float tm_wrt_ttl=0.0f; /* I/O [s] Cumulative write time */
   static float tm_io_ttl=0.0f; /* [s] I/O time */
   static float tm_ttl=0.0f; /* I/O [s] Cumulative time */
-  
+
   /* Current variable costs */
   float tm_ntg; /* [s] Integer time */
   float tm_flp; /* [s] Floating point time */
@@ -169,7 +169,7 @@ nco_ddra /* [fnc] Count operations */
   long long flp_nbr=long_long_CEWI; /* [nbr] Floating point operations */
   long long rd_nbr_byt=long_long_CEWI; /* [B] Bytes read */
   long long wrt_nbr_byt=long_long_CEWI; /* [B] Bytes written */
-  
+
   /* Summary statistics */
   float tm_frc_flp_ttl=float_CEWI; /* [frc] Floating point time fraction */
   float tm_frc_io_ttl=float_CEWI; /* [frc] I/O time fraction */
@@ -231,7 +231,7 @@ nco_ddra /* [fnc] Count operations */
      binary_arithmetic(weight*value)+
      reduction(numerator)+reduction(denominator)+
      normalization(numerator)+normalization(denominator)+byte_swap(output)"
-     Units: 
+     Units:
      [nbr] = Operation counts for lmn_nbr elements
      [nbr nbr-1] = Operation counts per element */
 
@@ -407,7 +407,7 @@ nco_ddra /* [fnc] Count operations */
   lmn_nbr_ttl+=lmn_nbr; /* [nbr] Cumulative variable size */
   flp_nbr_ttl+=flp_nbr; /* [nbr] Cumulative floating point operations */
   ntg_nbr_ttl+=ntg_nbr; /* [nbr] Cumulative integer operations */
-  
+
   tm_ntg_ttl+=tm_ntg; /* [s] Cumulative integer time */
   tm_flp_ttl+=tm_flp; /* [s] Cumulative floating point time */
   tm_rd_ttl+=tm_rd; /* [s] Cumulative read time */
@@ -455,13 +455,13 @@ nco_ddra /* [fnc] Count operations */
   return rcd; /* [rcd] Return code */
 } /* nco_ddra() */
 
-void 
+void
 nco_dfl_case_tmr_typ_err(void) /* [fnc] Print error and exit for illegal switch(tmr_typ) case */
 {
   /* Purpose: Convenience routine for printing error and exiting when
      switch(tmr_typ) statement receives an illegal default case
 
-     Placing this in its own routine also has the virtue of saving many lines 
+     Placing this in its own routine also has the virtue of saving many lines
      of code since this function is used in many many switch() statements. */
   const char fnc_nm[]="nco_dfl_case_tmr_typ_err()";
   (void)fprintf(stdout,"%s: ERROR switch(tmr_typ) statement fell through to default case, which is unsafe. This catch-all error handler ensures all switch(tmr_typ) statements are fully enumerated. Exiting...\n",fnc_nm);
@@ -492,7 +492,7 @@ nco_exit /* [fnc] Wrapper for exit() */
   } /* endif rcd */
 } /* nco_exit() */
 
-void 
+void
 nco_exit_gracefully(void) /* [fnc] Clean up timers, file descriptors, memory, then exit */
 {
   /* Purpose: Clean up timers, file descriptors, memory, then exit */
@@ -500,7 +500,7 @@ nco_exit_gracefully(void) /* [fnc] Clean up timers, file descriptors, memory, th
   (void)fclose(stdin);
   (void)fclose(stdout);
 
-  /* This should be penultimate command in program 
+  /* This should be penultimate command in program
      After program name is free'd, calls to prg_nm_get() will fail */
   (void)nco_free(prg_nm_get());
 
@@ -517,20 +517,20 @@ nco_is_mlt_fl_opr /* [fnc] Query whether program is multi-file operator */
      MFOs attempt to read input filenames from stdin when input filenames are not positional arguments */
   switch(prg_id){
   case ncea:
-  case ncecat: 
+  case ncecat:
   case ncra:
-  case ncrcat: 
+  case ncrcat:
     return True;
     break;
-  case ncap: 
-  case ncatted: 
-  case ncbo: 
-  case ncflint: 
-  case nckt: 
-  case ncks: 
-  case ncpdq: 
-  case ncrename: 
-  case ncwa: 
+  case ncap:
+  case ncatted:
+  case ncbo:
+  case ncflint:
+  case nckt:
+  case ncks:
+  case ncpdq:
+  case ncrename:
+  case ncwa:
     return False;
     break;
   default: nco_dfl_case_prg_id_err(); break;
@@ -550,11 +550,11 @@ nco_is_rth_opr /* [fnc] Query whether program does arithmetic */
      Attributors (ncrename, ncatted) are not arithmetic because they change metadata, not data
      nco_is_rth_opr() flag help control packing behavior
      Clearly, arithmetic operators must operate on unpacked values
-     Hence, one use of nco_is_rth_opr() is to tell arithmetic operators to 
+     Hence, one use of nco_is_rth_opr() is to tell arithmetic operators to
      automatically unpack variables when reading them
      Non-arithmetic operators do not need to unpack variables */
   switch(prg_id){
-  case ncap: 
+  case ncap:
   case ncbo:
   case ncea:
   case ncflint:
@@ -562,13 +562,13 @@ nco_is_rth_opr /* [fnc] Query whether program does arithmetic */
   case ncwa:
     return True;
     break;
-  case ncatted: 
-  case ncecat: 
-  case ncks: 
-  case nckt: 
-  case ncpdq: 
-  case ncrcat: 
-  case ncrename: 
+  case ncatted:
+  case ncecat:
+  case ncks:
+  case nckt:
+  case ncpdq:
+  case ncrcat:
+  case ncrename:
     return False;
     break;
   default: nco_dfl_case_prg_id_err(); break;
@@ -588,25 +588,25 @@ nco_is_rnk_prs_rth_opr /* [fnc] Is program rank-preserving arithmetic operator? 
      Attributors (ncrename, ncatted) are not arithmetic because they change metadata, not data
      One use of nco_is_rnk_prs_rth_opr() is to tell which operators should
      not process multidimensional coordinate values.
-     For example, we want ncwa to act of coordinates that are reduced 
+     For example, we want ncwa to act of coordinates that are reduced
      But we do not want ncea, ncbo, or ncflint, for example, to load and process
      single or multi-dimensional coordinate variables.
-     They are best treated as "fixed" variables to be copied directly from the input to the output file. */ 
+     They are best treated as "fixed" variables to be copied directly from the input to the output file. */
   switch(prg_id){
-  case ncap: 
+  case ncap:
   case ncbo:
   case ncea:
   case ncflint:
   case ncra:
     return True;
     break;
-  case ncatted: 
-  case ncecat: 
-  case ncks: 
-  case nckt: 
-  case ncpdq: 
-  case ncrcat: 
-  case ncrename: 
+  case ncatted:
+  case ncecat:
+  case ncks:
+  case nckt:
+  case ncpdq:
+  case ncrcat:
+  case ncrename:
   case ncwa:
     return False;
     break;
@@ -633,7 +633,7 @@ nco_lbr_vrs_prn(void) /* [fnc] Print netCDF library version */
      netCDF 3.4--3.6.x: "3.4 of May 16 1998 14:06:16 $"
      netCDF 4.0-alpha1--4.0-alpha10: NULL
      netCDF 4.0-alpha11--4.0-alpha16: "4.0-alpha11"
-     netCDF 4.0-beta1--present: "4.0-beta1" */  
+     netCDF 4.0-beta1--present: "4.0-beta1" */
   lbr_sng=(char *)strdup(nc_inq_libvers());
   /* (void)fprintf(stderr,"%s: nco_lbr_vrs_prn() returns %s\n",prg_nm_get(),lbr_sng);*/
   of_ptr=strstr(lbr_sng," of ");
@@ -775,12 +775,12 @@ nco_cnf_prn(void) /* [fnc] Print NCO configuration and help text */
 
 const char * /* O [sng] Mnemonic that describes current NCO version */
 nco_nmn_get(void) /* [fnc] Return mnemonic that describes current NCO version */
-{ 
+{
   /* Purpose: Return mnemonic describing current NCO version */
   return "Avatar: The time of great sorrow\n";
 } /* end nco_nmn_get() */
 
-char * /* O [sng] nm_in stripped of any path (i.e., program name stub) */ 
+char * /* O [sng] nm_in stripped of any path (i.e., program name stub) */
 prg_prs /* [fnc] Strip program name to stub and return program ID */
 (const char * const nm_in, /* I [sng] Name of program, i.e., argv[0] (may include path prefix) */
  int * const prg_lcl) /* O [enm] Enumerated number corresponding to nm_in */
@@ -855,7 +855,7 @@ prg_prs /* [fnc] Strip program name to stub and return program ID */
 
 } /* end prg_prs() */
 
-void 
+void
 nco_usg_prn(void)
 {
   /* Purpose: Print correct command-line usage (currently to stdout) */
@@ -880,7 +880,7 @@ nco_usg_prn(void)
     opt_sng=(char *)strdup("[-3] [-4] [-6] [-A] [-C] [-c] [-D dbg_lvl] [-d ...] [-F] [-h] [-i var,val] [-L lvl] [-l path] [-O] [-o out.nc] [-p path] [-R] [-r] [-t thr_nbr] [-v ...] [-X box] [-x] [-w wgt_1[,wgt_2]] in_1.nc in_2.nc [out.nc]\n");
     break;
   case ncks:
-    opt_sng=(char *)strdup("[-3] [-4] [-6] [-A] [-a] [-B] [-b fl_bnr] [-C] [-c] [--cnk_dmn nm,sz] [--cnk_map map] [--cnk_plc plc] [--cnk_scl sz] [-D dbg_lvl] [-d ...] [-F] [--fix_rec_dmn] [-H] [-h] [--hdr_pad nbr] [-L lvl] [-l path] [-m] [--mk_rec_dmn dim] [-M] [-O] [-o out.nc] [-P] [-p path] [-Q] [-q] [-R] [-r] [-s format] [-u] [-v ...] [-X box] [-x] in.nc [[out.nc]]\n");
+    opt_sng=(char *)strdup("[-3] [-4] [-6] [-A] [-a] [-B] [-b fl_bnr] [-C] [-c] [--cnk_dmn nm,sz] [--cnk_map map] [--cnk_plc plc] [--cnk_scl sz] [-D dbg_lvl] [-d ...] [-F] [--fix_rec_dmn] [-H] [-h] [--hdr_pad nbr] [-L lvl] [-l path] [-m] [--mk_rec_dmn dim] [-M] [-O] [-o out.nc] [-P] [-p path] [-pd database] [-ph hostname] [-pu user] [-pp password] [-Q] [-q] [-R] [-r] [-s format] [-u] [-v ...] [-X box] [-x] in.nc [[out.nc]]\n");
     break;
   case ncpdq:
     opt_sng=(char *)strdup("[-3] [-4] [-6] [-A] [-a ...] [-C] [-c] [-D dbg_lvl] [-d ...] [-F] [-h] [-L lvl] [-l path] [-M pck_map][-O] [-o out.nc] [-P pck_plc] [-p path] [-R] [-r] [-t thr_nbr] [-v ...] [-U] [-X box] [-x] in.nc [out.nc]\n");
@@ -903,7 +903,7 @@ nco_usg_prn(void)
     break;
   default: nco_dfl_case_prg_id_err(); break;
   } /* end switch */
-  
+
   /* We now have command-specific command line option string */
   (void)fprintf(stdout,"%s command line options cheat-sheet:\n",prg_nm_get());
   (void)fprintf(stdout,"%s %s\n",prg_nm_get(),opt_sng);
@@ -987,6 +987,13 @@ nco_usg_prn(void)
     if(prg_lcl == ncpdq) (void)fprintf(stdout,"-P, --pck_plc, --pack_policy pck_plc\tPacking policy [all_new,all_xst,xst_new,upk]\n");
   } /* end if -P */
   if(strstr(opt_sng,"-p")) (void)fprintf(stdout,"-p, --pth, --path path\tPath prefix for all input filenames\n");
+  if(strstr(opt_sng,"-pd")) (void)fprintf(stdout,"    --pgdb database\tPostgres database (implies -H)\n");
+  if(strstr(opt_sng,"-ph")) (void)fprintf(stdout,"    --pghost hostname\tPostgres hostname (default localhost)\n");
+  if(strstr(opt_sng,"-pp")) (void)fprintf(stdout,"    --pgport port\tPostgres port (default 5432)\n");
+  if(strstr(opt_sng,"-pu")) (void)fprintf(stdout,"    --pguser user\tPostgres username (default postgres)\n");
+  if(strstr(opt_sng,"-pp")) (void)fprintf(stdout,"    --pgpass password\tPostgres password (default trust)\n");
+  if(strstr(opt_sng,"-pp")) (void)fprintf(stdout,"    --pgschema schema\tPostgres schema (default public)\n");
+  if(strstr(opt_sng,"-pp")) (void)fprintf(stdout,"    --pgtable table\tPostgres table (default NetCDF varname)\n");
   if(strstr(opt_sng,"-Q")) (void)fprintf(stdout,"-Q, \t\t\tToggle printing of dimension indices and coordinate values\n");
   if(strstr(opt_sng,"-q")) (void)fprintf(stdout,"-q, --quiet\t\tTurn off all printing to screen\n");
   if(strstr(opt_sng,"-R")) (void)fprintf(stdout,"-R, --rtn, --retain\tRetain remotely-retrieved files after use\n");

@@ -14,8 +14,10 @@
 *.so
 *.so.*
 *.dylib
+config.status
 
 # Executables
 *.exe
 *.out
 *.app
+config.log

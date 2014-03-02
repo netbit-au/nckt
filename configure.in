@@ -504,6 +504,7 @@ if test "${C_INC}"; then
 # Using C_INC is required on UCI's ESMF
     CPPFLAGS="-I${C_INC} ${CPPFLAGS}"
 fi
+CPPFLAGS="-I/usr/include/postgresql/ ${CPPFLAGS}"
 AC_LANG_PUSH([C++])
 if test "${enable_ncoxx}" != 'no'; then
     if test "${ANTLR_ROOT}"; then

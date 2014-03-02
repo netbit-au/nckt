@@ -8471,7 +8471,7 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
 fi
 
 # On IRIX 5.3, sys/types and inttypes.h are conflicting.
-for ac_header in sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
+for ac_header in sys/types.h sys/stat.h stdlib.h string.h memory.h libpq-fe.h strings.h \
 		  inttypes.h stdint.h unistd.h
 do :
   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
@@ -16660,7 +16660,7 @@ if test "${ac_cv_lib_netcdf_nc__opendap+set}" = set; then :
   $as_echo_n "(cached) " >&6
 else
   ac_check_lib_save_LIBS=$LIBS
-LIBS="-lnetcdf -lcurl $LIBS"
+LIBS="-lnetcdf -lcurl -lpq $LIBS"
 cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -16695,7 +16695,7 @@ if test "x$ac_cv_lib_netcdf_nc__opendap" = x""yes; then :
 #define HAVE_LIBNETCDF 1
 _ACEOF
 
-  LIBS="-lnetcdf $LIBS"
+  LIBS="-lnetcdf -lpq $LIBS"
 
 else
   enable_dap_netcdf=no
@@ -16841,6 +16841,7 @@ fi
 
 
 
+CPPFLAGS="-I/usr/include/postgresql/ -lpq ${CPPFLAGS}";
 # User-specified netCDF locations, if any, take precedence
 if test "${NETCDF_ROOT}" != ''; then
     if test -d "${NETCDF_ROOT}"; then
