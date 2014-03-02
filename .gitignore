@@ -15,6 +15,7 @@
 *.so.*
 *.dylib
 config.status
+data/*.nc
 
 # Executables
 *.exe
