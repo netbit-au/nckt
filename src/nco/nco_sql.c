@@ -211,6 +211,8 @@ void nco_sql_ins_vals (PGconn *conn, char * pgschema, char * pgtable, const int 
 
   /* For regular data */
   long lmn;
+  long tridx;
+  long itridx;
 
   dmn_sct *dim=NULL_CEWI;
 
@@ -368,8 +370,29 @@ void nco_sql_ins_vals (PGconn *conn, char * pgschema, char * pgtable, const int 
       (void)cast_void_nctype(dim[idx].type,&dim[idx].val);
     }/* end for */
   
+    tridx = 0;
+    itridx = 1;
+
+    res = PQexec(conn,"BEGIN");
+    if (PQresultStatus(res) != PGRES_COMMAND_OK)
+    {
+      fprintf(stderr, "BEGIN command failed\n");
+      PQclear(res);
+      PQfinish(conn);
+      exit(1);
+    }
 
     for(lmn=0;lmn<var.sz;lmn++){
+      if (tridx == 100000 && tridx != var.sz)
+      {                      
+        tridx = 0;
+          
+        (void) PQexec(conn,"END");   
+        if(var.sz - (itridx * 100000) > 100000)    
+          (void) PQexec(conn,"BEGIN");        
+        itridx++;              
+      }
+      
       //(void) fprintf(stderr, "\nCalc var\n");        
       /* Caculate RAM indices from current limit */
       for(idx=0;idx <var.nbr_dim;idx++)
@@ -382,10 +405,6 @@ void nco_sql_ins_vals (PGconn *conn, char * pgschema, char * pgtable, const int 
       var_dsk=0;
       for(idx=0;idx <var.nbr_dim;idx++)	
         var_dsk+=dmn_sbs_dsk[idx]*mod_map_in[idx];
-
-      /* Skip rest of loop unless element is first in string */
-      if(var.type == NC_CHAR && dmn_sbs_ram[var.nbr_dim-1] > 0) 
-        goto lbl_chr_prn;
 
       /* Print dimensions with indices along with values if they are coordinate variables */
       int dmn_idx;
@@ -401,7 +420,7 @@ void nco_sql_ins_vals (PGconn *conn, char * pgschema, char * pgtable, const int 
   	    /* Format and print dimension part of output string for non-coordinate variables */
   	    if(dim[dmn_idx].cid == var.id) continue; /* If variable is a coordinate then skip printing until later */
         if(!dim[dmn_idx].is_crd_dmn){ /* If dimension is not a coordinate... */
-          (void)fprintf(stdout,"%s[%ld] ",dim[dmn_idx].nm,dmn_sbs_dsk[dmn_idx]);  	   
+          (void)fprintf(stdout,"DAFQ %s[%ld] ",dim[dmn_idx].nm,dmn_sbs_dsk[dmn_idx]);  	   
   	      continue;
   	    } /* end if */
 
@@ -414,8 +433,9 @@ void nco_sql_ins_vals (PGconn *conn, char * pgschema, char * pgtable, const int 
           lat = dim[dmn_idx].val.fp[crd_idx_crr];
         else if (dmn_idx == 2)
           lng = dim[dmn_idx].val.fp[crd_idx_crr];
-      
-        switch(dim[dmn_idx].type){
+        
+        // Prelim
+        /*switch(dim[dmn_idx].type){
           case NC_FLOAT: (void)fprintf(stdout,dmn_sng,dim[dmn_idx].nm,dmn_sbs_prn,dim[dmn_idx].val.fp[crd_idx_crr]);  break;
     	    case NC_DOUBLE: (void)fprintf(stdout,dmn_sng,dim[dmn_idx].nm,dmn_sbs_prn,dim[dmn_idx].val.dp[crd_idx_crr]); break;
     	    case NC_SHORT: (void)fprintf(stdout,dmn_sng,dim[dmn_idx].nm,dmn_sbs_prn,dim[dmn_idx].val.sp[crd_idx_crr]); break;
@@ -429,109 +449,56 @@ void nco_sql_ins_vals (PGconn *conn, char * pgschema, char * pgtable, const int 
     	    case NC_UINT64: (void)fprintf(stdout,dmn_sng,dim[dmn_idx].nm,dmn_sbs_prn,dim[dmn_idx].val.ui64p[crd_idx_crr]); break;
     	    case NC_STRING: (void)fprintf(stdout,dmn_sng,dim[dmn_idx].nm,dmn_sbs_prn,dim[dmn_idx].val.sngp[crd_idx_crr]); break;
     	    default: nco_dfl_case_nc_type_err(); break;
-        } 
+        } */
       } /* end loop over dimensions */
-  
-      (void) sprintf(qry, "INSERT INTO %s.%s (id, lat, long, prec_text) VALUES (nextval('cdfdata_gid_seq'), %g, %g, %g);", pgschema, pgtable, lat, lng, var.val.fp[lmn]);
-    
-      /*res = PQexec(conn,qry);
-      if (PQresultStatus(res) != PGRES_COMMAND_OK)
-      {
-          fprintf(stderr, "Insert failed:\n%s\n", PQerrorMessage(conn));
-          PQclear(res);
-    	 PQfinish(conn);
-          exit(1);
-      }
-      else
-        PQclear(res);*/
 
-      /* Print all characters in last dimension each time penultimate dimension subscript changes to its start value */
-      lbl_chr_prn:
-    
-        if(var.type == NC_CHAR){
-          static nco_bool NULL_IN_SLAB;
-          static char *prn_sng;
-          static int chr_cnt;
-          static long dmn_sz;
-          static long var_dsk_srt;
-          static long var_dsk_end;
+      (void)sprintf(var_sng,"4 %%s[%%ld]=%s %%s\n",nco_typ_fmt_sng(var.type));    
 
-          /* At beginning of character array */
-          if(dmn_sbs_ram[var.nbr_dim-1] == 0L) {
-            dmn_sz=lmt_mult[var.nbr_dim-1]->dmn_cnt;
-            prn_sng=(char *)nco_malloc((size_t)dmn_sz+1UL);
-    	      var_dsk_srt=var_dsk;
-            var_dsk_end=var_dsk;
-            chr_cnt=0;
-            NULL_IN_SLAB=False;
-    	    } /* end if */
-
-    	    /* In middle of array---save characters to prn_sng */
-          prn_sng[chr_cnt++]=var.val.cp[lmn];
-          if(var.val.cp[lmn] == '\0' && !NULL_IN_SLAB){
-            var_dsk_end=var_dsk;
-            NULL_IN_SLAB=True;
-          } /* end if */
-
-          /* At end of character array */
-          if(dmn_sbs_ram[var.nbr_dim-1] == dmn_sz-1 ){
-            if(NULL_IN_SLAB){
-              (void)sprintf(var_sng,"Findme1 %%s[%%ld--%%ld]=\"%%s\" %%s");
-            }else{
-              (void)sprintf(var_sng,"Findme2 %%s[%%ld--%%ld]='%%s' %%s");
-              prn_sng[chr_cnt]='\0';
-              var_dsk_end=var_dsk;
-            } /* end if */
-
-            (void)printf("precursor: ");
-            (void)fprintf(stdout,var_sng,var_nm,var_dsk_srt,var_dsk_end,prn_sng,unit_sng);
-            (void)fprintf(stdout,"x\nx");
-            (void)fflush(stdout);
-            (void)nco_free(prn_sng);
-          } /* endif */	    
-          continue;
-        } /* end if NC_CHAR */
-
-        (void)sprintf(var_sng,"4 %%s[%%ld]=%s %%s\n",nco_typ_fmt_sng(var.type));    
-
-      	switch(var.type){
-        	case NC_FLOAT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.fp[lmn],unit_sng); break;
-        	case NC_DOUBLE: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.dp[lmn],unit_sng); break;
-        	case NC_SHORT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.sp[lmn],unit_sng); break;
-        	case NC_INT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.ip[lmn],unit_sng); break;
-        	case NC_CHAR: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.cp[lmn],unit_sng); break;
-        	case NC_BYTE: (void)fprintf(stdout,var_sng,var_nm,var_dsk,(unsigned char)var.val.bp[lmn],unit_sng); break;
-        	case NC_UBYTE: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.ubp[lmn],unit_sng); break;
-        	case NC_USHORT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.usp[lmn],unit_sng); break;
-        	case NC_UINT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.uip[lmn],unit_sng); break;
-        	case NC_INT64: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.i64p[lmn],unit_sng); break;
-        	case NC_UINT64: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.ui64p[lmn],unit_sng); break;
-        	case NC_STRING: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.sngp[lmn],unit_sng); break;
-        	default: nco_dfl_case_nc_type_err(); break;
-      	} // end switch
-      } /* end loop over elements */
+      // Value 
+    	/*switch(var.type){
+      	case NC_FLOAT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.fp[lmn],unit_sng); break;
+      	case NC_DOUBLE: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.dp[lmn],unit_sng); break;
+      	case NC_SHORT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.sp[lmn],unit_sng); break;
+      	case NC_INT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.ip[lmn],unit_sng); break;
+      	case NC_CHAR: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.cp[lmn],unit_sng); break;
+      	case NC_BYTE: (void)fprintf(stdout,var_sng,var_nm,var_dsk,(unsigned char)var.val.bp[lmn],unit_sng); break;
+      	case NC_UBYTE: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.ubp[lmn],unit_sng); break;
+      	case NC_USHORT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.usp[lmn],unit_sng); break;
+      	case NC_UINT: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.uip[lmn],unit_sng); break;
+      	case NC_INT64: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.i64p[lmn],unit_sng); break;
+      	case NC_UINT64: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.ui64p[lmn],unit_sng); break;
+      	case NC_STRING: (void)fprintf(stdout,var_sng,var_nm,var_dsk,var.val.sngp[lmn],unit_sng); break;
+      	default: nco_dfl_case_nc_type_err(); break;
+    	} // end switch*/
 
       (void) sprintf(qry, "INSERT INTO %s.%s (id, lat, long, prec_text) VALUES (nextval('cdfdata_gid_seq'), %g, %g, %g);", pgschema, pgtable, lat, lng, var.val.fp[lmn]);
-      // (void) fprintf(stderr, "PGEXEC\n");
+
       res = PQexec(conn,qry);
       if (PQresultStatus(res) != PGRES_COMMAND_OK)
       {
           fprintf(stderr, "Insert failed:\n%s\n", PQerrorMessage(conn));
           PQclear(res);
-       PQfinish(conn);
+          PQfinish(conn);
           exit(1);
       }
       else
         PQclear(res);
-      (void)nco_free(mod_map_in);
-      (void)nco_free(mod_map_out);
-      (void)nco_free(dmn_sbs_ram);
-      (void)nco_free(dmn_sbs_dsk);
 
-      /* Additional newline between consecutive variables or final variable and prompt */
-      (void)fflush(stdout);
+      tridx++;
+    } /* end loop over elements */
+
+    //(void) PQexec(conn,"END");
+
+    (void)nco_free(mod_map_in);
+    (void)nco_free(mod_map_out);
+    (void)nco_free(dmn_sbs_ram);
+    (void)nco_free(dmn_sbs_dsk);
+
+    /* Additional newline between consecutive variables or final variable and prompt */
+    (void)fflush(stdout);
   } /* end if variable has more than one dimension */
-
+  
+  PQfinish(conn);
   var.val.vp=nco_free(var.val.vp);
   var.nm=(char *)nco_free(var.nm);
 
