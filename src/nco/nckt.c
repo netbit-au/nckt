@@ -299,7 +299,6 @@ main(int argc,char **argv)
 
   /* Get program name and set program enum (e.g., prg=ncra) */
   prg_nm=prg_prs(argv[0],&prg);
-
   fl_bnr=(char *)strdup("ncks.bnr");
   /* Parse command line arguments */
   while(1){
@@ -313,9 +312,9 @@ main(int argc,char **argv)
 
     if(opt == 0){
       if(!strcmp(opt_crr,"cnk_dmn") || !strcmp(opt_crr,"chunk_dimension")){
-	/* Copy limit argument for later processing */
-	cnk_arg[cnk_nbr]=(char *)strdup(optarg);
-	cnk_nbr++;
+        /* Copy limit argument for later processing */
+        cnk_arg[cnk_nbr]=(char *)strdup(optarg);
+        cnk_nbr++;
       } /* endif cnk */
       if(!strcmp(opt_crr,"pgdb")){
         USE_PG=True;
@@ -355,24 +354,24 @@ main(int argc,char **argv)
       }
 
       if(!strcmp(opt_crr,"cnk_scl") || !strcmp(opt_crr,"chunk_scalar")){
-	cnk_sz_scl=strtoul(optarg,(char **)NULL,10);
+        cnk_sz_scl=strtoul(optarg,(char **)NULL,10);
       } /* endif cnk */
       if(!strcmp(opt_crr,"cnk_map") || !strcmp(opt_crr,"chunk_map")){
-	/* Chunking map */
-	cnk_map_sng=(char *)strdup(optarg);
-	cnk_map=nco_cnk_map_get(cnk_map_sng);
+        /* Chunking map */
+        cnk_map_sng=(char *)strdup(optarg);
+        cnk_map=nco_cnk_map_get(cnk_map_sng);
       } /* endif cnk */
       if(!strcmp(opt_crr,"cnk_plc") || !strcmp(opt_crr,"chunk_policy")){
-	/* Chunking policy */
-	cnk_plc_sng=(char *)strdup(optarg);
-	cnk_plc=nco_cnk_plc_get(cnk_plc_sng);
+        /* Chunking policy */
+        cnk_plc_sng=(char *)strdup(optarg);
+        cnk_plc=nco_cnk_plc_get(cnk_plc_sng);
       } /* endif cnk */
       if(!strcmp(opt_crr,"mk_rec_dmn")){
-	rec_dmn_nm=strdup(optarg);
+        rec_dmn_nm=strdup(optarg);
       } /* endif mk_rec_dmn */
       if(!strcmp(opt_crr,"cmp") || !strcmp(opt_crr,"compiler")){
-	(void)fprintf(stdout,"%s\n",nco_cmp_get());
-	nco_exit(EXIT_SUCCESS);
+        (void)fprintf(stdout,"%s\n",nco_cmp_get());
+        nco_exit(EXIT_SUCCESS);
       } /* endif "cmp" */
       if(!strcmp(opt_crr,"cln") || !strcmp(opt_crr,"mmr_cln") || !strcmp(opt_crr,"clean")) flg_cln=True; /* [flg] Clean memory prior to exit */
       if(!strcmp(opt_crr,"drt") || !strcmp(opt_crr,"mmr_drt") || !strcmp(opt_crr,"dirty")) flg_cln=False; /* [flg] Clean memory prior to exit */
@@ -380,18 +379,18 @@ main(int argc,char **argv)
       if(!strcmp(opt_crr,"fl_fmt") || !strcmp(opt_crr,"file_format")) rcd=nco_create_mode_prs(optarg,&fl_out_fmt);
       if(!strcmp(opt_crr,"hdr_pad") || !strcmp(opt_crr,"header_pad")) hdr_pad=strtoul(optarg,(char **)NULL,10);
       if(!strcmp(opt_crr,"lbr") || !strcmp(opt_crr,"library")){
-	(void)nco_lbr_vrs_prn();
-	nco_exit(EXIT_SUCCESS);
+        (void)nco_lbr_vrs_prn();
+        nco_exit(EXIT_SUCCESS);
       } /* endif "lbr" */
       if(!strcmp(opt_crr,"mpi_implementation")){
-	(void)fprintf(stdout,"%s\n",nco_mpi_get());
-	nco_exit(EXIT_SUCCESS);
+        (void)fprintf(stdout,"%s\n",nco_mpi_get());
+        nco_exit(EXIT_SUCCESS);
       } /* endif "mpi" */
       if(!strcmp(opt_crr,"msa_usr_rdr")) MSA_USR_RDR=True; /* [flg] Multi-slabbing algorithm leaves hyperslabs in user order */
       if(!strcmp(opt_crr,"no_clb") || !strcmp(opt_crr,"no-clobber") || !strcmp(opt_crr,"no_clobber") || !strcmp(opt_crr,"noclobber")) FORCE_NOCLOBBER=!FORCE_NOCLOBBER;
       if(!strcmp(opt_crr,"no_dmn_var_nm") || !strcmp(opt_crr,"no_nm_prn")) PRN_DMN_VAR_NM=False;
       if(!strcmp(opt_crr,"tst_udunits")){
-	char *cp;
+        char *cp;
         char **args;
         double crr_val;
 
@@ -411,12 +410,12 @@ main(int argc,char **argv)
 
       } /* endif "tst_udunits" */
       if(!strcmp(opt_crr,"secret") || !strcmp(opt_crr,"scr") || !strcmp(opt_crr,"shh")){
-	(void)fprintf(stdout,"Hidden/unsupported NCO options:\nCompiler used\t\t--cmp, --compiler\nHidden functions\t--scr, --ssh, --secret\nLibrary used\t\t--lbr, --library\nMemory clean\t\t--mmr_cln, --cln, --clean\nMemory dirty\t\t--mmr_drt, --drt, --dirty\nMPI implementation\t--mpi_implementation\nMSA user order\t\t--msa_usr_rdr\nNameless printing\t--no_nm_prn, --no_dmn_var_nm\nNo-clobber files\t--no_clb, --no-clobber\nTest udunits\t\t--tst_udunits,'units_in','units_out','cal_sng'? \nVersion\t\t\t--vrs, --version\n\n");
-	nco_exit(EXIT_SUCCESS);
+        (void)fprintf(stdout,"Hidden/unsupported NCO options:\nCompiler used\t\t--cmp, --compiler\nHidden functions\t--scr, --ssh, --secret\nLibrary used\t\t--lbr, --library\nMemory clean\t\t--mmr_cln, --cln, --clean\nMemory dirty\t\t--mmr_drt, --drt, --dirty\nMPI implementation\t--mpi_implementation\nMSA user order\t\t--msa_usr_rdr\nNameless printing\t--no_nm_prn, --no_dmn_var_nm\nNo-clobber files\t--no_clb, --no-clobber\nTest udunits\t\t--tst_udunits,'units_in','units_out','cal_sng'? \nVersion\t\t\t--vrs, --version\n\n");
+        nco_exit(EXIT_SUCCESS);
       } /* endif "shh" */
       if(!strcmp(opt_crr,"vrs") || !strcmp(opt_crr,"version")){
-	(void)nco_vrs_prn(CVS_Id,CVS_Revision);
-	nco_exit(EXIT_SUCCESS);
+        (void)nco_vrs_prn(CVS_Id,CVS_Revision);
+        nco_exit(EXIT_SUCCESS);
       } /* endif "vrs" */
     } /* opt != 0 */
     /* Process short options */
@@ -615,7 +614,6 @@ main(int argc,char **argv)
   /* Initialize lmt_all_scts */
   (void)nco_msa_lmt_all_int(in_id,MSA_USR_RDR,lmt_all_lst,nbr_dmn_fl,lmt,lmt_nbr);
 
-
   if (USE_PG)
   {
     conn = PQsetdbLogin(pghost, pgport, NULL, NULL, pgdb, pguser, pgpass);
@@ -741,11 +739,11 @@ main(int argc,char **argv)
     if(PRN_GLB_METADATA){
       (void)fprintf(stdout,"Opened file %s: dimensions = %i, variables = %i, global atts. = %i, ID = %i, type = %s\n",fl_in,nbr_dmn_fl,nbr_var_fl,glb_att_nbr,in_id,nco_fmt_sng(fl_in_fmt));
       if(rec_dmn_id != NCO_REC_DMN_UNDEFINED){
-	char dmn_nm[NC_MAX_NAME];
-	long rec_dmn_sz;
+        char dmn_nm[NC_MAX_NAME];
+        long rec_dmn_sz;
 
-	(void)nco_inq_dim(in_id,rec_dmn_id,dmn_nm,&rec_dmn_sz);
-	(void)fprintf(stdout,"Record dimension: name = %s, size = %li\n\n",dmn_nm,rec_dmn_sz);
+        (void)nco_inq_dim(in_id,rec_dmn_id,dmn_nm,&rec_dmn_sz);
+        (void)fprintf(stdout,"Record dimension: name = %s, size = %li\n\n",dmn_nm,rec_dmn_sz);
       } /* end if */
 
       /* Print global attributes */
@@ -754,10 +752,10 @@ main(int argc,char **argv)
 
     if(PRN_VAR_METADATA){
       for(idx=0;idx<nbr_xtr;idx++){
-	/* Print variables definition */
-	(void)nco_prn_var_dfn(in_id,xtr_lst[idx].nm);
-	/* Print variables attributes */
-	(void)nco_prn_att(in_id,xtr_lst[idx].id);
+      	/* Print variables definition */
+      	(void)nco_prn_var_dfn(in_id,xtr_lst[idx].nm);
+      	/* Print variables attributes */
+      	(void)nco_prn_att(in_id,xtr_lst[idx].id);
       } /* end loop over idx */
     } /* end if PRN_VAR_METADATA */
 
@@ -765,7 +763,7 @@ main(int argc,char **argv)
       /* NB: nco_msa_prn_var_val() with same nc_id contains OpenMP critical region */
       for(idx=0;idx<nbr_xtr;idx++) {
         if (USE_PG)
-          (void)nco_sql_ins_var_val(conn, pgschema, pgtable, in_id,xtr_lst[idx].nm,lmt_all_lst,nbr_dmn_fl,dlm_sng,FORTRAN_IDX_CNV,PRN_DMN_UNITS,PRN_DMN_IDX_CRD_VAL,PRN_DMN_VAR_NM);
+          (void)nco_sql_ins_vals(conn, pgschema, pgtable, in_id,xtr_lst[idx].nm,lmt_all_lst,nbr_dmn_fl);
         else
           (void)nco_msa_prn_var_val(in_id,xtr_lst[idx].nm,lmt_all_lst,nbr_dmn_fl,dlm_sng,FORTRAN_IDX_CNV,PRN_DMN_UNITS,PRN_DMN_IDX_CRD_VAL,PRN_DMN_VAR_NM);
       }
@@ -791,7 +789,7 @@ main(int argc,char **argv)
     /* free lmt[] NB: is now referenced within lmt_all_lst[idx] */
     for(idx=0;idx<nbr_dmn_fl;idx++)
       for(jdx=0;jdx<lmt_all_lst[idx]->lmt_dmn_nbr;jdx++)
-	lmt_all_lst[idx]->lmt_dmn[jdx]=nco_lmt_free(lmt_all_lst[idx]->lmt_dmn[jdx]);
+        lmt_all_lst[idx]->lmt_dmn[jdx]=nco_lmt_free(lmt_all_lst[idx]->lmt_dmn[jdx]);
 
     lmt=(lmt_sct**)nco_free(lmt);
     if(nbr_dmn_fl > 0) lmt_all_lst=nco_lmt_all_lst_free(lmt_all_lst,nbr_dmn_fl);
