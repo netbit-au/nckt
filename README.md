@@ -1,7 +1,14 @@
 nckt
+
+NetCDF kettle toaster. We like to keep the project .. alive
+Work in progress!
+
+A fork of netCDF Kitchen Sink with Postgres support.
+http://nco.sourceforge.net/nco.html#ncks-netCDF-Kitchen-Sink
+
+
 ====
 
-A fork of ncks with Postgres support
 
 ncks combines selected features of ncdump, ncextr, and the nccut and ncpaste specifications into one versatile utility. ncks extracts a subset of the data from input-file and either prints it as ASCII text to stdout, or writes (or pastes) it to output-file, or both.
 
