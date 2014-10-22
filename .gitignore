@@ -6,7 +6,7 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-
+*.nc
 # Compiled Static libraries
 *.lai
 *.la
@@ -22,4 +22,4 @@ data/*.nc
 *.out
 *.app
 config.log
-src/nco/.libs/lt-nckt
+src/nco/.libs/
