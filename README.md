@@ -1,9 +1,10 @@
-nckt
+nckt - NetCDF kettle toaster
 
-NetCDF kettle toaster. We like to keep the project .. alive
 Work in progress!
 
-A fork of netCDF Kitchen Sink with Postgres support.
+
+A fork of netCDF Kitchen Sink with Postgres support -  We like to keep the project .. alive
+
 http://nco.sourceforge.net/nco.html#ncks-netCDF-Kitchen-Sink
 
 
