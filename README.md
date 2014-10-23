@@ -59,3 +59,18 @@ Usage:
     -x, --xcl, --exclude    Extract all variables EXCEPT those specified with -v
     in.nc                   Input file name
     out.nc                  Output file name (or use -o switch)
+
+License: GNU General Public License (GPL) Version 3
+The full license text is at http://www.gnu.org/copyleft/gpl.html
+and in the file nco/doc/LICENSE in the NCO source distribution.
+
+As a special exception to the terms of the GPL, you are permitted
+to link the NCO source code with the HDF, netCDF, OPeNDAP, and UDUnits
+libraries and to distribute the resulting executables under the terms
+of the GPL, but in addition obeying the extra stipulations of the
+HDF, netCDF, OPeNDAP, and UDUnits licenses.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
