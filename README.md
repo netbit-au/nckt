@@ -3,11 +3,11 @@ nckt - NetCDF kettle toaster
 Work in progress!
 
 
-A fork of netCDF Kitchen Sink with Postgres support -  We like to keep the project .. alive
+A fork of netCDF Kitchen Sink with Postgres support -  We like to keep it .. alive!
 
 http://nco.sourceforge.net/nco.html#ncks-netCDF-Kitchen-Sink
 
-See COPYING for license details
+GPLv3. See <a href='COPYING'>license</a> for details
 
 ====
 
